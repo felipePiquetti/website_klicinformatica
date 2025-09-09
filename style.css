@@ -134,4 +134,21 @@ body {
   background:#ECBA25;
 
 }
+.icone {
+  width: 50px;
+  height: auto; 
+}
+.hero-content {
+  position: relative; 
+}
+.cards-container {
+  display: flex;        /* coloca os cards lado a lado */
+  gap: 20px;            /* espaço entre os cards */
+  justify-content: center; /* centraliza na página */
+}
 
+.card {
+  text-align: center;
+  padding: 30px;
+  max-width: 250px;
+}
