@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Inter (Bold) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KLIC Informática</title>
+
+  <!-- Inter (Bold) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -48,13 +49,12 @@
         <a href="#" class="btn btn-amarelo">
           <img src="img/togaBLACK.png" alt="Toga" class="icon"> Nossos Cursos
         </a>
-
         <a href="#" class="btn btn-branco">
           <img src="img/seta-direita.png" alt="Seta" class="icon"> Nossos Serviços
         </a>
       </div>
 
-      <!-- CARDS (3 itens como na imagem) -->
+      <!-- CARDS (3 itens) -->
       <div class="cards-container">
         <div class="card">
           <img src="img/toga.png" alt="Alunos formados" class="icone">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="card">
-          <img src="img/ferramenta.png" alt="Anos de Experiência" class="icone">
+          <img src="img/contexto.png" alt="Anos de Experiência" class="icone">
           <h2>20+</h2>
           <p>Anos de Experiência</p>
         </div>
@@ -77,5 +77,15 @@
     </div>
   </section>
 
+  <!-- Script: aplica .scrolled no header ao rolar -->
+  <script>
+    const nav = document.querySelector('.navbar');
+    const onScroll = () => {
+      if (window.scrollY > 10) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  </script>
 </body>
 </html>
