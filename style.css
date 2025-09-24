@@ -14,22 +14,31 @@ html, body { height: 100%; }
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
-  background: var(--bg-dark); /* fallback por trás do banner */
+  background: var(--bg-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ========== Navbar ========== */
+/* ========== Navbar fixa ========== */
 .navbar{
-  position: absolute; /* por cima do banner */
-  inset: 0 0 auto 0;
+  position: fixed;        /* fixa no topo */
+  top: 0; left: 0; right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   padding: 18px 56px;
-  background: transparent; /* sem faixa sólida */
-  z-index: 3;
+  z-index: 999;           /* acima do banner */
+  background: transparent;/* transparente no topo do hero */
+  transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* fundo + sombra após rolar */
+.navbar.scrolled{
+  background: rgba(10,26,47,.85);
+  backdrop-filter: saturate(160%) blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 22px rgba(0,0,0,.35);
 }
 
 .logo{
@@ -74,10 +83,9 @@ body {
 .hero{
   position: relative;
   min-height: 100vh;
-  background: url("img/fundo.jpg") center/cover no-repeat; /* você já tem a imagem */
+  background: url("img/fundo.jpg") center/cover no-repeat;
 }
 
-/* escurece para dar contraste no texto */
 .hero .overlay{
   position: absolute;
   inset: 0;
@@ -91,7 +99,7 @@ body {
   position: relative;
   z-index: 2;
   max-width: 980px;
-  padding: 140px 56px 64px;
+  padding: 140px 56px 64px; /* espaço para o header fixo por cima */
 }
 
 /* Títulos */
@@ -101,7 +109,6 @@ body {
   line-height: 1.15;
   color: #fff;
   margin-bottom: 4px;
-  white-space: normal;
 }
 
 .titulo-amarelo{
@@ -110,14 +117,13 @@ body {
   line-height: 1.15;
   color: var(--accent);
   margin-bottom: 20px;
-  white-space: normal;
 }
 
 /* Subtítulo */
 .subtitulo{
   font-size: clamp(16px, 2.1vw, 20px);
   color: #E6ECF5;
-  line-height: 1.5; /* (corrige 1,4) */
+  line-height: 1.5;
   margin: 14px 0 28px;
 }
 
@@ -214,7 +220,58 @@ body {
 }
 
 @media (max-width: 640px){
-  .nav-links{ display: none; } /* simples: esconde menu no mobile */
+  .nav-links{ display: none; } /* esconde o menu no mobile (simplificado) */
   .btn{ min-width: 100%; }
   .cards-container{ grid-template-columns: 1fr; }
+}
+/* ===== Títulos: Inter / Bold / 65px ===== */
+.titulo-branco,
+.titulo-amarelo{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;          /* Bold */
+  font-size: 60px;           /* tamanho exato do layout */
+  line-height: 1.1;          /* mais compacto, como no modelo */
+  letter-spacing: 0;         /* sem tracking extra */
+  white-space: normal;       /* quebra se precisar em telas menores */
+}
+
+/* Responsivo para não estourar em telas menores */
+@media (max-width: 1024px){
+  .titulo-branco, .titulo-amarelo{ font-size: 56px; }
+}
+@media (max-width: 768px){
+  .titulo-branco, .titulo-amarelo{ font-size: 44px; }
+}
+@media (max-width: 480px){
+  .titulo-branco, .titulo-amarelo{ font-size: 34px; }
+}
+/* Botões (L220 x A47) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 220px;          /* L */
+  height: 47px;          /* A */
+  padding: 0 16px;       /* borda interna lateral (box-sizing: border-box já está ativo) */
+
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+
+  transition: background .2s ease, transform .06s ease, color .2s ease;
+}
+
+.btn .icon{
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;        /* evita “espremimento” do ícone */
+}
+
+/* responsivo: no mobile os botões ocupam a largura total mantendo 47px de altura */
+@media (max-width: 640px){
+  .btn{ width: 100%; height: 47px; }
 }
