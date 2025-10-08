@@ -1,0 +1,201 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #e9eef4;
+  padding: 20px;
+}
+
+/* Wrapper do carrossel */
+.courses-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Container do carrossel */
+.courses-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Cards */
+.course-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(15, 34, 56, .08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 16px 20px 20px;
+}
+
+.card-title {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #1f2b3a;
+  margin-bottom: 6px;
+}
+
+.card-lead {
+  color: #6c7a8a;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* Meta (horas + alunos) */
+.card-meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin: 12px 0 5px;
+  color: #1f4d6b;
+  font-weight: 700;
+}
+
+.meta-item {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.meta-ico {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Lista */
+.card-what {
+  margin-top: 12px;
+}
+
+.card-what strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0b1220;
+}
+
+.card-what ul {
+  padding-left: 16px;
+  color: #1f2b3a;
+}
+
+.card-what li {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+/* Botão */
+.card-cta {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cta {
+  background: #1f4d6b;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  min-width: 180px;
+  text-align: center;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s;
+}
+
+.btn-cta:hover {
+  background: #1a405a;
+  box-shadow: 0 8px 20px rgba(31,77,107,.25);
+}
+
+/* Setas de navegação */
+.courses-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #14324d;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.courses-arrow:hover {
+  background: #1a405a;
+}
+
+.courses-arrow.prev {
+  left: -20px;
+}
+
+.courses-arrow.next {
+  right: -20px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .courses-track {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+  
+  .courses-arrow.prev {
+    left: -10px;
+  }
+  
+  .courses-arrow.next {
+    right: -10px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* Vira carrossel com scroll horizontal em mobile */
+  .courses-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    padding: 0 60px; /* Espaço para setas */
+    max-width: none;
+    scroll-behavior: smooth;
+  }
+  
+  .course-card {
+    scroll-snap-align: start;
+  }
+  
+  .courses-arrow {
+    display: block; /* Sempre visível em mobile */
+  }
+}
+
+@media (min-width: 721px) {
+  .courses-arrow {
+    display: none; /* Esconder em desktop, ou ajuste para mostrar */
+  }
+}

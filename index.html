@@ -94,7 +94,7 @@
           <!-- Card 1 -->
           <article class="course-card">
             <div class="card-media">
-              <img src="img/curso-office.jpg" alt="Pacote Office Completo">
+              <img src="img/curso-office.svg" alt="Pacote Office Completo">
             </div>
             <div class="card-body">
               <h3 class="card-title">Pacote Office Completo</h3>
@@ -130,7 +130,7 @@
           <!-- Card 2 -->
           <article class="course-card">
             <div class="card-media">
-              <img src="img/curso-robotica.jpg" alt="Curso de Robótica">
+              <img src="img/curso-robotica.svg" alt="Curso de Robótica">
             </div>
             <div class="card-body">
               <h3 class="card-title">Curso de Robótica</h3>
@@ -166,7 +166,7 @@
           <!-- Card 3 -->
           <article class="course-card">
             <div class="card-media">
-              <img src="img/curso-digitacao.jpg" alt="Curso de Digitação">
+              <img src="img/curso-digitacao2.png" alt="Curso de Digitação">
             </div>
             <div class="card-body">
               <h3 class="card-title">Curso de Digitação</h3>
@@ -198,32 +198,48 @@
               </div>
             </div>
           </article>
+
+             <article class="course-card">
+            <div class="card-media">
+              <img src="img/curso-montagem.png" alt="Curso de Robótica">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Montagem e Manutencao de Computadores</h3>
+              <p class="card-lead">Torne-se especialista em hardware. Aprenda montagem, diagnóstico e reparo de computadores</p>
+
+              <div class="card-meta">
+                <span class="meta-item">
+                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 1.5a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5Zm-.75 3.5a.75.75 0 0 0-1.5 0v6.2c0 .3.12.58.33.79l3.9 3.9a.75.75 0 0 0 1.06-1.06l-3.79-3.8V6.75Z"/></svg>
+                  25 horas
+                </span>
+                <span class="meta-item">
+                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0-1.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 10.5Zm-8.5 8.25a7 7 0 0 1 14 0 .75.75 0 0 1-1.5 0 5.5 5.5 0 0 0-11 0 .75.75 0 0 1-1.5 0Z"/></svg>
+                  12 alunos por turma
+                </span>
+              </div>
+
+              <div class="card-what">
+                <strong>O que você vai aprender:</strong>
+                <ul>
+                  <li>Arquitetura de Hardware</li>
+                  <li>Diagnóstico de Problemas</li>
+                  <li>Montagem Completa</li>
+                  <li>Manutencao Preventiva</li>
+                </ul>
+              </div>
+
+              <div class="card-cta">
+                <a href="#" class="btn-cta">Saiba Mais</a>
+              </div>
+            </div>
+          </article>
+
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script>
-    // Header: aplica .scrolled ao rolar
-    const nav = document.querySelector('.navbar');
-    const onScroll = () => {
-      if (window.scrollY > 10) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll);
-  </script>
 
-  <script>
-    // Setas do carrossel no mobile
-    document.querySelectorAll('.courses-arrow').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const track = document.querySelector('.courses-track');
-        const shift = track.clientWidth * 0.9;
-        track.scrollBy({ left: btn.dataset.dir === 'next' ? shift : -shift, behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
