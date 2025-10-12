@@ -1,245 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KLIC Informática</title>
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLIC INFORMATICA</title>
 
-  <!-- Inter (Bold) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!---fontes---->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
-
+<!--Arquivo css-->
   <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-
-  <!-- NAVBAR -->
+ </head>
+ <body>
+  
+  <!----NAVBAR-->
   <header class="navbar">
     <div class="logo">KLIC INFORMATICA</div>
-
     <nav aria-label="Menu principal">
       <ul class="nav-links">
-        <li><a href="#">Início</a></li>
-        <!-- 👉 aponta para a seção abaixo -->
-        <li><a href="#cursos">Cursos</a></li>
-        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Servicos</a></li>
         <li><a href="#">Contato</a></li>
       </ul>
     </nav>
 
-    <a href="#" class="btn-contato">
+    <a href="#" class="btn-contatonav">
       <img src="img/telefone.png" alt="Telefone" class="icon"> Fale Conosco
     </a>
+    
   </header>
 
-  <!-- HERO -->
+  <!----HERO----->
   <section class="hero">
     <div class="overlay"></div>
-
     <div class="hero-content">
       <h1 class="titulo-branco">Transforme seu futuro com</h1>
       <h1 class="titulo-amarelo">Tecnologia e Educação</h1>
-
       <p class="subtitulo">
         Cursos especializados em robótica, computação e muito mais. <br>
         Além de assistência técnica profissional para todas as suas necessidades.
       </p>
-
       <div class="hero-buttons">
-        <a href="#" class="btn btn-amarelo">
-          <img src="img/togaBLACK.png" alt="Toga" class="icon"> Nossos Cursos
+        <a href="#" class="btn btn-amarelo1">
+          <img src="img/togaBLACK.png" alt="Toga" class="iconNav"> Nossos Cursos
         </a>
-        <a href="#" class="btn btn-branco">
-          <img src="img/seta-direita.png" alt="Seta" class="icon"> Nossos Serviços
+        <a href="#" class="btn btn-branco1">
+          <img src="img/seta-direita.png" alt="Seta" class="iconNav"> Nossos Serviços
         </a>
       </div>
 
-      <!-- Cards hero -->
+      <!------ICONES HERO-->
       <div class="cards-container">
-        <div class="card">
+        <div class="cardHero">
           <img src="img/toga.png" alt="Alunos formados" class="icone">
           <h2>500+</h2>
           <p>Alunos formados</p>
         </div>
-        <div class="card">
+        <div class="cardHero">
           <img src="img/lasca.png" alt="Equipamentos Reparados" class="icone">
           <h2>1000+</h2>
           <p>Equipamentos Reparados</p>
         </div>
-        <div class="card">
-          <img src="img/contexto.png" alt="Anos de Experiência" class="icone">
+
+        <div class="cardHero">
+          <img src="img/contexto.png" alt="Anos de Experiencia" class="icone">
           <h2>20+</h2>
-          <p>Anos de Experiência</p>
+          <p>Anos de Experiencia</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CURSOS (cole esta seção logo após a hero) -->
-  <section id="cursos" class="section-cursos">
-    <div class="container">
-      <h2 class="section-title">Nossos Cursos</h2>
-      <p class="section-subtitle">
-        Invista no seu futuro com nossos cursos especializados em tecnologia
-        e capacitação profissional
-      </p>
-
-      <div class="courses-wrapper">
-        <!-- setas (mobile) -->
-        <button class="courses-arrow prev" aria-label="Anterior" data-dir="prev">‹</button>
-        <button class="courses-arrow next" aria-label="Próximo" data-dir="next">›</button>
-
-        <div class="courses-track">
-          <!-- Card 1 -->
-          <article class="course-card">
-            <div class="card-media">
-              <img src="img/curso-office.svg" alt="Pacote Office Completo">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Pacote Office Completo</h3>
-              <p class="card-lead">Domine Word, Excel e PowerPoint, do básico ao avançado com certificação</p>
-
-              <div class="card-meta">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico" aria-hidden="true"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 1.5a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5Zm-.75 3.5a.75.75 0 0 0-1.5 0v6.2c0 .3.12.58.33.79l3.9 3.9a.75.75 0 0 0 1.06-1.06l-3.79-3.8V6.75Z"/></svg>
-                  25 horas
-                </span>
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0-1.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 10.5Zm-8.5 8.25a7 7 0 0 1 14 0 .75.75 0 0 1-1.5 0 5.5 5.5 0 0 0-11 0 .75.75 0 0 1-1.5 0Z"/></svg>
-                  12 alunos por turma
-                </span>
-              </div>
-
-              <div class="card-what">
-                <strong>O que você vai aprender:</strong>
-                <ul>
-                  <li>Word Avançado</li>
-                  <li>Excel com Fórmulas</li>
-                  <li>PowerPoint Profissional</li>
-                  <li>Certificação Incluída</li>
-                </ul>
-              </div>
-
-              <div class="card-cta">
-                <a href="#" class="btn-cta">Saiba Mais</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="course-card">
-            <div class="card-media">
-              <img src="img/curso-robotica.svg" alt="Curso de Robótica">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Curso de Robótica</h3>
-              <p class="card-lead">Aprenda a construir e programar robôs do zero. Domine Arduino</p>
-
-              <div class="card-meta">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 1.5a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5Zm-.75 3.5a.75.75 0 0 0-1.5 0v6.2c0 .3.12.58.33.79l3.9 3.9a.75.75 0 0 0 1.06-1.06l-3.79-3.8V6.75Z"/></svg>
-                  25 horas
-                </span>
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0-1.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 10.5Zm-8.5 8.25a7 7 0 0 1 14 0 .75.75 0 0 1-1.5 0 5.5 5.5 0 0 0-11 0 .75.75 0 0 1-1.5 0Z"/></svg>
-                  12 alunos por turma
-                </span>
-              </div>
-
-              <div class="card-what">
-                <strong>O que você vai aprender:</strong>
-                <ul>
-                  <li>Arduino e Microcontroladores</li>
-                  <li>Programação C++</li>
-                  <li>Sensores e Atuadores</li>
-                  <li>Projetos Práticos</li>
-                </ul>
-              </div>
-
-              <div class="card-cta">
-                <a href="#" class="btn-cta">Saiba Mais</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="course-card">
-            <div class="card-media">
-              <img src="img/curso-digitacao2.png" alt="Curso de Digitação">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Curso de Digitação</h3>
-              <p class="card-lead">Aumente sua velocidade e precisão na digitação com técnicas profissionais</p>
-
-              <div class="card-meta">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 1.5a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5Zm-.75 3.5a.75.75 0 0 0-1.5 0v6.2c0 .3.12.58.33.79l3.9 3.9a.75.75 0 0 0 1.06-1.06l-3.79-3.8V6.75Z"/></svg>
-                  15 horas
-                </span>
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0-1.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 10.5Zm-8.5 8.25a7 7 0 0 1 14 0 .75.75 0 0 1-1.5 0 5.5 5.5 0 0 0-11 0 .75.75 0 0 1-1.5 0Z"/></svg>
-                  12 alunos por turma
-                </span>
-              </div>
-
-              <div class="card-what">
-                <strong>O que você vai aprender:</strong>
-                <ul>
-                  <li>Técnica de Digitação</li>
-                  <li>Aumentar Velocidade</li>
-                  <li>Postura Correta</li>
-                  <li>Exercícios Práticos</li>
-                </ul>
-              </div>
-
-              <div class="card-cta">
-                <a href="#" class="btn-cta">Saiba Mais</a>
-              </div>
-            </div>
-          </article>
-
-             <article class="course-card">
-            <div class="card-media">
-              <img src="img/curso-montagem.png" alt="Curso de Robótica">
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Montagem e Manutencao de Computadores</h3>
-              <p class="card-lead">Torne-se especialista em hardware. Aprenda montagem, diagnóstico e reparo de computadores</p>
-
-              <div class="card-meta">
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 1.5a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5Zm-.75 3.5a.75.75 0 0 0-1.5 0v6.2c0 .3.12.58.33.79l3.9 3.9a.75.75 0 0 0 1.06-1.06l-3.79-3.8V6.75Z"/></svg>
-                  25 horas
-                </span>
-                <span class="meta-item">
-                  <svg viewBox="0 0 24 24" class="meta-ico"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0-1.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 10.5Zm-8.5 8.25a7 7 0 0 1 14 0 .75.75 0 0 1-1.5 0 5.5 5.5 0 0 0-11 0 .75.75 0 0 1-1.5 0Z"/></svg>
-                  12 alunos por turma
-                </span>
-              </div>
-
-              <div class="card-what">
-                <strong>O que você vai aprender:</strong>
-                <ul>
-                  <li>Arquitetura de Hardware</li>
-                  <li>Diagnóstico de Problemas</li>
-                  <li>Montagem Completa</li>
-                  <li>Manutencao Preventiva</li>
-                </ul>
-              </div>
-
-              <div class="card-cta">
-                <a href="#" class="btn-cta">Saiba Mais</a>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-</body>
-</html>
+ </body>
+ </html>
