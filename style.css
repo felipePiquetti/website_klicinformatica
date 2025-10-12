@@ -9,6 +9,9 @@
   --amarelo-botao: #ECBA25;
   --botao-cursor: #B6901C;
   --legenda-icone: #B8C0CC;
+  --cord-botao:#1e4e76;
+  --cor-fundocard: #FBFCFC;
+  --sombra-card: rgba(0, 0, 0, 0.35);
  }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -193,4 +196,146 @@ body{
 .cardHero p{
     font-size: 12px;
     color: var(--legenda-icone);
+}
+
+.Cursos {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #e8f0fe;
+  display: flex;
+  flex-direction: column;  /* Novo: Empilha header em cima e cards embaixo */
+  justify-content: flex-start;  /* Novo: Alinha do topo para baixo, em vez de centro */
+  align-items: center;  /* Mantém: Centraliza horizontalmente o header e os cards */
+  min-height: 100vh;  /* Mudei de height para min-height: Evita cortar se o conteúdo for maior */
+  padding: 80px 80px;  /* Adicionei padding nas laterais e topo para mais ar (ajuste se quiser) */
+  margin: 0;
+}
+.cursos-header {
+  text-align: center;  /* Mantém: Centraliza o texto */
+  margin-bottom: 60px;  /* Mantém: Espaço entre header e cards */
+  max-width: 800px;  /* Mantém: Limita largura */
+  margin-left: auto;
+  margin-right: auto;  /* Mantém: Centraliza o bloco */
+  width: 100%;  /* Novo: Garante que ocupe toda a largura disponível na flex */
+}
+.cursos-header{
+  font-size: 17px;
+  color: #14446c;
+  margin-bottom: 16px;
+  
+  
+}
+.selecaoCurso{
+  display: flex;
+  gap: 20px; /*brecha*/
+}
+.cardCurso{
+  background: var(--cor-fundocard);
+  width: 311px;
+  height: 544px;
+  border-radius: 20px;/*borda*/
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);/*sombra das bordas*/
+  overflow: hidden;/*imagem dentro do card*/
+  transition: transform 0.5s ease, box-shadow 0.2s ease;/*animacao leve*/
+  flex-direction: column;/*permite alinhar o footer embaixo */
+  justify-content: space-between;
+  display: flex;  
+  margin-top: 50px;
+}
+.cardC-imagem{
+  width:100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+.cardCurso:hover {
+  transform: translateY(-20px);
+   /*movendo para cima Y*/
+  box-shadow: 0 8px 20px var(--sombra-card);
+   /*offset-x offset-y blur-radius color;*/
+}
+.cardC-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Permite que o flex item encolha se necessário */
+}
+.cardC-titulo {
+  font-family: 'Assistant', sans-serif;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #14446C;
+}
+.cardC-descricao {
+  font-family: 'Assistant', sans-serif;
+  margin: 9px 0 16px;
+  color: #547895;
+  font-size: 15px;
+  line-height: 1.4;
+  flex-shrink: 0; /* Impede que a descrição encolha */
+  
+}
+.curso-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #14446C;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  /*empurra o grupo pra baixo */
+}
+.curso-item i {
+  font-size: 18px;
+  color: #1E4E76;
+  position: relative;
+  top: 2px;
+}
+.curso-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 80px;
+  margin-top: 8px;
+  flex-shrink: 0; /* Mantém o info fixo */
+}
+
+.cardC-subtitulo {
+  font-size: 15px;
+  color: #000;
+  margin-top: 25px;
+  font-weight: 600;
+  flex-shrink: 0; /* Impede encolhimento */
+}
+.cardC-conteudo {
+  font-size: 16px;
+  color: #4F6475;
+  margin-top: -5px;
+  flex-grow: 1;
+}
+.cardC-conteudo ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.cardC-footer {
+  display: flex;
+  justify-content: center;/* centraliza o botão */
+  padding: 12px 0 16px;/* espaço interno acima e abaixo */
+  flex-shrink: 0; /* Mantém o footer fixo no tamanho */
+}
+/* botão */
+.cardCurso-botao {
+  background: var(--cord-botao);
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 24px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cardCurso-botao:hover {
+  background: #2491ff;
+  transform: translateY(-2px);
 }
