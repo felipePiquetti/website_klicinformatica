@@ -309,7 +309,7 @@ body{
 .cardC-conteudo {
   font-size: 16px;
   color: #4F6475;
-  margin-top: -5px;
+  margin-top: 5px;
   flex-grow: 1;
 }
 .cardC-conteudo ul {
