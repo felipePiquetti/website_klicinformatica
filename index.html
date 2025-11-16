@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KLIC INFORMATICA</title>
 
-<!---fontes---->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&display=swap"
-    rel="stylesheet">
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet">
-  
-<!--Arquivo css-->
+  <!-- Inter com pesos completos para cursos/serviços -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Arquivo CSS -->
   <link rel="stylesheet" href="style.css"/>
- </head>
- <body>
-  
+</head>
+
+<body>
   <!----NAVBAR-->
   <header class="navbar">
     <div class="logo">KLIC INFORMATICA</div>
@@ -25,7 +25,7 @@
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#cursos">Cursos</a></li>
-        <li><a href="#">Servicos</a></li>
+        <li><a href="#servicos">Servicos</a></li>
         <li><a href="#">Contato</a></li>
         <li><a href="#localizacao">Localizacao</a></li>
       </ul>
@@ -34,7 +34,6 @@
     <a href="#" class="btn-contatonav">
       <img src="img/telefone.png" alt="Telefone" class="icon"> Fale Conosco
     </a>
-    
   </header>
 
   <!----HERO----->
@@ -48,10 +47,10 @@
         Além de assistência técnica profissional para todas as suas necessidades.
       </p>
       <div class="hero-buttons">
-        <a href="#" class="btn btn-amarelo1">
+        <a href="#cursos" class="btn btn-amarelo1">
           <img src="img/togaBLACK.png" alt="Toga" class="iconNav"> Nossos Cursos
         </a>
-        <a href="#" class="btn btn-branco1">
+        <a href="#servicos" class="btn btn-branco1">
           <img src="img/seta-direita.png" alt="Seta" class="iconNav"> Nossos Serviços
         </a>
       </div>
@@ -77,146 +76,663 @@
       </div>
     </div>
   </section>
+
   <!-------CURSOS cards-->
-  <section id="cursos" class="Cursos">
-    <div class="cursos-header">
-      <h2 class="cursos-titulo">Nossos Cursos</h2>
-      <p class="cursos-subtitulo">Descubra opcoes incriveis para o seu aprendizado em tecnologia e robotica</p>
-    </div>
-    <div class="selecaoCurso">
-      <!------card 1----->
-      <div class="cardCurso">
-        <img class="cardC-imagem" src="img/curso-robotica.svg" alt="curso robotica">
-        <div class="cardC-info">
-          <h3 class="cardC-titulo">Curso de Robotica</h3>
-          <p class="cardC-descricao">
-            Aprenda a construir e programar robos do zero. Domine Arduino
-          </p>
-          <div class="curso-info">
-            <span class="curso-item">
-              <i class="fi fi-br-clock"></i>25 horas
-            </span>
-            <span class="curso-item">
-              <i class="fi fi-br-users"></i>12 alunos
-            </span>
-          </div>
-            <h4 class="cardC-subtitulo">O que voce vai aprender:</h4>
-            <div class="cardC-conteudo">
-              <ul>
-                <li>Arduino e Microcontroladores</li>
-                <li>Programacao C++</li>
-                <li>Arduino e Microcontroladores</li>
-                <li>Arduino e Microcontroladores</li>
-              </ul>
+  <section id="cursos" class="kc-section">
+    <div class="kc-wrapper">
+      <header class="kc-header">
+        <h2>Nossos Cursos</h2>
+        <p>Formação prática em tecnologia para impulsionar seu futuro acadêmico e profissional.</p>
+      </header>
+
+      <div class="kc-carousel" aria-label="Carrossel de cursos">
+        <button class="kc-carousel-btn kc-prev" aria-label="Cursos anteriores">
+          <span>&larr;</span>
+        </button>
+
+        <div class="kc-carousel-viewport">
+          <div class="kc-carousel-track">
+
+            <!-- CARD 1 -->
+            <article class="kc-course-card">
+              <img class="kc-course-image"
+                   src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Pessoa usando notebook com múltiplos monitores">
+              <div class="kc-course-body">
+                <h3 class="kc-course-title">Pacote Office Completo</h3>
+                <p class="kc-course-subtitle">
+                  Domine Word, Excel e PowerPoint do básico ao avançado com certificação reconhecida.
+                </p>
+
+                <div class="kc-course-meta-row">
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">⏱</span>
+                    <span>25 horas</span>
+                  </div>
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">👥</span>
+                    <span>12 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="kc-course-section-title">O que você vai aprender:</p>
+                <ul class="kc-course-list">
+                  <li>Word avançado para relatórios e TCC</li>
+                  <li>Excel com fórmulas e gráficos</li>
+                  <li>Apresentações profissionais no PowerPoint</li>
+                  <li>Certificação inclusa ao final do curso</li>
+                </ul>
               </div>
-        </div>
-        <div class="cardC-footer">
-          <button class="cardCurso-botao">Saiba Mais</button>
-        </div>
-      </div>
-<!--------card 2---------->
-      <div class="cardCurso">
-        <img class="cardC-imagem" src="img/curso-robotica.svg" alt="curso robotica">
-        <div class="cardC-info">
-          <h3 class="cardC-titulo">Curso de Robotica</h3>
-          <p class="cardC-descricao">
-            Aprenda a construir e programar robos do zero. Domine Arduino
-          </p>
-          <div class="curso-info">
-            <span class="curso-item">
-              <i class="fi fi-br-clock"></i>25 horas
-            </span>
-            <span class="curso-item">
-              <i class="fi fi-br-users"></i>12 alunos
-            </span>
-          </div>
-            <h4 class="cardC-subtitulo">O que voce vai aprender:</h4>
-            <div class="cardC-conteudo">
-              <ul>
-                <li>Arduino e Microcontroladores</li>
-                <li>Programacao C++</li>
-                <li>Arduino e Microcontroladores</li>
-                <li>Arduino e Microcontroladores</li>
-              </ul>
+              <div class="kc-course-footer">
+                <button class="kc-course-btn">
+                  <span>Saiba Mais</span>
+                  <span class="kc-icon">➜</span>
+                </button>
               </div>
-        </div>
-        <div class="cardC-footer">
-          <button class="cardCurso-botao">Saiba Mais</button>
-        </div>
-      </div>
-<!-------- card 3 ----------->
-      <div class="cardCurso">
-        <img class="cardC-imagem" src="img/curso-robotica.svg" alt="curso robotica">
-        <div class="cardC-info">
-          <h3 class="cardC-titulo">Curso de Robotica</h3>
-          <p class="cardC-descricao">
-            Aprenda a construir e programar robos do zero. Domine Arduino
-          </p>
-          <div class="curso-info">
-            <span class="curso-item">
-              <i class="fi fi-br-clock"></i>25 horas
-            </span>
-            <span class="curso-item">
-              <i class="fi fi-br-users"></i>12 alunos
-            </span>
-          </div>
-            <h4 class="cardC-subtitulo">O que voce vai aprender:</h4>
-            <div class="cardC-conteudo">
-              <ul>
-                <li>Arduino e Microcontroladores</li>
-                <li>Programacao C++</li>
-                <li>Arduino e Microcontroladores</li>
-                <li>Arduino e Microcontroladores</li>
-              </ul>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="kc-course-card">
+              <img class="kc-course-image"
+                   src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Aluno montando robô de robótica">
+              <div class="kc-course-body">
+                <h3 class="kc-course-title">Curso de Robótica</h3>
+                <p class="kc-course-subtitle">
+                  Aprenda a construir e programar robôs do zero usando Arduino e sensores eletrônicos.
+                </p>
+
+                <div class="kc-course-meta-row">
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">⏱</span>
+                    <span>25 horas</span>
+                  </div>
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">👥</span>
+                    <span>12 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="kc-course-section-title">O que você vai aprender:</p>
+                <ul class="kc-course-list">
+                  <li>Arduino e microcontroladores</li>
+                  <li>Lógica de programação em C/C++</li>
+                  <li>Sensores, atuadores e motores</li>
+                  <li>Projetos práticos de robótica móvel</li>
+                </ul>
               </div>
-        </div>
-        <div class="cardC-footer">
-          <button class="cardCurso-botao">Saiba Mais</button>
-        </div>
-      </div>
-<!-------------card 4----------->
-      <div class="cardCurso">
-        <img class="cardC-imagem" src="img/curso-robotica.svg" alt="curso robotica">
-        <div class="cardC-info">
-          <h3 class="cardC-titulo">Curso de Robotica</h3>
-          <p class="cardC-descricao">
-            Aprenda a construir e programar robos do zero. Domine Arduino
-          </p>
-          <div class="curso-info">
-            <span class="curso-item">
-              <i class="fi fi-br-clock"></i>25 horas
-            </span>
-            <span class="curso-item">
-              <i class="fi fi-br-users"></i>12 alunos
-            </span>
-          </div>
-            <h4 class="cardC-subtitulo">O que voce vai aprender:</h4>
-            <div class="cardC-conteudo">
-              <ul>
-                <li>Arduino e Microcontroladores</li>
-                <li>Programacao C++</li>
-                <li>Arduino e Microcontroladores</li>
-                <li>Arduino e Microcontroladores</li>
-              </ul>
+              <div class="kc-course-footer">
+                <button class="kc-course-btn">
+                  <span>Saiba Mais</span>
+                  <span class="kc-icon">➜</span>
+                </button>
               </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="kc-course-card">
+              <img class="kc-course-image"
+                   src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Pessoa digitando em teclado iluminado">
+              <div class="kc-course-body">
+                <h3 class="kc-course-title">Curso de Digitação</h3>
+                <p class="kc-course-subtitle">
+                  Aumente sua velocidade e precisão na digitação com técnicas profissionais e exercícios práticos.
+                </p>
+
+                <div class="kc-course-meta-row">
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">⏱</span>
+                    <span>15 horas</span>
+                  </div>
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">👥</span>
+                    <span>12 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="kc-course-section-title">O que você vai aprender:</p>
+                <ul class="kc-course-list">
+                  <li>Técnica de digitação correta</li>
+                  <li>Aumento de velocidade e precisão</li>
+                  <li>Postura adequada ao computador</li>
+                  <li>Exercícios de treino diário</li>
+                </ul>
+              </div>
+              <div class="kc-course-footer">
+                <button class="kc-course-btn">
+                  <span>Saiba Mais</span>
+                  <span class="kc-icon">➜</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- CARD 4 -->
+            <article class="kc-course-card">
+              <img class="kc-course-image"
+                   src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Tela de programação">
+              <div class="kc-course-body">
+                <h3 class="kc-course-title">Lógica de Programação</h3>
+                <p class="kc-course-subtitle">
+                  Introdução à programação para quem quer dar os primeiros passos no desenvolvimento.
+                </p>
+
+                <div class="kc-course-meta-row">
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">⏱</span>
+                    <span>30 horas</span>
+                  </div>
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">👥</span>
+                    <span>10 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="kc-course-section-title">O que você vai aprender:</p>
+                <ul class="kc-course-list">
+                  <li>Algoritmos e fluxogramas</li>
+                  <li>Estruturas de decisão e repetição</li>
+                  <li>Resolução de problemas reais</li>
+                  <li>Noções de JavaScript e Python</li>
+                </ul>
+              </div>
+              <div class="kc-course-footer">
+                <button class="kc-course-btn">
+                  <span>Saiba Mais</span>
+                  <span class="kc-icon">➜</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- CARD 5 -->
+            <article class="kc-course-card">
+              <img class="kc-course-image"
+                   src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                   alt="Pessoa usando notebook e smartphone">
+              <div class="kc-course-body">
+                <h3 class="kc-course-title">Informática Essencial</h3>
+                <p class="kc-course-subtitulo">
+                  Curso ideal para iniciantes que desejam aprender a usar o computador com segurança.
+                </p>
+
+                <div class="kc-course-meta-row">
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">⏱</span>
+                    <span>20 horas</span>
+                  </div>
+                  <div class="kc-course-meta-item">
+                    <span class="kc-course-meta-icon">👥</span>
+                    <span>15 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="kc-course-section-title">O que você vai aprender:</p>
+                <ul class="kc-course-list">
+                  <li>Uso do Windows e navegação na internet</li>
+                  <li>E-mails e comunicação online</li>
+                  <li>Organização de arquivos e pastas</li>
+                  <li>Noções de segurança digital</li>
+                </ul>
+              </div>
+              <div class="kc-course-footer">
+                <button class="kc-course-btn">
+                  <span>Saiba Mais</span>
+                  <span class="kc-icon">➜</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
         </div>
-        <div class="cardC-footer">
-          <button class="cardCurso-botao">Saiba Mais</button>
-        </div>
+
+        <button class="kc-carousel-btn kc-next" aria-label="Próximos cursos">
+          <span>&rarr;</span>
+        </button>
       </div>
     </div>
   </section>
-  <!-- Nova seção de Contato com Mapa -->
-<section id="localizacao" class="Localizacao">
-  <div class="localizacao-header">
-     <!--------Mapa------->
-    <div class="mapa-container">
-     
 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6077926411936!2d-54.50656670000001!3d-25.4847687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6975885a5b51b%3A0xc0eab1a473311d25!2sKlic%20Informatica!5e0!3m2!1spt-BR!2sbr!4v1760249957168!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- Localização -->
+  <section id="localizacao" class="Localizacao">
+    <div class="localizacao-header">
+      <div class="mapa-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6077926411936!2d-54.50656670000001!3d-25.4847687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6975885a5b51b%3A0xc0eab1a473311d25!2sKlic%20Informatica!5e0!3m2!1spt-BR!2sbr!4v1760249957168!5m2!1spt-BR!2sbr"
+                width="100%" height="450" style="border:0;" allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS – seção nova integrada -->
+  <section id="servicos" class="SelecaoServicos">
+    <div class="servicos-wrapper">
+      <header class="servicos-header">
+        <h2 class="servicos-titulo-geral">Nossos Serviços</h2>
+        <p class="servicos-subtitulo-geral">
+          Soluções rápidas e práticas para o seu dia a dia na KLIC Informática.
+        </p>
+      </header>
+
+      <div class="servicos-carousel" aria-label="Carrossel de serviços">
+        <button class="servicos-btn prev" aria-label="Serviços anteriores">
+          <span>&larr;</span>
+        </button>
+
+        <div class="servicos-viewport">
+          <div class="servicos-track">
+            <!-- CARD 1 -->
+            <div class="cardS">
+              <div class="cardS-badge">Serviço Rápido</div>
+
+              <div class="header-card">
+                <div class="card-icon">
+                  <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone">
+                </div>
+                <div class="header-text">
+                  <h2 class="servico-titulo">card1</h2>
+                  <p class="servico-subtitulo">
+                    Impressão rápida de boletos enviados pelo WhatsApp.
+                  </p>
+                </div>
+              </div>
+
+              <p class="servico-subtexto">
+                Serviços práticos e eficientes para o seu dia a dia.
+              </p>
+
+              <div class="mensagem">
+                <span class="relogio-item">
+                  <i class="fi fi-br-clock"></i>
+                  Envie pelo WhatsApp e retire na hora.
+                </span>
+              </div>
+
+              <h3 class="titulo-servicos">Características do serviço</h3>
+              <div class="card-servicos">
+                <ul>
+                  <li>Envie o arquivo diretamente pelo WhatsApp</li>
+                  <li>Impressão imediata na loja</li>
+                  <li>Qualidade de impressão garantida</li>
+                  <li>Preço justo e transparente</li>
+                </ul>
+              </div>
+
+              <button class="btn-solicitar">
+                Solicitar Serviço
+                <span class="btn-seta">&rarr;</span>
+              </button>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="cardS">
+              <div class="cardS-badge">Mais solicitado</div>
+
+              <div class="header-card">
+                <div class="card-icon">
+                  <img src="icones/documento.png" alt="Ícone de Documento" class="img-icone">
+                </div>
+                <div class="header-text">
+                  <h2 class="servico-titulo">card2</h2>
+                  <p class="servico-subtitulo">
+                    Impressão de contratos, trabalhos e formulários em geral.
+                  </p>
+                </div>
+              </div>
+
+              <p class="servico-subtexto">
+                Ideal para estudantes, empresas e uso pessoal.
+              </p>
+
+              <div class="mensagem">
+                <span class="relogio-item">
+                  <i class="fi fi-br-clock"></i>
+                  Arquivo pronto, impressão em poucos minutos.
+                </span>
+              </div>
+
+              <h3 class="titulo-servicos">Características do serviço</h3>
+              <div class="card-servicos">
+                <ul>
+                  <li>Preto e branco ou colorido</li>
+                  <li>Folhas A4 (consulte outros tamanhos)</li>
+                  <li>Papel de qualidade</li>
+                  <li>Opção de grampear e organizar</li>
+                </ul>
+              </div>
+
+              <button class="btn-solicitar">
+                Solicitar Serviço
+                <span class="btn-seta">&rarr;</span>
+              </button>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="cardS">
+              <div class="cardS-badge">Ideal para empresas</div>
+
+              <div class="header-card">
+                <div class="card-icon">
+                  <img src="icones/cartao.png" alt="Ícone de Cartão" class="img-icone">
+                </div>
+                <div class="header-text">
+                  <h2 class="servico-titulo">card3</h2>
+                  <p class="servico-subtitulo">
+                    Suporte para recarga e impressão de cartões de acesso, fidelidade e transporte.
+                  </p>
+                </div>
+              </div>
+
+              <p class="servico-subtexto">
+                Atendimento rápido para não parar a sua rotina.
+              </p>
+
+              <div class="mensagem">
+                <span class="relogio-item">
+                  <i class="fi fi-br-clock"></i>
+                  Processamento em poucos minutos na loja.
+                </span>
+              </div>
+
+              <h3 class="titulo-servicos">Características do serviço</h3>
+              <div class="card-servicos">
+                <ul>
+                  <li>Impressão em cartões específicos (consulte modelos)</li>
+                  <li>Atualização rápida de dados</li>
+                  <li>Atendimento personalizado</li>
+                  <li>Ideal para empresas e estudantes</li>
+                </ul>
+              </div>
+
+              <button class="btn-solicitar">
+                Solicitar Serviço
+                <span class="btn-seta">&rarr;</span>
+              </button>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="cardS">
+              <div class="cardS-badge">Digital e prático</div>
+
+              <div class="header-card">
+                <div class="card-icon">
+                  <img src="icones/scanner.png" alt="Ícone de Scanner" class="img-icone">
+                </div>
+                <div class="header-text">
+                  <h2 class="servico-titulo">card4</h2>
+                  <p class="servico-subtitulo">
+                    Digitalização de documentos físicos e envio por e-mail ou WhatsApp.
+                  </p>
+                </div>
+              </div>
+
+              <p class="servico-subtexto">
+                Guarde seus documentos com segurança em formato digital.
+              </p>
+
+              <div class="mensagem">
+                <span class="relogio-item">
+                  <i class="fi fi-br-clock"></i>
+                  Digitalização na hora, sem burocracia.
+                </span>
+              </div>
+
+              <h3 class="titulo-servicos">Características do serviço</h3>
+              <div class="card-servicos">
+                <ul>
+                  <li>Digitalização em PDF ou imagem</li>
+                  <li>Envio imediato para seu e-mail ou WhatsApp</li>
+                  <li>Qualidade de leitura preservada</li>
+                  <li>Organização por pastas/arquivos</li>
+                </ul>
+              </div>
+
+              <button class="btn-solicitar">
+                Solicitar Serviço
+                <span class="btn-seta">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="servicos-btn next" aria-label="Próximos serviços">
+          <span>&rarr;</span>
+        </button>
+      </div>
+
+      <!-- Card de aviso -->
+      <div class="aviso-agendamento">
+        <div class="aviso-icone">
+          <i class="fi fi-br-marker"></i>
+        </div>
+
+        <div class="aviso-conteudo">
+          <h3 class="aviso-titulo">
+            Atenção - Agendamento para Identidades
+          </h3>
+          <p class="aviso-texto">
+            Serviços disponível apenas às terças e quintas-feiras, com atendimento iniciando às 18h da tarde.
+            Utilizamos sistema de senhas para organizar o atendimento.
+          </p>
+        </div>
+
+        <button class="aviso-botao">
+          Agendar Agora
+        </button>
+      </div>
+    </div>
+  </section>
+  <section id="contato" class="contato-section">
+  <div class="contato-wrapper">
+    <header class="contato-header">
+      <h2>Entre em Contato</h2>
+      <p>
+        Estamos prontos para atender você. Entre em contato pelos nossos canais
+        ou preencha o formulário.
+      </p>
+    </header>
+
+    <div class="contato-grid">
+      <!-- COLUNA ESQUERDA – INFORMAÇÕES -->
+      <div class="contato-info">
+        <h3 class="contato-info-titulo">Informações de Contato</h3>
+
+        <!-- Telefone -->
+        <div class="contato-info-item">
+          <div class="contato-info-icon">
+            <i class="fi fi-br-phone-call"></i>
+          </div>
+          <div>
+            <h4>Telefone</h4>
+            <p>(11) 1234-56789<br>(11) 98765-4321</p>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="contato-info-item">
+          <div class="contato-info-icon">
+            <i class="fi fi-br-whatsapp"></i>
+          </div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>(11) 98765-4321<br><span>atendimento rápido via WhatsApp</span></p>
+          </div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="contato-info-item">
+          <div class="contato-info-icon">
+            <i class="fi fi-br-envelope"></i>
+          </div>
+          <div>
+            <h4>E-mail</h4>
+            <p>contato@klicinformatica.com<br>cursos@klicinformatica.com</p>
+          </div>
+        </div>
+
+        <!-- Endereço -->
+        <div class="contato-info-item">
+          <div class="contato-info-icon">
+            <i class="fi fi-br-marker"></i>
+          </div>
+          <div>
+            <h4>Endereço</h4>
+            <p>
+              Rua da Tecnologia, 123<br>
+              Centro - Cidade/PR<br>
+              CEP: 12345-678
+            </p>
+          </div>
+        </div>
+
+        <!-- Horário -->
+        <div class="contato-info-item">
+          <div class="contato-info-icon">
+            <i class="fi fi-br-time-add"></i>
+          </div>
+          <div>
+            <h4>Horário de funcionamento</h4>
+            <p>
+              Segunda a Sexta: 8h às 18h<br>
+              Sábado: 8h às 12h<br>
+              Domingo: Fechado
+            </p>
+          </div>
+        </div>
+
+        <!-- Botões WhatsApp / Ligar -->
+        <div class="contato-info-actions">
+          <button class="contato-btn contato-btn-whatsapp">
+            <i class="fi fi-br-whatsapp"></i>
+            Enviar WhatsApp
+          </button>
+          <button class="contato-btn contato-btn-call">
+            <i class="fi fi-br-phone-call"></i>
+            Ligar Agora
+          </button>
+        </div>
+      </div>
+
+      <!-- COLUNA DIREITA – FORMULÁRIO -->
+      <form class="contato-card">
+        <div class="contato-card-header">
+          <h3>Envie uma Mensagem</h3>
+          <p>
+            Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+          </p>
+        </div>
+
+        <div class="contato-card-body">
+          <!-- Nome + Telefone -->
+          <div class="contato-row contato-row-2">
+            <div class="contato-campo">
+              <label>Nome completo</label>
+              <input type="text" placeholder="nome completo">
+            </div>
+            <div class="contato-campo">
+              <label>Telefone</label>
+              <input type="text" placeholder="(DD) 99876-5432">
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contato-campo">
+            <label>Email</label>
+            <input type="email" placeholder="seu@email.com">
+          </div>
+
+          <!-- Assunto -->
+          <div class="contato-campo">
+            <label>Assunto</label>
+            <input type="text" placeholder="Qual é o assunto da sua mensagem?">
+          </div>
+
+          <!-- Mensagem -->
+          <div class="contato-campo">
+            <label>Mensagem</label>
+            <textarea
+              rows="4"
+              placeholder="Descreva sua dúvida ou necessidade..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="contato-card-footer">
+          <button type="submit" class="contato-submit">
+            <i class="fi fi-br-paper-plane"></i>
+            Enviar Mensagem
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
 
- </body>
- </html>
+
+  <script src="script.js"></script>
+</body>
+<footer class="klic-footer">
+  <div class="klic-footer-main">
+    <!-- COLUNA 1 – LOGO / PROJETO / REDES -->
+    <div class="klic-footer-brand">
+      <div class="klic-footer-logo">
+        <span class="klic-footer-logo-k">K</span>
+        <div class="klic-footer-logo-text">
+          <span class="klic-footer-logo-name">KLIC</span>
+          <span class="klic-footer-logo-sub">INFORMATICA</span>
+        </div>
+      </div>
+
+      <p class="klic-footer-projeto">Projeto acadêmico</p>
+
+      <div class="klic-footer-social">
+        <a href="#" aria-label="WhatsApp">
+          <i class="fi fi-br-whatsapp"></i>
+        </a>
+        <a href="mailto:contato@klicinformatica.com" aria-label="E-mail">
+          <i class="fi fi-br-envelope"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="fi fi-br-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- COLUNA 2 – NAVEGAÇÃO -->
+    <div class="klic-footer-column">
+      <h4>Navegacao</h4>
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contatos</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUNA 3 – SUPORTE -->
+    <div class="klic-footer-column">
+      <h4>Suporte</h4>
+      <ul>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="mailto:contato@klicinformatica.com">E-mail</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUNA 4 – FAQ / POLÍTICAS -->
+    <div class="klic-footer-column">
+      <h4>FAQ</h4>
+      <ul>
+        <li><a href="reportar-bug.html">Reportar Bug</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="privacidade.html">Privacidade</a></li>
+        <li><a href="termos.html">Termos</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="klic-footer-bottom">
+    <p>© 2025 KlicInformatica — Projeto acadêmico</p>
+  </div>
+</footer>
+
+</html>
