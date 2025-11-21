@@ -10,275 +10,297 @@
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Inter com pesos completos para cursos/serviços -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Arquivo CSS -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-  <!----NAVBAR-->
-  <header class="navbar">
+
+  <!---- NAVBAR ---->
+<header class="navbar">
     <div class="logo">KLIC INFORMATICA</div>
     <nav aria-label="Menu principal">
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#cursos">Cursos</a></li>
         <li><a href="#servicos">Servicos</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#contato">Contato</a></li>
         <li><a href="#localizacao">Localizacao</a></li>
       </ul>
     </nav>
-
-    <a href="#" class="btn-contatonav">
-      <img src="img/telefone.png" alt="Telefone" class="icon"> Fale Conosco
+    <!-- Botão WhatsApp corrigido -->
+ <a class="Btn" href="https://wa.me/+5545998387188?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20e%20servi%C3%A7os%20">
+      <div class="sign">
+        <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+        </svg>
+      </div>
+      <div class="text">Whatsapp</div>
     </a>
   </header>
+<!---- HERO ---->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1 class="titulo-branco">Transforme seu futuro com</h1>
+    <h1 class="titulo-amarelo">Tecnologia e Educação</h1>
+    <p class="subtitulo">
+      Cursos especializados em robótica, computação e muito mais. <br>
+      Além de assistência técnica profissional para todas as suas necessidades.
+    </p>
 
-  <!----HERO----->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="titulo-branco">Transforme seu futuro com</h1>
-      <h1 class="titulo-amarelo">Tecnologia e Educação</h1>
-      <p class="subtitulo">
-        Cursos especializados em robótica, computação e muito mais. <br>
-        Além de assistência técnica profissional para todas as suas necessidades.
-      </p>
-      <div class="hero-buttons">
-        <a href="#cursos" class="btn btn-amarelo1">
-          <img src="img/togaBLACK.png" alt="Toga" class="iconNav"> Nossos Cursos
-        </a>
-        <a href="#servicos" class="btn btn-branco1">
-          <img src="img/seta-direita.png" alt="Seta" class="iconNav"> Nossos Serviços
-        </a>
+    <div class="hero-buttons">
+      <button data-ico="￫">Nossos Servicos</button>
+      <button data-ico="￫">Nossos Cursos</button>
+    </div>
+
+    <!------ ICONES HERO ---->
+    <div class="cards-container">
+      <div class="cardHero">
+        <img src="img/toga.png" alt="Alunos formados" class="icone">
+        <span class="counter" data-target="500">0</span>
+        <p>Alunos formados</p>
       </div>
 
-      <!------ICONES HERO-->
-      <div class="cards-container">
-        <div class="cardHero">
-          <img src="img/toga.png" alt="Alunos formados" class="icone">
-          <h2>500+</h2>
-          <p>Alunos formados</p>
-        </div>
-        <div class="cardHero">
-          <img src="img/lasca.png" alt="Equipamentos Reparados" class="icone">
-          <h2>1000+</h2>
-          <p>Equipamentos Reparados</p>
-        </div>
+      <div class="cardHero">
+        <img src="img/lasca.png" alt="Equipamentos Reparados" class="icone">
+        <span class="counter" data-target="1000">0</span>
+        <p>Equipamentos Reparados</p>
+      </div>
 
-        <div class="cardHero">
-          <img src="img/contexto.png" alt="Anos de Experiencia" class="icone">
-          <h2>20+</h2>
-          <p>Anos de Experiencia</p>
-        </div>
+      <div class="cardHero">
+        <img src="img/contexto.png" alt="Anos de Experiencia" class="icone">
+        <span class="counter" data-target="20">0</span>
+        <p>Anos de Experiencia</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-------CURSOS cards-->
-  <section id="cursos" class="kc-section">
-    <div class="kc-wrapper">
-      <header class="kc-header">
-        <h2>Nossos Cursos</h2>
-        <p>Formação prática em tecnologia para impulsionar seu futuro acadêmico e profissional.</p>
-      </header>
+<!------- CURSOS ---->
+<section id="cursos" class="area-cursos">
+  <div class="cursos-bloco">
+    <header class="cursos-header">
+      <h2>Nossos Cursos</h2>
+      <p>Invista no seu futuro com nossos cursos especializados em tecnologia e capacitação profissional.</p>
+    </header>
 
-      <div class="kc-carousel" aria-label="Carrossel de cursos">
-        <button class="kc-carousel-btn kc-prev" aria-label="Cursos anteriores">
+      <div class="carrossel-cursos" aria-label="Carrossel de cursos">
+        <button class="btn-carrossel-curso btn-curso-prev" aria-label="Cursos anteriores">
           <span>&larr;</span>
         </button>
 
-        <div class="kc-carousel-viewport">
-          <div class="kc-carousel-track">
+        <div class="janela-cursos">
+          <div class="trilha-cursos">
 
             <!-- CARD 1 -->
-            <article class="kc-course-card">
-              <img class="kc-course-image"
-                   src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            <article class="card-curso">
+              <img class="img-curso"
+                   src="https://i.ibb.co/5gHcm3Ld/Gemini-Generated-Image-x0pqxtx0pqxtx0pq.png"
                    alt="Pessoa usando notebook com múltiplos monitores">
-              <div class="kc-course-body">
-                <h3 class="kc-course-title">Pacote Office Completo</h3>
-                <p class="kc-course-subtitle">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Pacote Office Completo</h3>
+                <p class="subtitulo-curso">
                   Domine Word, Excel e PowerPoint do básico ao avançado com certificação reconhecida.
                 </p>
 
-                <div class="kc-course-meta-row">
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">⏱</span>
+                <div class="linha-info-curso">
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span>
                     <span>25 horas</span>
                   </div>
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">👥</span>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">👥</span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
 
-                <p class="kc-course-section-title">O que você vai aprender:</p>
-                <ul class="kc-course-list">
-                  <li>Word avançado para relatórios e TCC</li>
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
+                  <li>Word avançado para relatórios</li>
                   <li>Excel com fórmulas e gráficos</li>
                   <li>Apresentações profissionais no PowerPoint</li>
                   <li>Certificação inclusa ao final do curso</li>
                 </ul>
               </div>
-              <div class="kc-course-footer">
-                <button class="kc-course-btn">
+              <div class="rodape-curso">
+                <button class="botao-curso">
                   <span>Saiba Mais</span>
-                  <span class="kc-icon">➜</span>
+                  <span class="icone-seta-curso">➜</span>
                 </button>
               </div>
             </article>
 
             <!-- CARD 2 -->
-            <article class="kc-course-card">
-              <img class="kc-course-image"
-                   src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                   alt="Aluno montando robô de robótica">
-              <div class="kc-course-body">
-                <h3 class="kc-course-title">Curso de Robótica</h3>
-                <p class="kc-course-subtitle">
+            <article class="card-curso">
+              <img class="img-curso"
+                   src="https://i.ibb.co/7xjsR3fw/pexels-vanessa-loring-7869048-1.png">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Curso de Robótica</h3>
+                <p class="subtitulo-curso">
                   Aprenda a construir e programar robôs do zero usando Arduino e sensores eletrônicos.
                 </p>
 
-                <div class="kc-course-meta-row">
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">⏱</span>
+                <div class="linha-info-curso">
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span>
                     <span>25 horas</span>
                   </div>
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">👥</span>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">👥</span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
 
-                <p class="kc-course-section-title">O que você vai aprender:</p>
-                <ul class="kc-course-list">
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
                   <li>Arduino e microcontroladores</li>
                   <li>Lógica de programação em C/C++</li>
                   <li>Sensores, atuadores e motores</li>
                   <li>Projetos práticos de robótica móvel</li>
                 </ul>
               </div>
-              <div class="kc-course-footer">
-                <button class="kc-course-btn">
+              <div class="rodape-curso">
+                <button class="botao-curso">
                   <span>Saiba Mais</span>
-                  <span class="kc-icon">➜</span>
+                  <span class="icone-seta-curso">➜</span>
                 </button>
               </div>
             </article>
 
             <!-- CARD 3 -->
-            <article class="kc-course-card">
-              <img class="kc-course-image"
-                   src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                   alt="Pessoa digitando em teclado iluminado">
-              <div class="kc-course-body">
-                <h3 class="kc-course-title">Curso de Digitação</h3>
-                <p class="kc-course-subtitle">
+            <article class="card-curso">
+              <img class="img-curso"
+                   src="https://i.ibb.co/M51yK7qF/curso-digitacao2.png"
+                   alt="curso digitacao">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Curso de Digitação</h3>
+                <p class="subtitulo-curso">
                   Aumente sua velocidade e precisão na digitação com técnicas profissionais e exercícios práticos.
                 </p>
 
-                <div class="kc-course-meta-row">
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">⏱</span>
+                <div class="linha-info-curso">
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span>
                     <span>15 horas</span>
                   </div>
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">👥</span>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">👥</span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
 
-                <p class="kc-course-section-title">O que você vai aprender:</p>
-                <ul class="kc-course-list">
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
                   <li>Técnica de digitação correta</li>
                   <li>Aumento de velocidade e precisão</li>
                   <li>Postura adequada ao computador</li>
                   <li>Exercícios de treino diário</li>
                 </ul>
               </div>
-              <div class="kc-course-footer">
-                <button class="kc-course-btn">
+              <div class="rodape-curso">
+                <button class="botao-curso">
                   <span>Saiba Mais</span>
-                  <span class="kc-icon">➜</span>
+                  <span class="icone-seta-curso">➜</span>
                 </button>
               </div>
             </article>
 
             <!-- CARD 4 -->
-            <article class="kc-course-card">
-              <img class="kc-course-image"
-                   src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                   alt="Tela de programação">
-              <div class="kc-course-body">
-                <h3 class="kc-course-title">Lógica de Programação</h3>
-                <p class="kc-course-subtitle">
-                  Introdução à programação para quem quer dar os primeiros passos no desenvolvimento.
+          <article class="card-curso">
+              <img class="img-curso" src="https://i.ibb.co/F4J8Xxc1/curso-computacao.jpg" alt="Curso de Computação Completa">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Curso de Computação Completa</h3>
+                <p class="subtitulo-curso">
+                  Formação em computação com foco em sistemas operacionais e uso seguro da internet.
                 </p>
-
-                <div class="kc-course-meta-row">
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">⏱</span>
-                    <span>30 horas</span>
-                  </div>
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">👥</span>
-                    <span>10 alunos por turma</span>
-                  </div>
+                <div class="linha-info-curso">
+                  <div class="item-info-curso"><span class="icone-info-curso">⏱</span><span>30 horas</span></div>
+                  <div class="item-info-curso"><span class="icone-info-curso">👥</span><span>10 alunos por turma</span></div>
                 </div>
-
-                <p class="kc-course-section-title">O que você vai aprender:</p>
-                <ul class="kc-course-list">
-                  <li>Algoritmos e fluxogramas</li>
-                  <li>Estruturas de decisão e repetição</li>
-                  <li>Resolução de problemas reais</li>
-                  <li>Noções de JavaScript e Python</li>
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
+                  <li>Uso prático do Windows para tarefas do dia a dia</li>
+                  <li>Configurações básicas e intermediárias do sistema operacional</li>
+                  <li>Navegação segura na internet,</li>
+                  <li>Organização de arquivos e pastas</li>
                 </ul>
               </div>
-              <div class="kc-course-footer">
-                <button class="kc-course-btn">
-                  <span>Saiba Mais</span>
-                  <span class="kc-icon">➜</span>
-                </button>
+              <div class="rodape-curso">
+                <button class="botao-curso"><span>Saiba Mais</span><span class="icone-seta-curso">➜</span></button>
               </div>
-            </article>
-
+            </article> 
             <!-- CARD 5 -->
-            <article class="kc-course-card">
-              <img class="kc-course-image"
-                   src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                   alt="Pessoa usando notebook e smartphone">
-              <div class="kc-course-body">
-                <h3 class="kc-course-title">Informática Essencial</h3>
-                <p class="kc-course-subtitulo">
-                  Curso ideal para iniciantes que desejam aprender a usar o computador com segurança.
+            <article class="card-curso">
+              <img class="img-curso"
+                   src="https://i.ibb.co/XrR1mrB0/curso-montagem.jpg"
+                   alt="curso montagem ">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Montagem e Manutenção de Computadores</h3>
+                <p class="subtitulo-curso">
+                 Curso prático de montagem e manutenção de computadores
                 </p>
 
-                <div class="kc-course-meta-row">
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">⏱</span>
+                <div class="linha-info-curso">
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span>
                     <span>20 horas</span>
                   </div>
-                  <div class="kc-course-meta-item">
-                    <span class="kc-course-meta-icon">👥</span>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">👥</span>
                     <span>15 alunos por turma</span>
                   </div>
                 </div>
 
-                <p class="kc-course-section-title">O que você vai aprender:</p>
-                <ul class="kc-course-list">
-                  <li>Uso do Windows e navegação na internet</li>
-                  <li>E-mails e comunicação online</li>
-                  <li>Organização de arquivos e pastas</li>
-                  <li>Noções de segurança digital</li>
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
+                  <li>Identificar e conhecer as principais peças de um computador</li>
+                  <li>Montar e desmontar computadores de forma segura</li>
+                  <li>Detectar e resolver problemas comuns de hardware</li>
+                  <li>Fazer limpeza, upgrades simples e melhorias de desempenho</li>
                 </ul>
               </div>
-              <div class="kc-course-footer">
-                <button class="kc-course-btn">
+              <div class="rodape-curso">
+                <button class="botao-curso">
                   <span>Saiba Mais</span>
-                  <span class="kc-icon">➜</span>
+                  <span class="icone-seta-curso">➜</span>
+                </button>
+              </div>
+            </article>
+                        <!-- CARD 6 -->
+            <article class="card-curso">
+              <img class="img-curso"
+                   src="https://i.ibb.co/bwk4Vwz/1913bcdf-b4e3-45c9-8c7f-13ce8b4d01bf.jpg"
+                   alt="curso adm">
+              <div class="corpo-curso">
+                <h3 class="titulo-curso">Auxiliar de Administração</h3>
+                <p class="subtitulo-curso">
+                  Formação prática para atuar como auxiliar administrativo no dia a dia do escritório.
+
+                <div class="linha-info-curso">
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span>
+                    <span>30 horas</span>
+                  </div>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">👥</span>
+                    <span>10 alunos por turma</span>
+                  </div>
+                </div>
+
+                <p class="titulo-parte-curso">O que você vai aprender:</p>
+                <ul class="lista-curso">
+                  <li>Rotinas básicas de escritório e atendimento</li>
+                  <li>Organização de documentos físicos e digitais</li>
+                  <li>Noções simples de contas a pagar e a receber</li>
+                  <li>Uso de computador, e-mail e planilhas no setor administrativo</li>
+                </ul>
+              </div>
+              <div class="rodape-curso">
+                <button class="botao-curso">
+                  <span>Saiba Mais</span>
+                  <span class="icone-seta-curso">➜</span>
                 </button>
               </div>
             </article>
@@ -286,7 +308,7 @@
           </div>
         </div>
 
-        <button class="kc-carousel-btn kc-next" aria-label="Próximos cursos">
+        <button class="btn-carrossel-curso btn-curso-next" aria-label="Próximos cursos">
           <span>&rarr;</span>
         </button>
       </div>
@@ -305,51 +327,51 @@
   </section>
 
   <!-- SERVIÇOS – seção nova integrada -->
-  <section id="servicos" class="SelecaoServicos">
-    <div class="servicos-wrapper">
-      <header class="servicos-header">
-        <h2 class="servicos-titulo-geral">Nossos Serviços</h2>
-        <p class="servicos-subtitulo-geral">
+  <section id="servicos" class="secao-servicos">
+    <div class="servicos-container">
+      <header class="topo-servicos">
+        <h2 class="titulo-servicos-geral">Nossos Serviços</h2>
+        <p class="texto-servicos-geral">
           Soluções rápidas e práticas para o seu dia a dia na KLIC Informática.
         </p>
       </header>
 
-      <div class="servicos-carousel" aria-label="Carrossel de serviços">
-        <button class="servicos-btn prev" aria-label="Serviços anteriores">
+      <div class="carrossel-servicos" aria-label="Carrossel de serviços">
+        <button class="btn-carrossel-servico btn-servico-prev" aria-label="Serviços anteriores">
           <span>&larr;</span>
         </button>
 
-        <div class="servicos-viewport">
-          <div class="servicos-track">
+        <div class="janela-servicos">
+          <div class="trilha-servicos">
             <!-- CARD 1 -->
-            <div class="cardS">
-              <div class="cardS-badge">Serviço Rápido</div>
+            <div class="card-servico">
+              <div class="etiqueta-servico">Serviço Rápido</div>
 
-              <div class="header-card">
-                <div class="card-icon">
-                  <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone">
+              <div class="cabecalho-card-servico">
+                <div class="icone-card-servico">
+                  <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone-servico">
                 </div>
-                <div class="header-text">
-                  <h2 class="servico-titulo">card1</h2>
-                  <p class="servico-subtitulo">
+                <div class="texto-cabecalho-servico">
+                  <h2 class="titulo-servico">card1</h2>
+                  <p class="subtitulo-servico">
                     Impressão rápida de boletos enviados pelo WhatsApp.
                   </p>
                 </div>
               </div>
 
-              <p class="servico-subtexto">
+              <p class="descricao-servico">
                 Serviços práticos e eficientes para o seu dia a dia.
               </p>
 
-              <div class="mensagem">
-                <span class="relogio-item">
+              <div class="area-mensagem-servico">
+                <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Envie pelo WhatsApp e retire na hora.
                 </span>
               </div>
 
-              <h3 class="titulo-servicos">Características do serviço</h3>
-              <div class="card-servicos">
+              <h3 class="titulo-lista-servico">Características do serviço</h3>
+              <div class="lista-servicos">
                 <ul>
                   <li>Envie o arquivo diretamente pelo WhatsApp</li>
                   <li>Impressão imediata na loja</li>
@@ -358,41 +380,41 @@
                 </ul>
               </div>
 
-              <button class="btn-solicitar">
+              <button class="botao-solicitar-servico">
                 Solicitar Serviço
-                <span class="btn-seta">&rarr;</span>
+                <span class="seta-botao-servico">&rarr;</span>
               </button>
             </div>
 
             <!-- CARD 2 -->
-            <div class="cardS">
-              <div class="cardS-badge">Mais solicitado</div>
+            <div class="card-servico">
+              <div class="etiqueta-servico">Mais solicitado</div>
 
-              <div class="header-card">
-                <div class="card-icon">
-                  <img src="icones/documento.png" alt="Ícone de Documento" class="img-icone">
+              <div class="cabecalho-card-servico">
+                <div class="icone-card-servico">
+                  <img src="icones/impressora.png" alt="Ícone de Documento" class="img-icone-servico">
                 </div>
-                <div class="header-text">
-                  <h2 class="servico-titulo">card2</h2>
-                  <p class="servico-subtitulo">
+                <div class="texto-cabecalho-servico">
+                  <h2 class="titulo-servico">card2</h2>
+                  <p class="subtitulo-servico">
                     Impressão de contratos, trabalhos e formulários em geral.
                   </p>
                 </div>
               </div>
 
-              <p class="servico-subtexto">
+              <p class="descricao-servico">
                 Ideal para estudantes, empresas e uso pessoal.
               </p>
 
-              <div class="mensagem">
-                <span class="relogio-item">
+              <div class="area-mensagem-servico">
+                <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Arquivo pronto, impressão em poucos minutos.
                 </span>
               </div>
 
-              <h3 class="titulo-servicos">Características do serviço</h3>
-              <div class="card-servicos">
+              <h3 class="titulo-lista-servico">Características do serviço</h3>
+              <div class="lista-servicos">
                 <ul>
                   <li>Preto e branco ou colorido</li>
                   <li>Folhas A4 (consulte outros tamanhos)</li>
@@ -401,41 +423,41 @@
                 </ul>
               </div>
 
-              <button class="btn-solicitar">
+              <button class="botao-solicitar-servico">
                 Solicitar Serviço
-                <span class="btn-seta">&rarr;</span>
+                <span class="seta-botao-servico">&rarr;</span>
               </button>
             </div>
 
             <!-- CARD 3 -->
-            <div class="cardS">
-              <div class="cardS-badge">Ideal para empresas</div>
+            <div class="card-servico">
+              <div class="etiqueta-servico">Ideal para empresas</div>
 
-              <div class="header-card">
-                <div class="card-icon">
-                  <img src="icones/cartao.png" alt="Ícone de Cartão" class="img-icone">
+              <div class="cabecalho-card-servico">
+                <div class="icone-card-servico">
+                  <img src="icones/impressora.png" alt="Ícone de Cartão" class="img-icone-servico">
                 </div>
-                <div class="header-text">
-                  <h2 class="servico-titulo">card3</h2>
-                  <p class="servico-subtitulo">
+                <div class="texto-cabecalho-servico">
+                  <h2 class="titulo-servico">card3</h2>
+                  <p class="subtitulo-servico">
                     Suporte para recarga e impressão de cartões de acesso, fidelidade e transporte.
                   </p>
                 </div>
               </div>
 
-              <p class="servico-subtexto">
+              <p class="descricao-servico">
                 Atendimento rápido para não parar a sua rotina.
               </p>
 
-              <div class="mensagem">
-                <span class="relogio-item">
+              <div class="area-mensagem-servico">
+                <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Processamento em poucos minutos na loja.
                 </span>
               </div>
 
-              <h3 class="titulo-servicos">Características do serviço</h3>
-              <div class="card-servicos">
+              <h3 class="titulo-lista-servico">Características do serviço</h3>
+              <div class="lista-servicos">
                 <ul>
                   <li>Impressão em cartões específicos (consulte modelos)</li>
                   <li>Atualização rápida de dados</li>
@@ -444,41 +466,41 @@
                 </ul>
               </div>
 
-              <button class="btn-solicitar">
+              <button class="botao-solicitar-servico">
                 Solicitar Serviço
-                <span class="btn-seta">&rarr;</span>
+                <span class="seta-botao-servico">&rarr;</span>
               </button>
             </div>
 
             <!-- CARD 4 -->
-            <div class="cardS">
-              <div class="cardS-badge">Digital e prático</div>
+            <div class="card-servico">
+              <div class="etiqueta-servico">Digital e prático</div>
 
-              <div class="header-card">
-                <div class="card-icon">
-                  <img src="icones/scanner.png" alt="Ícone de Scanner" class="img-icone">
+              <div class="cabecalho-card-servico">
+                <div class="icone-card-servico">
+                  <img src="icones/impressora.png" alt="Ícone de Scanner" class="img-icone-servico">
                 </div>
-                <div class="header-text">
-                  <h2 class="servico-titulo">card4</h2>
-                  <p class="servico-subtitulo">
+                <div class="texto-cabecalho-servico">
+                  <h2 class="titulo-servico">card4</h2>
+                  <p class="subtitulo-servico">
                     Digitalização de documentos físicos e envio por e-mail ou WhatsApp.
                   </p>
                 </div>
               </div>
 
-              <p class="servico-subtexto">
+              <p class="descricao-servico">
                 Guarde seus documentos com segurança em formato digital.
               </p>
 
-              <div class="mensagem">
-                <span class="relogio-item">
+              <div class="area-mensagem-servico">
+                <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Digitalização na hora, sem burocracia.
                 </span>
               </div>
 
-              <h3 class="titulo-servicos">Características do serviço</h3>
-              <div class="card-servicos">
+              <h3 class="titulo-lista-servico">Características do serviço</h3>
+              <div class="lista-servicos">
                 <ul>
                   <li>Digitalização em PDF ou imagem</li>
                   <li>Envio imediato para seu e-mail ou WhatsApp</li>
@@ -487,15 +509,15 @@
                 </ul>
               </div>
 
-              <button class="btn-solicitar">
+              <button class="botao-solicitar-servico">
                 Solicitar Serviço
-                <span class="btn-seta">&rarr;</span>
+                <span class="seta-botao-servico">&rarr;</span>
               </button>
             </div>
           </div>
         </div>
 
-        <button class="servicos-btn next" aria-label="Próximos serviços">
+        <button class="btn-carrossel-servico btn-servico-next" aria-label="Próximos serviços">
           <span>&rarr;</span>
         </button>
       </div>
@@ -522,155 +544,164 @@
       </div>
     </div>
   </section>
+
   <section id="contato" class="contato-section">
-  <div class="contato-wrapper">
-    <header class="contato-header">
-      <h2>Entre em Contato</h2>
-      <p>
-        Estamos prontos para atender você. Entre em contato pelos nossos canais
-        ou preencha o formulário.
-      </p>
-    </header>
+    <div class="contato-wrapper">
+      <header class="contato-header">
+        <h2>Entre em Contato</h2>
+        <p>
+          Estamos prontos para atender você. Entre em contato pelos nossos canais
+          ou preencha o formulário.
+        </p>
+      </header>
 
-    <div class="contato-grid">
-      <!-- COLUNA ESQUERDA – INFORMAÇÕES -->
-      <div class="contato-info">
-        <h3 class="contato-info-titulo">Informações de Contato</h3>
+      <div class="contato-grid">
+        <!-- COLUNA ESQUERDA – INFORMAÇÕES -->
+        <div class="contato-info">
+          <h3 class="contato-info-titulo">Informações de Contato</h3>
 
-        <!-- Telefone -->
-        <div class="contato-info-item">
-          <div class="contato-info-icon">
-            <i class="fi fi-br-phone-call"></i>
+          <!-- Telefone -->
+          <div class="contato-info-item">
+            <div class="contato-info-icon">
+              <i class="fi fi-br-phone-call"></i>
+            </div>
+            <div>
+              <h4>Telefone</h4>
+              <p>(11) 1234-56789<br>(11) 98765-4321</p>
+            </div>
           </div>
-          <div>
-            <h4>Telefone</h4>
-            <p>(11) 1234-56789<br>(11) 98765-4321</p>
+
+          <!-- WhatsApp -->
+          <div class="contato-info-item">
+            <div class="contato-info-icon">
+              <i class="fi fi-br-whatsapp"></i>
+            </div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>(11) 98765-4321<br><span>atendimento rápido via WhatsApp</span></p>
+            </div>
+          </div>
+
+          <!-- E-mail -->
+          <div class="contato-info-item">
+            <div class="contato-info-icon">
+              <i class="fi fi-br-envelope"></i>
+            </div>
+            <div>
+              <h4>E-mail</h4>
+              <p>contato@klicinformatica.com<br>cursos@klicinformatica.com</p>
+            </div>
+          </div>
+
+          <!-- Endereço -->
+          <div class="contato-info-item">
+            <div class="contato-info-icon">
+              <i class="fi fi-br-marker"></i>
+            </div>
+            <div>
+              <h4>Endereço</h4>
+              <p>
+                Rua da Tecnologia, 123<br>
+                Centro - Cidade/PR<br>
+                CEP: 12345-678
+              </p>
+            </div>
+          </div>
+
+          <!-- Horário -->
+          <div class="contato-info-item">
+            <div class="contato-info-icon">
+              <i class="fi fi-br-time-add"></i>
+            </div>
+            <div>
+              <h4>Horário de funcionamento</h4>
+              <p>
+                Segunda a Sexta: 8h às 18h<br>
+                Sábado: 8h às 12h<br>
+                Domingo: Fechado
+              </p>
+            </div>
+          </div>
+
+          <!-- Botões WhatsApp / Ligar -->
+          <div class="contato-info-actions">
+            <button class="contato-btn contato-btn-whatsapp">
+              <i class="fi fi-br-whatsapp"></i>
+              Enviar WhatsApp
+            </button>
+            <button class="contato-btn contato-btn-call">
+              <i class="fi fi-br-phone-call"></i>
+              Ligar Agora
+            </button>
           </div>
         </div>
 
-        <!-- WhatsApp -->
-        <div class="contato-info-item">
-          <div class="contato-info-icon">
-            <i class="fi fi-br-whatsapp"></i>
-          </div>
-          <div>
-            <h4>WhatsApp</h4>
-            <p>(11) 98765-4321<br><span>atendimento rápido via WhatsApp</span></p>
-          </div>
-        </div>
-
-        <!-- E-mail -->
-        <div class="contato-info-item">
-          <div class="contato-info-icon">
-            <i class="fi fi-br-envelope"></i>
-          </div>
-          <div>
-            <h4>E-mail</h4>
-            <p>contato@klicinformatica.com<br>cursos@klicinformatica.com</p>
-          </div>
-        </div>
-
-        <!-- Endereço -->
-        <div class="contato-info-item">
-          <div class="contato-info-icon">
-            <i class="fi fi-br-marker"></i>
-          </div>
-          <div>
-            <h4>Endereço</h4>
+        <!-- COLUNA DIREITA – FORMULÁRIO -->
+        <form class="contato-card">
+          <div class="contato-card-header">
+            <h3>Envie uma Mensagem</h3>
             <p>
-              Rua da Tecnologia, 123<br>
-              Centro - Cidade/PR<br>
-              CEP: 12345-678
+              Preencha o formulário abaixo e entraremos em contato o mais breve possível.
             </p>
           </div>
-        </div>
 
-        <!-- Horário -->
-        <div class="contato-info-item">
-          <div class="contato-info-icon">
-            <i class="fi fi-br-time-add"></i>
-          </div>
-          <div>
-            <h4>Horário de funcionamento</h4>
-            <p>
-              Segunda a Sexta: 8h às 18h<br>
-              Sábado: 8h às 12h<br>
-              Domingo: Fechado
-            </p>
-          </div>
-        </div>
+          <div class="contato-card-body">
+            <!-- Nome + Telefone -->
+            <div class="contato-row contato-row-2">
+              <div class="contato-campo">
+                <label>Nome completo</label>
+                <input type="text" placeholder="nome completo">
+              </div>
+              <div class="contato-campo">
+                <label>Telefone</label>
+                <input type="text" placeholder="(DD) 99876-5432">
+              </div>
+            </div>
 
-        <!-- Botões WhatsApp / Ligar -->
-        <div class="contato-info-actions">
-          <button class="contato-btn contato-btn-whatsapp">
-            <i class="fi fi-br-whatsapp"></i>
-            Enviar WhatsApp
-          </button>
-          <button class="contato-btn contato-btn-call">
-            <i class="fi fi-br-phone-call"></i>
-            Ligar Agora
-          </button>
-        </div>
+            <!-- Email -->
+            <div class="contato-campo">
+              <label>Email</label>
+              <input type="email" placeholder="seu@email.com">
+            </div>
+
+            <!-- Assunto -->
+            <div class="contato-campo">
+              <label>Assunto</label>
+              <input type="text" placeholder="Qual é o assunto da sua mensagem?">
+            </div>
+
+            <!-- Mensagem -->
+            <div class="contato-campo">
+              <label>Mensagem</label>
+              <textarea
+                rows="4"
+                placeholder="Descreva sua dúvida ou necessidade..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="contato-card-footer">
+            <button type="submit" class="contato-submit">
+              <i class="fi fi-br-paper-plane"></i>
+              Enviar Mensagem
+            </button>
+          </div>
+        </form>
       </div>
-
-      <!-- COLUNA DIREITA – FORMULÁRIO -->
-      <form class="contato-card">
-        <div class="contato-card-header">
-          <h3>Envie uma Mensagem</h3>
-          <p>
-            Preencha o formulário abaixo e entraremos em contato o mais breve possível.
-          </p>
-        </div>
-
-        <div class="contato-card-body">
-          <!-- Nome + Telefone -->
-          <div class="contato-row contato-row-2">
-            <div class="contato-campo">
-              <label>Nome completo</label>
-              <input type="text" placeholder="nome completo">
-            </div>
-            <div class="contato-campo">
-              <label>Telefone</label>
-              <input type="text" placeholder="(DD) 99876-5432">
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="contato-campo">
-            <label>Email</label>
-            <input type="email" placeholder="seu@email.com">
-          </div>
-
-          <!-- Assunto -->
-          <div class="contato-campo">
-            <label>Assunto</label>
-            <input type="text" placeholder="Qual é o assunto da sua mensagem?">
-          </div>
-
-          <!-- Mensagem -->
-          <div class="contato-campo">
-            <label>Mensagem</label>
-            <textarea
-              rows="4"
-              placeholder="Descreva sua dúvida ou necessidade..."
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="contato-card-footer">
-          <button type="submit" class="contato-submit">
-            <i class="fi fi-br-paper-plane"></i>
-            Enviar Mensagem
-          </button>
-        </div>
-      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <script src="script.js"></script>
+  <script src="script.js">
+      document.querySelectorAll('.fade-up').forEach(element => {
+      const text = element.getAttribute('data-text') || element.textContent;
+      element.innerHTML = text
+        .split('')
+        .map((letra, i) => `<span style="--i:${i+1}">${letra === ' ' ? '&nbsp;' : letra}</span>`)
+        .join('');
+    });
+  </script>
 </body>
+
 <footer class="klic-footer">
   <div class="klic-footer-main">
     <!-- COLUNA 1 – LOGO / PROJETO / REDES -->

@@ -1,130 +1,196 @@
+// HEADER – aplica classe quando a página é rolada
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+
+  if (!navbar) return;
+
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Contador animado
+const contar = () => {
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = +el.dataset.target;
+    const speed = 100;
+    const increment = target / speed;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = target + '+';
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.ceil(current);
+      }
+    }, 20);
+  });
+};
+
+// Ativa contador quando entra na tela
+new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) contar();
+}, {threshold: 0.7}).observe(document.querySelector('.cards-container'));
+
+// Carrossel de cursos (simples e funcional)
+document.querySelectorAll('.btn-curso-prev').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const trilha = btn.closest('.carrossel-cursos').querySelector('.trilha-cursos');
+    trilha.scrollBy({left: -380, behavior: 'smooth'});
+  });
+});
+document.querySelectorAll('.btn-curso-next').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const trilha = btn.closest('.carrossel-cursos').querySelector('.trilha-cursos');
+    trilha.scrollBy({left: 380, behavior: 'smooth'});
+  });
+});
+
 // ===============================
-//  CARROSSEL INFINITO DE CURSOS
+//  Carrossel dos cursos (scroll infinito)
 // ===============================
-(function initKlicCarousel() {
-  const track   = document.querySelector(".kc-carousel-track");
-  const btnPrev = document.querySelector(".kc-carousel-btn.kc-prev");
-  const btnNext = document.querySelector(".kc-carousel-btn.kc-next");
+(function carrosselCursosKlic() {
+  const linhaCursos = document.querySelector(".trilha-cursos");
+  const botaoVoltarCurso = document.querySelector(".btn-carrossel-curso.btn-curso-prev");
+  const botaoIrCurso = document.querySelector(".btn-carrossel-curso.btn-curso-next");
 
-  if (!track || !btnPrev || !btnNext) return;
+  if (!linhaCursos || !botaoVoltarCurso || !botaoIrCurso) return;
 
-  let isAnimating = false;
-  let lastAction = null;
+  let travadoAnimacao = false;
+  let ultimaDirecao = null;
 
-  function getStepWidth() {
-    const firstCard = track.querySelector(".kc-course-card");
-    if (!firstCard) return 0;
+  function calcularLarguraCard() {
+    const primeiroCard = linhaCursos.querySelector(".card-curso");
+    if (!primeiroCard) return 0;
 
-    const rect   = firstCard.getBoundingClientRect();
-    const styles = window.getComputedStyle(track);
-    const gap    = parseFloat(styles.columnGap || styles.gap || 20);
+    const rectCard = primeiroCard.getBoundingClientRect();
+    const estilosTrack = window.getComputedStyle(linhaCursos);
+    const espacoEntre =
+      parseFloat(estilosTrack.columnGap || estilosTrack.gap || 20);
 
-    return rect.width + gap;
+    return rectCard.width + espacoEntre;
   }
 
-  function goNext() {
-    if (isAnimating) return;
-    const step = getStepWidth();
-    if (!step) return;
+  function passarProLadoDireito() {
+    if (travadoAnimacao) return;
 
-    isAnimating = true;
-    lastAction = "next";
+    const passo = calcularLarguraCard();
+    if (!passo) return;
 
-    track.style.transition = "transform 0.45s ease";
-    track.style.transform  = `translateX(-${step}px)`;
+    travadoAnimacao = true;
+    ultimaDirecao = "proximo";
+
+    linhaCursos.style.transition = "transform 0.45s ease";
+    linhaCursos.style.transform = `translateX(-${passo}px)`;
   }
 
-  function goPrev() {
-    if (isAnimating) return;
-    const step = getStepWidth();
-    if (!step) return;
+  function passarProLadoEsquerdo() {
+    if (travadoAnimacao) return;
 
-    isAnimating = true;
-    lastAction = "prev";
+    const passo = calcularLarguraCard();
+    if (!passo) return;
 
-    const lastCard = track.lastElementChild;
-    track.insertBefore(lastCard, track.firstElementChild);
+    travadoAnimacao = true;
+    ultimaDirecao = "anterior";
 
-    track.style.transition = "none";
-    track.style.transform  = `translateX(-${step}px)`;
-    void track.offsetWidth;
+    const ultimoCard = linhaCursos.lastElementChild;
+    linhaCursos.insertBefore(ultimoCard, linhaCursos.firstElementChild);
 
-    track.style.transition = "transform 0.45s ease";
-    track.style.transform  = "translateX(0)";
+    linhaCursos.style.transition = "none";
+    linhaCursos.style.transform = `translateX(-${passo}px)`;
+    void linhaCursos.offsetWidth; // força repaint
+
+    linhaCursos.style.transition = "transform 0.45s ease";
+    linhaCursos.style.transform = "translateX(0)";
   }
 
-  track.addEventListener("transitionend", (event) => {
-    if (event.target !== track) return;
-    if (!isAnimating) return;
+  linhaCursos.addEventListener("transitionend", (evento) => {
+    if (evento.target !== linhaCursos) return;
+    if (!travadoAnimacao) return;
 
-    const step = getStepWidth();
+    const passo = calcularLarguraCard();
 
-    if (lastAction === "next" && step) {
-      const firstCard = track.firstElementChild;
-      track.appendChild(firstCard);
+    if (ultimaDirecao === "proximo" && passo) {
+      const primeiroCard = linhaCursos.firstElementChild;
+      linhaCursos.appendChild(primeiroCard);
 
-      track.style.transition = "none";
-      track.style.transform  = "translateX(0)";
-      void track.offsetWidth;
-    } else if (lastAction === "prev") {
-      track.style.transition = "none";
-      track.style.transform  = "translateX(0)";
+      linhaCursos.style.transition = "none";
+      linhaCursos.style.transform = "translateX(0)";
+      void linhaCursos.offsetWidth;
+    } else if (ultimaDirecao === "anterior") {
+      linhaCursos.style.transition = "none";
+      linhaCursos.style.transform = "translateX(0)";
     }
 
-    isAnimating = false;
+    travadoAnimacao = false;
   });
 
-  btnNext.addEventListener("click", goNext);
-  btnPrev.addEventListener("click", goPrev);
+  botaoIrCurso.addEventListener("click", passarProLadoDireito);
+  botaoVoltarCurso.addEventListener("click", passarProLadoEsquerdo);
 
   window.addEventListener("resize", () => {
-    if (isAnimating) return;
-    track.style.transition = "none";
-    track.style.transform  = "translateX(0)";
+    if (travadoAnimacao) return;
+    linhaCursos.style.transition = "none";
+    linhaCursos.style.transform = "translateX(0)";
   });
 })();
 
 // ===============================
-//  CARROSSEL TIPO "CARD CENTRAL" (SERVIÇOS)
+//  Carrossel dos serviços (card central)
 // ===============================
-(function initServicosCarousel() {
-  const cards   = Array.from(document.querySelectorAll(".servicos-track .cardS"));
-  const btnPrev = document.querySelector(".servicos-btn.prev");
-  const btnNext = document.querySelector(".servicos-btn.next");
+(function carrosselServicosKlic() {
+  const cartoesServicos = Array.from(
+    document.querySelectorAll(".trilha-servicos .card-servico")
+  );
+  const botaoVoltarServico = document.querySelector(".btn-carrossel-servico.btn-servico-prev");
+  const botaoAvancarServico = document.querySelector(".btn-carrossel-servico.btn-servico-next");
 
-  if (!cards.length || !btnPrev || !btnNext) return;
+  if (!cartoesServicos.length || !botaoVoltarServico || !botaoAvancarServico) {
+    return;
+  }
 
-  let current = 0;
+  let indiceAtual = 0;
 
-  function atualizarPosicoes() {
-    const total = cards.length;
+  function arrumarClassesCards() {
+    const totalCards = cartoesServicos.length;
 
-    cards.forEach(card => {
-      card.classList.remove("cardS--active", "cardS--prev", "cardS--next");
+    cartoesServicos.forEach((cartao) => {
+      cartao.classList.remove(
+        "card-servico-ativo",
+        "card-servico-anterior",
+        "card-servico-proximo"
+      );
     });
 
-    const active = cards[current];
-    const prev   = cards[(current - 1 + total) % total];
-    const next   = cards[(current + 1) % total];
+    const cartaoAtivo = cartoesServicos[indiceAtual];
+    const cartaoAnterior =
+      cartoesServicos[(indiceAtual - 1 + totalCards) % totalCards];
+    const cartaoProximo =
+      cartoesServicos[(indiceAtual + 1) % totalCards];
 
-    if (active) active.classList.add("cardS--active");
-    if (total > 1 && prev)  prev.classList.add("cardS--prev");
-    if (total > 2 && next)  next.classList.add("cardS--next");
+    if (cartaoAtivo) cartaoAtivo.classList.add("card-servico-ativo");
+    if (totalCards > 1 && cartaoAnterior)
+      cartaoAnterior.classList.add("card-servico-anterior");
+    if (totalCards > 2 && cartaoProximo)
+      cartaoProximo.classList.add("card-servico-proximo");
   }
 
-  function irProximo() {
-    current = (current + 1) % cards.length;
-    atualizarPosicoes();
+  function andarPraFrenteServico() {
+    indiceAtual = (indiceAtual + 1) % cartoesServicos.length;
+    arrumarClassesCards();
   }
 
-  function irAnterior() {
-    current = (current - 1 + cards.length) % cards.length;
-    atualizarPosicoes();
+  function andarPraTrasServico() {
+    indiceAtual = (indiceAtual - 1 + cartoesServicos.length) % cartoesServicos.length;
+    arrumarClassesCards();
   }
 
-  btnNext.addEventListener("click", irProximo);
-  btnPrev.addEventListener("click", irAnterior);
+  botaoAvancarServico.addEventListener("click", andarPraFrenteServico);
+  botaoVoltarServico.addEventListener("click", andarPraTrasServico);
 
-  // inicia com o primeiro card no centro
-  atualizarPosicoes();
+  // começa com o primeiro card no meio
+  arrumarClassesCards();
 })();

@@ -20,63 +20,121 @@ body{
 }
 
 /* NAVBAR */
-.navbar{
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 14px 56px;
-    background: linear-gradient(90deg, #0F2238 0%, #0B1C31 55%, #0A1E35 100%);
-    border-bottom: 2px solid #5B5332;
-    box-shadow: 0 2px 12px rgba(0,0,0,.25);
-    transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  /* ESTADO INICIAL (sobre o hero) */
+  padding: 40px 56px;
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: blur(0px);
+
+  transform: translateY(0);
+  transition:
+    background 0.4s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    padding 0.3s ease,
+    backdrop-filter 0.4s ease,
+    transform 0.25s ease;
 }
-.navbar.scrolled{
-  background: linear-gradient(90deg, #0F2238 0%, #0B1C31 55%, #0A1E35 100%);
-  border-bottom-color: #5B5332;
+
+/* ESTADO AO ROLAR (navbar “grudada” e mais compacta) */
+.navbar.scrolled {
+  padding: 14px 56px;
+
+  /* Mantém a ideia do gradiente original, só que um pouco translúcido */
+  background: linear-gradient(
+    90deg,
+    rgba(15, 34, 56, 0.96) 0%,
+    rgba(11, 28, 49, 0.96) 55%,
+    rgba(10, 30, 53, 0.96) 100%
+  );
+
+  border-bottom: 1px solid rgba(250, 204, 107, 0.55);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.468);
+  backdrop-filter: blur(14px);
+
+  /* leve “encaixe” pra baixo quando fixa */
+  transform: translateY(0);
 }
-.logo{
+
+
+.logo {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.5px;
   color: var(--amarelo-botao);
 }
-.nav-links{
-    list-style: none;
-    display: flex;
-    gap: 28px;
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
 }
-.nav-links a{
+
+.nav-links a {
   text-decoration: none;
-  color: #EAF0F7;
+  color: #eaf0f7;
   font-weight: 700;
-  opacity: 0.95;
-  transition: color .2s ease, opacity .2s ease;
+  opacity: 0.9;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    text-shadow 0.25s ease;
 }
-.nav-links a:hover{
-  color: #ECBA25;
+
+.navbar.scrolled .nav-links a {
+  /* um leve brilho quando estiver em modo “barra” */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.nav-links a:hover {
+  color: #ecba25;
   opacity: 1;
 }
 
-.btn-contatonav{
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--amarelo-botao);
-    color: #000;
-    text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: background .2s ease, transform .06s ease;
+/* Botão do nav */
+.btn-contatonav {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amarelo-botao);
+  color: #000;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    transform 0.06s ease,
+    box-shadow 0.2s ease;
 }
-.btn-contatonav:hover{background: var(--botao-cursor);}
-.btn-contatonav:active{transform: translateY(1px);}
-.btn-contatonav .icon{ width: 18px; height:18px;}
+
+.btn-contatonav:hover {
+  background: var(--botao-cursor);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn-contatonav:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.btn-contatonav .icon {
+  width: 18px;
+  height: 18px;
+}
 
 /* HERO */
 .hero{
@@ -85,7 +143,7 @@ body{
 .hero{
     position: relative;
     min-height: 100vh;
-    background: url("img/fundo.jpg") center/cover no-repeat;
+    background: url("https://i.ibb.co/SjJfBvD/fundo.jpg") center/cover no-repeat;
 }
 .hero .overlay{
     position: absolute;
@@ -142,6 +200,7 @@ body{
     text-decoration: none;
     transition: background .2s ease, transform .06s ease, color .2s ease;
 }
+
 .btn .iconNav{
     width: 20px;
     height: 20px;
@@ -189,7 +248,7 @@ body{
 }
 
 /* ==========================
-   CURSOS (kc-section)
+   CURSOS (area-cursos)
    ========================== */
 :root {
   --kc-bg-section: #e8f0fe;
@@ -205,37 +264,37 @@ body{
 }
 
 /* SECTION cursos */
-.kc-section {
+.area-cursos {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--kc-bg-section);
   padding: 40px 16px;
 }
 
-.kc-wrapper {
+.cursos-bloco {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* HEADER */
-.kc-header {
+.cursos-header {
   text-align: center;
   margin-bottom: 28px;
 }
 
-.kc-header h2 {
+.cursos-header h2 {
   font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 4px;
   color: var(--kc-text-main);
 }
 
-.kc-header p {
+.cursos-header p {
   color: var(--kc-text-muted);
   font-size: 0.95rem;
 }
 
 /* CARROSSEL CURSOS */
-.kc-carousel {
+.carrossel-cursos {
   position: relative;
   display: flex;
   align-items: center;
@@ -243,7 +302,7 @@ body{
 }
 
 /* Botões laterais */
-.kc-carousel-btn {
+.btn-carrossel-curso {
   background: #ffffff;
   border-radius: 999px;
   width: 40px;
@@ -258,7 +317,7 @@ body{
   flex-shrink: 0;
 }
 
-.kc-carousel-btn span {
+.btn-carrossel-curso span {
   display: inline-block;
   font-size: 20px;
   color: var(--kc-primary);
@@ -266,37 +325,41 @@ body{
   transform: translateY(-1px);
 }
 
-.kc-carousel-btn:hover {
+.btn-carrossel-curso:hover {
   background: var(--kc-primary);
   transform: translateY(-1px);
 }
 
-.kc-carousel-btn:hover span {
+.btn-carrossel-curso:hover span {
   color: #ffffff;
 }
 
-.kc-carousel-btn:active {
+.btn-carrossel-curso:active {
   transform: translateY(0);
 }
 
 /* Janela visível (3 cards inteiros no desktop) */
-.kc-carousel-viewport {
+.janela-cursos {
   overflow: hidden;
   flex: 0 0 auto;
   width: 100%;
   max-width: calc(340px * 3 + 20px * 2); /* 3 cards + 2 gaps */
   margin: 0 auto;
+
 }
 
 /* Trilho com os cards */
-.kc-carousel-track {
+.trilha-cursos {
   display: flex;
   gap: 20px;
+  /* espaço interno pra sombra/hover não serem cortados */
+  padding: 16px 0 80px; /* em cima / laterais / embaixo */
+  box-sizing: border-box;
   transition: transform 0.45s ease;
 }
 
 /* CARD CURSO */
-.kc-course-card {
+.card-curso {
   background: var(--kc-card-bg);
   border-radius: var(--kc-radius-card);
   box-shadow: var(--kc-shadow-soft);
@@ -307,42 +370,55 @@ body{
   width: 340px;
   min-width: 340px;
   max-width: 340px;
+
+  /* animação suave no hover */
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.kc-course-image {
+/* efeito ao passar o mouse */
+.card-curso:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.25);
+  border-color: var(--kc-primary);
+}
+
+.img-curso {
   width: 100%;
   height: 170px;
   object-fit: cover;
   display: block;
 }
 
-.kc-course-body {
+.corpo-curso {
   padding: 18px 22px 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.kc-course-title {
+.titulo-curso {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--kc-text-main);
 }
 
-.kc-course-subtitle {
+.subtitulo-curso {
   font-size: 0.9rem;
   color: var(--kc-text-muted);
   line-height: 1.4;
 }
 
-.kc-course-meta-row {
+.linha-info-curso {
   display: flex;
   gap: 16px;
   margin-top: 8px;
   flex-wrap: wrap;
 }
 
-.kc-course-meta-item {
+.item-info-curso {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -354,7 +430,7 @@ body{
   font-weight: 500;
 }
 
-.kc-course-meta-icon {
+.icone-info-curso {
   width: 14px;
   height: 14px;
   border-radius: 999px;
@@ -366,14 +442,14 @@ body{
   font-size: 10px;
 }
 
-.kc-course-section-title {
+.titulo-parte-curso {
   font-size: 0.85rem;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 2px;
 }
 
-.kc-course-list {
+.lista-curso {
   font-size: 0.86rem;
   color: var(--kc-text-muted);
   padding-left: 18px;
@@ -381,16 +457,16 @@ body{
   margin-bottom: 10px;
 }
 
-.kc-course-list li + li {
+.lista-curso li + li {
   margin-top: 2px;
 }
 
-.kc-course-footer {
+.rodape-curso {
   padding: 10px 22px 20px;
   margin-top: auto;
 }
 
-.kc-course-btn {
+.botao-curso {
   width: 100%;
   border: none;
   border-radius: 999px;
@@ -408,31 +484,31 @@ body{
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
 }
 
-.kc-course-btn span.kc-icon {
+.botao-curso span.icone-seta-curso {
   font-size: 14px;
   transform: translateY(1px);
 }
 
-.kc-course-btn:hover {
+.botao-curso:hover {
   background: var(--kc-primary-dark);
   transform: translateY(-1px);
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.28);
 }
 
-.kc-course-btn:active {
+.botao-curso:active {
   transform: translateY(0);
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
 }
 
 /* RESPONSIVO CURSOS */
 @media (max-width: 1100px) {
-  .kc-carousel-viewport {
+  .janela-cursos {
     max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .kc-section {
+  .area-cursos {
     padding: 24px 8px;
   }
 }
@@ -440,7 +516,7 @@ body{
 /* ------LOCALIZAÇÃO----------*/
 .Localizacao {
   background: #e8f0fe;
-  padding: 80px 0 0;   /* topo 80px, embaixo 0 */
+  padding: 80px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -449,7 +525,7 @@ body{
 
 .localizacao-header {
   text-align: center;
-  margin-bottom: 0;    /* remove espaço embaixo do mapa */
+  margin-bottom: 0;
   max-width: 800px;
   width: 100%;
   padding: 0 56px;
@@ -477,7 +553,7 @@ body{
    SERVIÇOS – CARROSSEL 3D + AVISO
    ================================ */
 
-.SelecaoServicos {
+.secao-servicos {
   display: flex;
   justify-content: center;
   padding: 40px 16px 80px;
@@ -485,11 +561,11 @@ body{
   background: radial-gradient(circle at top, #0b1f3a 0, #020617 45%, #020617 100%);
 }
 
-.servicos-wrapper {
+.servicos-container {
   max-width: calc(
-    ((420px + 44px) * 3 + 16px * 2)  /* 3 cards + 2 gaps */
-    + 40px * 2                        /* 2 botões */
-    + 12px * 2                        /* gaps laterais entre botão e cards */
+    ((420px + 44px) * 3 + 16px * 2)
+    + 40px * 2
+    + 12px * 2
   );
   width: 100%;
   margin: 0 auto;
@@ -497,26 +573,26 @@ body{
 }
 
 /* Header da seção */
-.servicos-header {
+.topo-servicos {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.servicos-titulo-geral {
+.titulo-servicos-geral {
   font-size: 24px;
   font-weight: 700;
   color: #e5e7eb;
-  margin: 0 0 4px;
+  margin:27px 0px  4px;
 }
 
-.servicos-subtitulo-geral {
+.texto-servicos-geral {
   font-size: 14px;
   color: #9ca3af;
   margin: 0;
 }
 
 /* CARROSSEL SERVIÇOS */
-.servicos-carousel {
+.carrossel-servicos {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -525,7 +601,7 @@ body{
 }
 
 /* Botões de navegação */
-.servicos-btn {
+.btn-carrossel-servico {
   background: #ffffff;
   border-radius: 999px;
   width: 40px;
@@ -540,7 +616,7 @@ body{
   flex-shrink: 0;
 }
 
-.servicos-btn span {
+.btn-carrossel-servico span {
   display: inline-block;
   font-size: 20px;
   color: #1e4e76;
@@ -548,20 +624,20 @@ body{
   transform: translateY(-1px);
 }
 
-.servicos-btn:hover {
+.btn-carrossel-servico:hover {
   background: #1e4e76;
   transform: translateY(-1px);
 }
 
-.servicos-btn:hover span {
+.btn-carrossel-servico:hover span {
   color: #ffffff;
 }
 
-.servicos-btn:active {
+.btn-carrossel-servico:active {
   transform: translateY(0);
 }
 
-.servicos-viewport {
+.janela-servicos {
   position: relative;
   overflow: visible;
   flex: 0 0 auto;
@@ -571,14 +647,14 @@ body{
   margin: 0 30px;
 }
 
-.servicos-track {
+.trilha-servicos {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
 /* CARD SERVIÇOS */
-.cardS {
+.card-servico {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -604,7 +680,7 @@ body{
 }
 
 /* borda degradê sutil */
-.cardS::before {
+.card-servico::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -620,7 +696,7 @@ body{
 }
 
 /* Card central (em destaque) */
-.cardS--active {
+.card-servico-ativo {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   z-index: 3;
@@ -628,14 +704,14 @@ body{
 }
 
 /* Cards de trás: embaçados */
-.cardS--prev {
+.card-servico-anterior {
   opacity: 0.95;
   transform: translate(calc(-50% - 260px), -50%) scale(0.9);
   z-index: 2;
   filter: blur(1.8px) brightness(0.9);
 }
 
-.cardS--next {
+.card-servico-proximo {
   opacity: 0.95;
   transform: translate(calc(-50% + 260px), -50%) scale(0.9);
   z-index: 2;
@@ -643,7 +719,7 @@ body{
 }
 
 /* badge superior direita */
-.cardS-badge {
+.etiqueta-servico {
   position: absolute;
   top: 14px;
   right: 18px;
@@ -658,7 +734,7 @@ body{
 }
 
 /* HEADER DO CARD */
-.header-card {
+.cabecalho-card-servico {
   display: flex;
   align-items: flex-start;
   margin-bottom: 10px;
@@ -666,7 +742,7 @@ body{
   z-index: 1;
 }
 
-.card-icon {
+.icone-card-servico {
   background: linear-gradient(135deg, #1e4e76, #2563eb);
   width: 60px;
   height: 54px;
@@ -679,23 +755,23 @@ body{
   box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
 }
 
-.img-icone {
+.img-icone-servico {
   width: 42%;
   height: auto;
 }
 
-.header-text {
+.texto-cabecalho-servico {
   flex: 1;
 }
 
-.servico-titulo {
+.titulo-servico {
   color: #0f172a;
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 4px;
 }
 
-.servico-subtitulo {
+.subtitulo-servico {
   font-size: 14px;
   color: #4b5563;
   margin: 0;
@@ -703,7 +779,7 @@ body{
 }
 
 /* subtítulo complementar */
-.servico-subtexto {
+.descricao-servico {
   font-size: 13px;
   color: #6b7280;
   margin: 6px 0 14px;
@@ -712,13 +788,13 @@ body{
 }
 
 /* MENSAGEM */
-.mensagem {
+.area-mensagem-servico {
   margin-bottom: 16px;
   position: relative;
   z-index: 1;
 }
 
-.relogio-item {
+.tag-horario-servico {
   background-color: #e8f0fe;
   border-radius: 999px;
   padding: 10px 14px;
@@ -731,7 +807,7 @@ body{
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
-.relogio-item i {
+.tag-horario-servico i {
   width: 16px;
   height: 16px;
   color: #1e4e76;
@@ -741,7 +817,7 @@ body{
 }
 
 /* LISTA DE CARACTERÍSTICAS */
-.titulo-servicos {
+.titulo-lista-servico {
   font-size: 15px;
   font-weight: 600;
   color: #0f172a;
@@ -751,20 +827,20 @@ body{
   z-index: 1;
 }
 
-.card-servicos {
+.lista-servicos {
   margin-bottom: 18px;
   position: relative;
   z-index: 1;
 }
 
-.card-servicos ul {
+.lista-servicos ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
-.card-servicos li {
+.lista-servicos li {
   font-size: 14px;
   color: #4b5563;
   margin-bottom: 6px;
@@ -772,7 +848,7 @@ body{
   position: relative;
 }
 
-.card-servicos li::before {
+.lista-servicos li::before {
   content: "•";
   color: #2563eb;
   font-weight: 900;
@@ -782,7 +858,7 @@ body{
 }
 
 /* BOTÃO SERVIÇO */
-.btn-solicitar {
+.botao-solicitar-servico {
   position: relative;
   z-index: 1;
   background: linear-gradient(135deg, #1e4e76, #2563eb);
@@ -803,18 +879,18 @@ body{
   transition: transform 0.16s ease, box-shadow 0.18s ease, filter 0.16s ease;
 }
 
-.btn-solicitar .btn-seta {
+.botao-solicitar-servico .seta-botao-servico {
   font-size: 17px;
   transform: translateY(1px);
 }
 
-.btn-solicitar:hover {
+.botao-solicitar-servico:hover {
   transform: translateY(-1px);
   filter: brightness(1.03);
   box-shadow: 0 16px 38px rgba(15, 23, 42, 0.45);
 }
 
-.btn-solicitar:active {
+.botao-solicitar-servico:active {
   transform: translateY(0);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
 }
@@ -886,22 +962,22 @@ body{
 
 /* RESPONSIVO SERVIÇOS */
 @media (max-width: 960px) {
-  .servicos-carousel {
+  .carrossel-servicos {
     gap: 8px;
   }
 
-  .servicos-viewport {
+  .janela-servicos {
     max-width: 100%;
     height: auto;
   }
 
-  .servicos-track {
+  .trilha-servicos {
     position: static;
     width: 100%;
     height: auto;
   }
 
-  .cardS {
+  .card-servico {
     position: relative;
     left: auto;
     top: auto;
@@ -913,13 +989,14 @@ body{
     margin: 0 auto;
   }
 
-  .cardS--active,
-  .cardS--prev,
-  .cardS--next {
+  .card-servico-ativo,
+  .card-servico-anterior,
+  .card-servico-proximo {
     transform: none;
     filter: none;
   }
 }
+
 /* ==============================
    SEÇÃO CONTATO
    ============================== */
@@ -1178,6 +1255,7 @@ body{
     padding: 18px 18px 20px;
   }
 }
+
 /* ==============================
    FOOTER KLIC
    ============================== */
@@ -1311,6 +1389,15 @@ body{
   color: #9ca3af;
 }
 
+.cardHero .counter {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  display: block;
+}
+
+
 /* RESPONSIVO FOOTER */
 @media (max-width: 900px) {
   .klic-footer-main {
@@ -1332,4 +1419,148 @@ body{
   .klic-footer-bottom {
     font-size: 11px;
   }
+}
+
+html, body, button {       /* Aplica as mesmas propriedades de display para html, body e todos os botões */
+  display: grid;           /* Define o layout desses elementos como grid (grade) */
+}
+
+
+
+
+button {                                             /* Seleciona todos os botões <button> */
+  --hov: 0;                                          /* Cria uma variável CSS chamada --hov, iniciando em 0 (estado normal, sem hover) */
+  grid-gap: 0.5em;                                   /* Define um espaçamento de 0.5em entre as colunas do grid interno do botão */
+  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr; /* Define duas colunas: a primeira é pequena e cresce com o hover, a segunda ocupa o restante */
+  align-items: center;                               /* Centraliza verticalmente o conteúdo dentro do grid do botão */
+  place-self: center;                                /* Centraliza o botão dentro do container pai (grid do body/html) */
+  border: none;                                      /* Remove qualquer borda padrão do botão */
+  padding: 0.75em;                                   /* Adiciona espaçamento interno (padding) em todos os lados do botão */
+  border-radius: 5em;                                /* Deixa o botão bem arredondado (formato de pílula) */
+  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb); 
+                                                     /* Mistura duas cores em HSL: cinza (#bec8cb) com amarelo (#ECBA25) dependendo do valor de --hov (0 ou 1) */
+  color: #0e0a0e;                                    /* Define a cor do texto do botão (quase preto) */
+  font: 700 1em/1.375 ubuntu, sans-serif;            /* Define a fonte: peso 700 (negrito), tamanho 2em, altura de linha 1.375, fonte Ubuntu ou sans-serif */
+  transition: 0.3s ease-out;                         /* Define a transição padrão de 0.3s com easing "ease-out" para propriedades animáveis */
+  transition-delay: calc((1 - var(--hov))*.5*0.3s), 0s; 
+                                                     /* Define atrasos diferentes na transição dependendo do valor de --hov, para criar um efeito suave na ida/volta */
+  transition-property: grid-template-columns, background-color; 
+                                                     /* Especifica que as transições vão atuar nas colunas do grid e na cor de fundo */
+  cursor: pointer;                                   /* Troca o cursor para "mãozinha" ao passar em cima do botão */
+}
+
+button::before {                                     /* Seleciona o pseudo-elemento ::before de todo botão */
+  aspect-ratio: 1;                                   /* Garante que a “bolinha” seja sempre um quadrado perfeito (1:1) */
+  overflow: hidden;                                  /* Esconde qualquer conteúdo que ultrapassar os limites do pseudo-elemento */
+  border-radius: 50%;                                /* Deixa o pseudo-elemento totalmente redondo (círculo) */
+  background: #0e0a0e;                               /* Define fundo preto para o círculo */
+  color: hsla(0, 0%, 100%, var(--hov));              /* Cor do texto dentro do círculo: branco com opacidade controlada por --hov (0 = invisível, 1 = visível) */
+  font-weight: 100;                                  /* Deixa o texto dentro do círculo bem fino (peso 100) */
+  text-indent: calc((var(--hov) - 1)*1em);           /* Desloca o texto horizontalmente; quando não está em hover, o texto fica escondido */
+  clip-path: circle(closest-side);                   /* Garante que só a parte circular mais próxima do centro fique visível */
+  transition: inherit;                               /* Herda as mesmas configurações de transição definidas em button */
+  transition-delay: calc(var(--hov)*.5*0.3s);        /* Ajusta o atraso da transição do ::before de acordo com o valor de --hov */
+  transition-property: color, text-indent;           /* Aplica transição apenas na cor do texto e no recuo (text-indent) */
+  content: attr(data-ico);                           /* Define o conteúdo do pseudo-elemento usando o atributo data-ico do botão (ex: data-ico="▶") */
+}
+
+button:is(:hover, :focus) {                          /* Aplica estilos quando o botão estiver com hover ou foco (teclado) */
+  --hov: 1 ;                                         /* Muda a variável --hov para 1, ativando o estado “hover” e disparando as animações */
+}
+/* From Uiverse.io by Gaurang7717 */ 
+.btn-animado {       
+  --hov: 0;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
+  align-items: center;
+  border: none;
+  padding: 0.75em;
+  border-radius: 5em;
+  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
+  color: #0e0a0e;
+  font: 700 1em/1.375 ubuntu, sans-serif;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  place-self: center;
+}
+
+.btn-animado::before {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #0e0a0e;
+  color: hsla(0, 0%, 100%, var(--hov));
+  font-weight: 100;
+  text-indent: calc((var(--hov) - 1)*1em);
+  clip-path: circle(closest-side);
+  transition: inherit;
+  content: attr(data-ico);
+}
+
+.btn-animado:is(:hover, :focus) {
+  --hov: 1;
+}
+/* From Uiverse.io by Gaurang7717 */ 
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #00d757;
+}
+
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 25px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover {
+  width: 150px;
+  border-radius: 40px;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  padding-left: 10px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  padding-right: 10px;
+}
+
+.Btn:active {
+  transform: translate(2px, 2px);
 }
