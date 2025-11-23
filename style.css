@@ -1,22 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-:root{
+
+:root {
   --fundo-azul: #0a1a2f;
   --branco: #ffffff;
   --amarelo-botao: #ECBA25;
   --botao-cursor: #B6901C;
   --legenda-icone: #B8C0CC;
-  --cord-botao:#1e4e76;
+  --cord-botao: #1e4e76;
   --cor-fundocard: #FBFCFC;
   --sombra-card: rgba(0, 0, 0, 0.35);
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--fundo-azul);
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo-azul);
 }
 
 /* NAVBAR */
@@ -53,12 +54,10 @@ body{
   padding: 14px 56px;
 
   /* Mantém a ideia do gradiente original, só que um pouco translúcido */
-  background: linear-gradient(
-    90deg,
-    rgba(15, 34, 56, 0.96) 0%,
-    rgba(11, 28, 49, 0.96) 55%,
-    rgba(10, 30, 53, 0.96) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(15, 34, 56, 0.96) 0%,
+      rgba(11, 28, 49, 0.96) 55%,
+      rgba(10, 30, 53, 0.96) 100%);
 
   border-bottom: 1px solid rgba(250, 204, 107, 0.55);
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.468);
@@ -137,114 +136,156 @@ body{
 }
 
 /* HERO */
-.hero{
-   margin-bottom: 40px;
+.hero {
+  margin-bottom: 40px;
 }
-.hero{
-    position: relative;
-    min-height: 100vh;
-    background: url("https://i.ibb.co/SjJfBvD/fundo.jpg") center/cover no-repeat;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("https://i.ibb.co/SjJfBvD/fundo.jpg") center/cover no-repeat;
 }
-.hero .overlay{
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(80% 60% at 30% 40%, rgba(10,26,47,.25), rgba(10,26,47,.85)),
-      linear-gradient(180deg, rgba(10,26,47,.2) 0%, rgba(10,26,47,.8) 100%);
-    z-index: 1;
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 60% at 30% 40%, rgba(10, 26, 47, .25), rgba(10, 26, 47, .85)),
+    linear-gradient(180deg, rgba(10, 26, 47, .2) 0%, rgba(10, 26, 47, .8) 100%);
+  z-index: 1;
 }
-.hero-content{
-    position: relative;
-    z-index: 2;
-    max-width: 980px;
-    padding: 140px 56px 64px;
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  padding: 140px 56px 64px;
 }
 
 /* TÍTULOS HERO */
-.titulo-branco,.titulo-amarelo{
-    font-weight: 700;
-    font-size: 65px;
-    line-height: 1.1;
-    letter-spacing: 0;
-    white-space: normal;
+.titulo-branco,
+.titulo-amarelo {
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: normal;
 }
-.titulo-branco{ color: #ffffff; margin-bottom: 4px;}
-.titulo-amarelo{color: var(--amarelo-botao); margin-bottom: 20px;}
 
-.subtitulo{
-    font-size: clamp(16px,2.1vw, 20px);
-    color: #e6ecf5;
-    line-height: 1.5;
-    margin: 14px 0 28px;
+.titulo-branco {
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.titulo-amarelo {
+  color: var(--amarelo-botao);
+  margin-bottom: 20px;
+}
+
+.subtitulo {
+  font-size: clamp(16px, 2.1vw, 20px);
+  color: #e6ecf5;
+  line-height: 1.5;
+  margin: 14px 0 28px;
 }
 
 /* BOTÕES HERO */
-.hero-buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-.btn{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 220px;
-    height: 47px;
-    padding: 0 16px;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 1;
-    text-decoration: none;
-    transition: background .2s ease, transform .06s ease, color .2s ease;
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
-.btn .iconNav{
-    width: 20px;
-    height: 20px;
-    flex: 0 0 20px;
+.hero-buttons a {
+  text-decoration: none;
 }
-.btn-amarelo1{ background: var(--amarelo-botao); color: #0b0b0b; }
-.btn-amarelo1:hover{ background: var(--botao-cursor); }
-.btn-amarelo1:active{ transform: translateY(1px); }
-.btn-branco1{ background: #fff; color: #000; }
-.btn-branco1:hover{ background: var(--amarelo-botao); color: #000; }
-.btn-branco1:active{ transform: translateY(1px); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 220px;
+  height: 47px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background .2s ease, transform .06s ease, color .2s ease;
+}
+
+.btn .iconNav {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.btn-amarelo1 {
+  background: var(--amarelo-botao);
+  color: #0b0b0b;
+}
+
+.btn-amarelo1:hover {
+  background: var(--botao-cursor);
+}
+
+.btn-amarelo1:active {
+  transform: translateY(1px);
+}
+
+.btn-branco1 {
+  background: #fff;
+  color: #000;
+}
+
+.btn-branco1:hover {
+  background: var(--amarelo-botao);
+  color: #000;
+}
+
+.btn-branco1:active {
+  transform: translateY(1px);
+}
 
 /* CARDS HERO */
-.cards-container{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-    justify-items: start;
-    column-gap: clamp(26px, 10vw, 120px);
-    row-gap: 32px;
-    max-width: 960px;
-    margin-top: 56px;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  justify-items: start;
+  column-gap: clamp(26px, 10vw, 120px);
+  row-gap: 32px;
+  max-width: 960px;
+  margin-top: 56px;
 }
-.cardHero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 160px;
+
+.cardHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 160px;
 }
-.cardHero .icone{
-    width: 56px;
-    height: auto;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 1px 0 rgba(0,0,0,.2));
+
+.cardHero .icone {
+  width: 56px;
+  height: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .2));
 }
-.cardHero h2{
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 4px;
-    color: #fff;
+
+.cardHero h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: #fff;
 }
-.cardHero p{
-    font-size: 12px;
-    color: var(--legenda-icone);
+
+.cardHero p {
+  font-size: 12px;
+  color: var(--legenda-icone);
 }
 
 /* ==========================
@@ -301,41 +342,60 @@ body{
   gap: 12px;
 }
 
-/* Botões laterais */
+/* FORÇA O CENTRALIZAMENTO PERFEITO – ignora qualquer coisa que o JS faça */
 .btn-carrossel-curso {
+  position: relative !important;
+  /* garante que o ::after e o span fiquem dentro */
   background: #ffffff;
   border-radius: 999px;
-  width: 40px;
-  height: 40px;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  /* remove qualquer padding que o JS coloca */
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid !important;
+  /* grid é o mais confiável para centralizar */
+  place-items: center !important;
+  /* centraliza perfeitamente em X e Y */
   cursor: pointer;
-  box-shadow: var(--kc-shadow-soft);
-  transition: background 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  overflow: hidden;
+  /* importante pro ripple não vazar */
 }
 
+/* Força o ícone a ficar exatamente no centro (mesmo se o JS mexer no span) */
 .btn-carrossel-curso span {
-  display: inline-block;
-  font-size: 20px;
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 22px !important;
   color: var(--kc-primary);
-  line-height: 1;
-  transform: translateY(-1px);
+  pointer-events: none;
+  /* evita que o span atrapalhe o clique */
 }
 
+/* Hover e active (mantendo o estilo bonito que passei antes) */
 .btn-carrossel-curso:hover {
   background: var(--kc-primary);
-  transform: translateY(-1px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 .btn-carrossel-curso:hover span {
-  color: #ffffff;
+  color: #fff;
 }
 
 .btn-carrossel-curso:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+}
+
+
+.btn-carrossel-curso:active::after {
+  width: 60px;
+  height: 60px;
 }
 
 /* Janela visível (3 cards inteiros no desktop) */
@@ -343,7 +403,8 @@ body{
   overflow: hidden;
   flex: 0 0 auto;
   width: 100%;
-  max-width: calc(340px * 3 + 20px * 2); /* 3 cards + 2 gaps */
+  max-width: calc(340px * 3 + 20px * 2);
+  /* 3 cards + 2 gaps */
   margin: 0 auto;
 
 }
@@ -353,7 +414,8 @@ body{
   display: flex;
   gap: 20px;
   /* espaço interno pra sombra/hover não serem cortados */
-  padding: 16px 0 80px; /* em cima / laterais / embaixo */
+  padding: 16px 0 80px;
+  /* em cima / laterais / embaixo */
   box-sizing: border-box;
   transition: transform 0.45s ease;
 }
@@ -372,7 +434,7 @@ body{
   max-width: 340px;
 
   /* animação suave no hover */
-  transition: 
+  transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
     border-color 0.2s ease;
@@ -457,7 +519,7 @@ body{
   margin-bottom: 10px;
 }
 
-.lista-curso li + li {
+.lista-curso li+li {
   margin-top: 2px;
 }
 
@@ -562,11 +624,7 @@ body{
 }
 
 .servicos-container {
-  max-width: calc(
-    ((420px + 44px) * 3 + 16px * 2)
-    + 40px * 2
-    + 12px * 2
-  );
+  max-width: calc(((420px + 44px) * 3 + 16px * 2) + 40px * 2 + 12px * 2);
   width: 100%;
   margin: 0 auto;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -582,7 +640,7 @@ body{
   font-size: 24px;
   font-weight: 700;
   color: #e5e7eb;
-  margin:27px 0px  4px;
+  margin: 27px 0px 4px;
 }
 
 .texto-servicos-geral {
@@ -626,7 +684,7 @@ body{
 
 .btn-carrossel-servico:hover {
   background: #1e4e76;
-  transform: translateY(-1px);
+  transform: translateY(-6px);
 }
 
 .btn-carrossel-servico:hover span {
@@ -666,17 +724,17 @@ body{
   display: flex;
   flex-direction: column;
   box-shadow:
-      0 18px 45px rgba(15, 23, 42, 0.38),
-      0 0 0 1px rgba(148, 163, 184, 0.5);
+    0 18px 45px rgba(15, 23, 42, 0.38),
+    0 0 0 1px rgba(148, 163, 184, 0.5);
   overflow: hidden;
   backdrop-filter: blur(6px);
   transform: translate(-50%, -50%) scale(0.85);
   opacity: 0;
   pointer-events: none;
   transition:
-      transform 0.4s ease,
-      opacity 0.3s ease,
-      box-shadow 0.3s ease;
+    transform 0.4s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* borda degradê sutil */
@@ -688,10 +746,10 @@ body{
   padding: 1px;
   background: linear-gradient(135deg, #38bdf8, #6366f1, #facc15);
   -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
   opacity: 0.7;
 }
 
@@ -1049,7 +1107,7 @@ body{
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 23px;
 }
 
 .contato-info-icon {
@@ -1108,6 +1166,7 @@ body{
   justify-content: center;
   gap: 8px;
   transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
 }
 
 .contato-btn i {
@@ -1128,6 +1187,7 @@ body{
   background: #1e4e76;
   color: #ffffff;
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+  text-decoration: none;
 }
 
 /* COLUNA DIREITA – CARD DO FORMULÁRIO */
@@ -1362,7 +1422,7 @@ body{
   padding: 0;
 }
 
-.klic-footer-column li + li {
+.klic-footer-column li+li {
   margin-top: 6px;
 }
 
@@ -1421,54 +1481,87 @@ body{
   }
 }
 
-html, body, button {       /* Aplica as mesmas propriedades de display para html, body e todos os botões */
-  display: grid;           /* Define o layout desses elementos como grid (grade) */
+html,
+body,
+button {
+  /* Aplica as mesmas propriedades de display para html, body e todos os botões */
+  display: grid;
+  /* Define o layout desses elementos como grid (grade) */
 }
 
 
 
 
-button {                                             /* Seleciona todos os botões <button> */
-  --hov: 0;                                          /* Cria uma variável CSS chamada --hov, iniciando em 0 (estado normal, sem hover) */
-  grid-gap: 0.5em;                                   /* Define um espaçamento de 0.5em entre as colunas do grid interno do botão */
-  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr; /* Define duas colunas: a primeira é pequena e cresce com o hover, a segunda ocupa o restante */
-  align-items: center;                               /* Centraliza verticalmente o conteúdo dentro do grid do botão */
-  place-self: center;                                /* Centraliza o botão dentro do container pai (grid do body/html) */
-  border: none;                                      /* Remove qualquer borda padrão do botão */
-  padding: 0.75em;                                   /* Adiciona espaçamento interno (padding) em todos os lados do botão */
-  border-radius: 5em;                                /* Deixa o botão bem arredondado (formato de pílula) */
-  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb); 
-                                                     /* Mistura duas cores em HSL: cinza (#bec8cb) com amarelo (#ECBA25) dependendo do valor de --hov (0 ou 1) */
-  color: #0e0a0e;                                    /* Define a cor do texto do botão (quase preto) */
-  font: 700 1em/1.375 ubuntu, sans-serif;            /* Define a fonte: peso 700 (negrito), tamanho 2em, altura de linha 1.375, fonte Ubuntu ou sans-serif */
-  transition: 0.3s ease-out;                         /* Define a transição padrão de 0.3s com easing "ease-out" para propriedades animáveis */
-  transition-delay: calc((1 - var(--hov))*.5*0.3s), 0s; 
-                                                     /* Define atrasos diferentes na transição dependendo do valor de --hov, para criar um efeito suave na ida/volta */
-  transition-property: grid-template-columns, background-color; 
-                                                     /* Especifica que as transições vão atuar nas colunas do grid e na cor de fundo */
-  cursor: pointer;                                   /* Troca o cursor para "mãozinha" ao passar em cima do botão */
+button {
+  /* Seleciona todos os botões <button> */
+  --hov: 0;
+  /* Cria uma variável CSS chamada --hov, iniciando em 0 (estado normal, sem hover) */
+  grid-gap: 0.5em;
+  /* Define um espaçamento de 0.5em entre as colunas do grid interno do botão */
+  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
+  /* Define duas colunas: a primeira é pequena e cresce com o hover, a segunda ocupa o restante */
+  align-items: center;
+  /* Centraliza verticalmente o conteúdo dentro do grid do botão */
+  place-self: center;
+  /* Centraliza o botão dentro do container pai (grid do body/html) */
+  border: none;
+  /* Remove qualquer borda padrão do botão */
+  padding: 0.75em;
+  /* Adiciona espaçamento interno (padding) em todos os lados do botão */
+  border-radius: 5em;
+  /* Deixa o botão bem arredondado (formato de pílula) */
+  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
+  /* Mistura duas cores em HSL: cinza (#bec8cb) com amarelo (#ECBA25) dependendo do valor de --hov (0 ou 1) */
+  color: #0e0a0e;
+  /* Define a cor do texto do botão (quase preto) */
+  font: 700 1em/1.375 ubuntu, sans-serif;
+  /* Define a fonte: peso 700 (negrito), tamanho 2em, altura de linha 1.375, fonte Ubuntu ou sans-serif */
+  transition: 0.3s ease-out;
+  /* Define a transição padrão de 0.3s com easing "ease-out" para propriedades animáveis */
+  transition-delay: calc((1 - var(--hov))*.5*0.3s), 0s;
+  /* Define atrasos diferentes na transição dependendo do valor de --hov, para criar um efeito suave na ida/volta */
+  transition-property: grid-template-columns, background-color;
+  /* Especifica que as transições vão atuar nas colunas do grid e na cor de fundo */
+  cursor: pointer;
+  /* Troca o cursor para "mãozinha" ao passar em cima do botão */
 }
 
-button::before {                                     /* Seleciona o pseudo-elemento ::before de todo botão */
-  aspect-ratio: 1;                                   /* Garante que a “bolinha” seja sempre um quadrado perfeito (1:1) */
-  overflow: hidden;                                  /* Esconde qualquer conteúdo que ultrapassar os limites do pseudo-elemento */
-  border-radius: 50%;                                /* Deixa o pseudo-elemento totalmente redondo (círculo) */
-  background: #0e0a0e;                               /* Define fundo preto para o círculo */
-  color: hsla(0, 0%, 100%, var(--hov));              /* Cor do texto dentro do círculo: branco com opacidade controlada por --hov (0 = invisível, 1 = visível) */
-  font-weight: 100;                                  /* Deixa o texto dentro do círculo bem fino (peso 100) */
-  text-indent: calc((var(--hov) - 1)*1em);           /* Desloca o texto horizontalmente; quando não está em hover, o texto fica escondido */
-  clip-path: circle(closest-side);                   /* Garante que só a parte circular mais próxima do centro fique visível */
-  transition: inherit;                               /* Herda as mesmas configurações de transição definidas em button */
-  transition-delay: calc(var(--hov)*.5*0.3s);        /* Ajusta o atraso da transição do ::before de acordo com o valor de --hov */
-  transition-property: color, text-indent;           /* Aplica transição apenas na cor do texto e no recuo (text-indent) */
-  content: attr(data-ico);                           /* Define o conteúdo do pseudo-elemento usando o atributo data-ico do botão (ex: data-ico="▶") */
+button::before {
+  /* Seleciona o pseudo-elemento ::before de todo botão */
+  aspect-ratio: 1;
+  /* Garante que a “bolinha” seja sempre um quadrado perfeito (1:1) */
+  overflow: hidden;
+  /* Esconde qualquer conteúdo que ultrapassar os limites do pseudo-elemento */
+  border-radius: 50%;
+  /* Deixa o pseudo-elemento totalmente redondo (círculo) */
+  background: #0e0a0e;
+  /* Define fundo preto para o círculo */
+  color: hsla(0, 0%, 100%, var(--hov));
+  /* Cor do texto dentro do círculo: branco com opacidade controlada por --hov (0 = invisível, 1 = visível) */
+  font-weight: 100;
+  /* Deixa o texto dentro do círculo bem fino (peso 100) */
+  text-indent: calc((var(--hov) - 1)*1em);
+  /* Desloca o texto horizontalmente; quando não está em hover, o texto fica escondido */
+  clip-path: circle(closest-side);
+  /* Garante que só a parte circular mais próxima do centro fique visível */
+  transition: inherit;
+  /* Herda as mesmas configurações de transição definidas em button */
+  transition-delay: calc(var(--hov)*.5*0.3s);
+  /* Ajusta o atraso da transição do ::before de acordo com o valor de --hov */
+  transition-property: color, text-indent;
+  /* Aplica transição apenas na cor do texto e no recuo (text-indent) */
+  content: attr(data-ico);
+  /* Define o conteúdo do pseudo-elemento usando o atributo data-ico do botão (ex: data-ico="▶") */
 }
 
-button:is(:hover, :focus) {                          /* Aplica estilos quando o botão estiver com hover ou foco (teclado) */
-  --hov: 1 ;                                         /* Muda a variável --hov para 1, ativando o estado “hover” e disparando as animações */
+button:is(:hover, :focus) {
+  /* Aplica estilos quando o botão estiver com hover ou foco (teclado) */
+  --hov: 1;
+  /* Muda a variável --hov para 1, ativando o estado “hover” e disparando as animações */
 }
-/* From Uiverse.io by Gaurang7717 */ 
-.btn-animado {       
+
+/* From Uiverse.io by Gaurang7717 */
+.btn-animado {
   --hov: 0;
   display: grid;
   grid-gap: 0.5em;
@@ -1501,7 +1594,8 @@ button:is(:hover, :focus) {                          /* Aplica estilos quando o 
 .btn-animado:is(:hover, :focus) {
   --hov: 1;
 }
-/* From Uiverse.io by Gaurang7717 */ 
+
+/* From Uiverse.io by Gaurang7717 */
 .Btn {
   display: flex;
   align-items: center;
