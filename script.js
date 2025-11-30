@@ -31,21 +31,26 @@ const contar = () => {
 };
 
 // Ativa contador quando entra na tela
-new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) contar();
-}, {threshold: 0.7}).observe(document.querySelector('.cards-container'));
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    contar();
+    observer.disconnect();
+  }
+}, { threshold: 0.7 });
+
+observer.observe(document.querySelector('.cards-container'));
 
 // Carrossel de cursos (simples e funcional)
 document.querySelectorAll('.btn-curso-prev').forEach(btn => {
   btn.addEventListener('click', () => {
     const trilha = btn.closest('.carrossel-cursos').querySelector('.trilha-cursos');
-    trilha.scrollBy({left: -380, behavior: 'smooth'});
+    trilha.scrollBy({ left: -380, behavior: 'smooth' });
   });
 });
 document.querySelectorAll('.btn-curso-next').forEach(btn => {
   btn.addEventListener('click', () => {
     const trilha = btn.closest('.carrossel-cursos').querySelector('.trilha-cursos');
-    trilha.scrollBy({left: 380, behavior: 'smooth'});
+    trilha.scrollBy({ left: 380, behavior: 'smooth' });
   });
 });
 
@@ -194,3 +199,4 @@ document.querySelectorAll('.btn-curso-next').forEach(btn => {
   // começa com o primeiro card no meio
   arrumarClassesCards();
 })();
+

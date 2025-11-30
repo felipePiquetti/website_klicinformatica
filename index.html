@@ -23,17 +23,19 @@
 
   <!---- NAVBAR ---->
   <header class="navbar">
-    <div class="logo">KLIC INFORMATICA</div>
+    <a href="#" class="logo-button">
+      <img src="https://i.ibb.co/YBp7cV9B/logo.png" alt="KLIC INFORMATICA" class="logoHeader">
+    </a>
     <nav aria-label="Menu principal">
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#cursos">Cursos</a></li>
-        <li><a href="#servicos">Servicos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#localizacao">Localizacao</a></li>
+        <li><a href="#localizacao">Localização</a></li>
       </ul>
     </nav>
-    <!-- Botão WhatsApp corrigido -->
+    <!-- Botão WhatsApp -->
     <a class="Btn"
       href="https://wa.me/+5545998387188?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20e%20servi%C3%A7os%20">
       <div class="sign">
@@ -58,33 +60,48 @@
       </p>
 
       <div class="hero-buttons">
-        <button data-ico="￫">Nossos Servicos</button>
-        <button data-ico="￫">Nossos Cursos</button>
+        <button onclick="location.href='#servicos'" data-ico="→">Nossos Serviços</button>
+        <button onclick="location.href='#cursos'" data-ico="→">Nossos Cursos</button>
       </div>
 
       <!------ ICONES HERO ---->
       <div class="cards-container">
         <div class="cardHero">
-          <img src="img/toga.png" alt="Alunos formados" class="icone">
+          <img src="https://i.ibb.co/0RmP5Byw/toga.png" alt="Alunos formados" class="icone">
           <span class="counter" data-target="500">0</span>
           <p>Alunos formados</p>
         </div>
 
         <div class="cardHero">
-          <img src="img/lasca.png" alt="Equipamentos Reparados" class="icone">
+          <img src="https://i.ibb.co/ymjZrRSG/lasca.png" alt="Equipamentos Reparados" class="icone">
           <span class="counter" data-target="1000">0</span>
           <p>Equipamentos Reparados</p>
         </div>
 
         <div class="cardHero">
-          <img src="img/contexto.png" alt="Anos de Experiencia" class="icone">
+          <img src="https://i.ibb.co/jPSC85m9/contexto.png" alt="Anos de Experiencia" class="icone">
           <span class="counter" data-target="20">0</span>
           <p>Anos de Experiencia</p>
         </div>
       </div>
     </div>
+    <!-------ESFERA-->
+    <div class="cardEsfera">
+      <!-- imagem da esfera -->
+      <img src="https://i.ibb.co/cP9VkNY/iconecentro.png" alt="Esfera KLIC" class="esfera-base">
+      <img src="https://i.ibb.co/gFHp8vGq/livro.png" class="esfera-icone icone-a icone icone-livro" alt="livro">
+      <img src="https://i.ibb.co/5WTgdyrB/word.png" class="esfera-icone icone-b icone-word" alt="Word">
+      <img src="https://i.ibb.co/7tDDC9p6/excel.png" class="esfera-icone icone-c icone-excel" alt="documento">
+      <img src="https://i.ibb.co/7x8Vrzpw/powerpoint.png" class="esfera-icone icone-d icone-powerpoint"
+        alt="powerpoint">
+      <img src="https://i.ibb.co/3yjrB2fq/whatsapp.png" class="esfera-icone icone-e icone-whats" alt="whatsapp">
+      <img src="https://i.ibb.co/SXJXs8VB/documento.png" class="esfera-icone icone-f icone-documento" alt="documento">
+      <img src="https://i.ibb.co/sdFwz1L3/impressoraicone.png" class="esfera-icone icone-g  icone-impressora"
+        alt="impressora">
+      <img src="https://i.ibb.co/ZzcfKD3d/toga2.png" class="esfera-icone icone-h  icone-togaa" alt="toga">
+    </div>
   </section>
-
+  </div>
   <!------- CURSOS ---->
   <section id="cursos" class="area-cursos">
     <div class="cursos-bloco">
@@ -92,7 +109,6 @@
         <h2>Nossos Cursos</h2>
         <p>Invista no seu futuro com nossos cursos especializados em tecnologia e capacitação profissional.</p>
       </header>
-
       <div class="carrossel-cursos" aria-label="Carrossel de cursos">
         <button class="btn-carrossel-curso btn-curso-prev" aria-label="Cursos anteriores">
           <span>&larr;</span>
@@ -117,7 +133,7 @@
                     <span>25 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">👥</span>
+                    <span class="icone-info-curso"></span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
@@ -131,10 +147,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso">
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
 
@@ -153,7 +201,7 @@
                     <span>25 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">👥</span>
+                    <span class="icone-info-curso"></span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
@@ -167,10 +215,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso">
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
 
@@ -189,7 +269,7 @@
                     <span>15 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">👥</span>
+                    <span class="icone-info-curso"></span>
                     <span>12 alunos por turma</span>
                   </div>
                 </div>
@@ -203,10 +283,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso">
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
 
@@ -221,7 +333,7 @@
                 </p>
                 <div class="linha-info-curso">
                   <div class="item-info-curso"><span class="icone-info-curso">⏱</span><span>30 horas</span></div>
-                  <div class="item-info-curso"><span class="icone-info-curso">👥</span><span>10 alunos por turma</span>
+                  <div class="item-info-curso"><span class="icone-info-curso"></span><span>10 alunos por turma</span>
                   </div>
                 </div>
                 <p class="titulo-parte-curso">O que você vai aprender:</p>
@@ -233,7 +345,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso"><span>Saiba Mais</span><span class="icone-seta-curso">➜</span></button>
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  <span>Saiba Mais</span>
+                  <span class="icone-seta-curso">➜</span>
+                </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
             <!-- CARD 5 -->
@@ -247,11 +394,13 @@
 
                 <div class="linha-info-curso">
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">⏱</span>
+                    <span class="icone-info-curso">
+
+                    </span>
                     <span>20 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">👥</span>
+                    <span class="icone-info-curso"></span>
                     <span>15 alunos por turma</span>
                   </div>
                 </div>
@@ -265,10 +414,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso">
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
             <!-- CARD 6 -->
@@ -286,7 +467,9 @@
                     <span>30 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">👥</span>
+                    <span class="icone-info-curso">
+
+                    </span>
                     <span>10 alunos por turma</span>
                   </div>
                 </div>
@@ -300,10 +483,42 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso">
+                <button class="botao-curso" data-whatsapp="+5545998387188"
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
+
+                <script>
+                  // Função para criar link do WhatsApp
+                  function linkWhatsApp(numero, mensagem) {
+                    // Remove caracteres especiais do número
+                    const numeroLimpo = numero.replace(/\D/g, '');
+
+                    // Codifica a mensagem para URL
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+
+                    // Retorna o link formatado
+                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+                  }
+
+                  // Adiciona evento de clique aos botões
+                  document.querySelectorAll('.botao-curso').forEach(botao => {
+                    botao.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const numero = this.dataset.whatsapp;
+                      const mensagem = this.dataset.mensagem;
+
+                      if (numero && mensagem) {
+                        const link = linkWhatsApp(numero, mensagem);
+                        window.open(link, '_blank');
+                      } else {
+                        console.error('Número ou mensagem não definidos!');
+                      }
+                    });
+                  });
+                </script>
               </div>
             </article>
 
@@ -317,17 +532,6 @@
     </div>
   </section>
 
-  <!-- Localização -->
-  <section id="localizacao" class="Localizacao">
-    <div class="localizacao-header">
-      <div class="mapa-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6077926411936!2d-54.50656670000001!3d-25.4847687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6975885a5b51b%3A0xc0eab1a473311d25!2sKlic%20Informatica!5e0!3m2!1spt-BR!2sbr!4v1760249957168!5m2!1spt-BR!2sbr"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
 
   <!-- SERVIÇOS – seção nova integrada -->
   <section id="servicos" class="secao-servicos">
@@ -335,7 +539,7 @@
       <header class="topo-servicos">
         <h2 class="titulo-servicos-geral">Nossos Serviços</h2>
         <p class="texto-servicos-geral">
-          Soluções rápidas e práticas para o seu dia a dia na KLIC Informática.
+          Soluções rápidas e práticas para o seu dia a dia na KLIC Informática
         </p>
       </header>
 
@@ -348,35 +552,33 @@
           <div class="trilha-servicos">
             <!-- CARD 1 -->
             <div class="card-servico">
-              <div class="etiqueta-servico">Serviço Rápido</div>
-
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
                   <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone-servico">
                 </div>
                 <div class="texto-cabecalho-servico">
-                  <h2 class="titulo-servico">card1</h2>
+                  <h2 class="titulo-servico">Impressão de Boletos</h2>
                   <p class="subtitulo-servico">
-                    Impressão rápida de boletos enviados pelo WhatsApp.
+                    Impressão rápida de boletos enviados pelo WhatsApp
                   </p>
                 </div>
               </div>
 
               <p class="descricao-servico">
-                Serviços práticos e eficientes para o seu dia a dia.
+                Serviços práticos e eficientes para o seu dia a dia
               </p>
 
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
-                  Envie pelo WhatsApp e retire na hora.
+                  Envie pelo WhatsApp e retire na hora
                 </span>
               </div>
 
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
-                  <li>Envie o arquivo diretamente pelo WhatsApp</li>
+                  <li>Envio via WhatsApp</li>
                   <li>Impressão imediata na loja</li>
                   <li>Qualidade de impressão garantida</li>
                   <li>Preço justo e transparente</li>
@@ -391,41 +593,36 @@
 
             <!-- CARD 2 -->
             <div class="card-servico">
-              <div class="etiqueta-servico">Mais solicitado</div>
-
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="icones/impressora.png" alt="Ícone de Documento" class="img-icone-servico">
+                  <img src="https://i.ibb.co/0y3J8XQz/documento.png" alt="Ícone de Documento" class="img-icone-servico">
                 </div>
                 <div class="texto-cabecalho-servico">
-                  <h2 class="titulo-servico">card2</h2>
+                  <h2 class="titulo-servico">Contrato de Aluguel</h2>
                   <p class="subtitulo-servico">
-                    Impressão de contratos, trabalhos e formulários em geral.
-                  </p>
+                    Elaboração profissional de contratos de aluguel
                 </div>
               </div>
 
               <p class="descricao-servico">
-                Ideal para estudantes, empresas e uso pessoal.
+                Ideal para empresas e uso pessoal
               </p>
 
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
-                  Arquivo pronto, impressão em poucos minutos.
+                  Documento seguro e juridicamente válido
                 </span>
               </div>
-
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
-                  <li>Preto e branco ou colorido</li>
-                  <li>Folhas A4 (consulte outros tamanhos)</li>
-                  <li>Papel de qualidade</li>
-                  <li>Opção de grampear e organizar</li>
+                  <li>Contratos padronizados</li>
+                  <li>Cláusulas atualizadas</li>
+                  <li>Entrega rápida</li>
+                  <li>Preço acessivel</li>
                 </ul>
               </div>
-
               <button class="botao-solicitar-servico">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
@@ -434,41 +631,35 @@
 
             <!-- CARD 3 -->
             <div class="card-servico">
-              <div class="etiqueta-servico">Ideal para empresas</div>
-
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="icones/impressora.png" alt="Ícone de Cartão" class="img-icone-servico">
+                  <img src="https://i.ibb.co/SXJSTDQz/calendario.png" alt="Ícone de Cartão" class="img-icone-servico">
                 </div>
                 <div class="texto-cabecalho-servico">
-                  <h2 class="titulo-servico">card3</h2>
+                  <h2 class="titulo-servico">Agendamento para Identidades</h2>
                   <p class="subtitulo-servico">
-                    Suporte para recarga e impressão de cartões de acesso, fidelidade e transporte.
+                    Agendamento para emissão de carteiras de identidade
                   </p>
                 </div>
               </div>
-
               <p class="descricao-servico">
-                Atendimento rápido para não parar a sua rotina.
+                Processo simples e direto, sem complicações
               </p>
-
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
-                  Processamento em poucos minutos na loja.
+                  Disponivel terças e quintas a partir das 18h
                 </span>
               </div>
-
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
-                  <li>Impressão em cartões específicos (consulte modelos)</li>
-                  <li>Atualização rápida de dados</li>
-                  <li>Atendimento personalizado</li>
-                  <li>Ideal para empresas e estudantes</li>
+                  <li>Apenas terças e quintas</li>
+                  <li>Sistema de senhas</li>
+                  <li>Agendamento facilitado</li>
+
                 </ul>
               </div>
-
               <button class="botao-solicitar-servico">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
@@ -477,41 +668,73 @@
 
             <!-- CARD 4 -->
             <div class="card-servico">
-              <div class="etiqueta-servico">Digital e prático</div>
-
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="icones/impressora.png" alt="Ícone de Scanner" class="img-icone-servico">
+                  <img src="https://i.ibb.co/bZHHfgR/curriculo-e-cv-1.png" alt="Ícone de Scanner"
+                    class="img-icone-servico">
                 </div>
                 <div class="texto-cabecalho-servico">
-                  <h2 class="titulo-servico">card4</h2>
+                  <h2 class="titulo-servico">Criação de Currículos</h2>
                   <p class="subtitulo-servico">
-                    Digitalização de documentos físicos e envio por e-mail ou WhatsApp.
+                    Currículos profissionais personalizados para destacar seu perfil
                   </p>
                 </div>
               </div>
-
               <p class="descricao-servico">
-                Guarde seus documentos com segurança em formato digital.
+                Dê o primeiro passo rumo a vaga dos seus sonhos com um currículo profissional
               </p>
-
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
-                  Digitalização na hora, sem burocracia.
+                  Aumente suas chances no mercado
                 </span>
               </div>
-
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
-                  <li>Digitalização em PDF ou imagem</li>
-                  <li>Envio imediato para seu e-mail ou WhatsApp</li>
-                  <li>Qualidade de leitura preservada</li>
-                  <li>Organização por pastas/arquivos</li>
+                  <li>Versão em PDF e Word</li>
+                  <li>Entrega pronta para impressão ou envio online</li>
+                  <li>Layout moderno e atraente</li>
+                  <li>Texto objetivo e impactante</li>
                 </ul>
               </div>
-
+              <button class="botao-solicitar-servico">
+                Solicitar Serviço
+                <span class="seta-botao-servico">&rarr;</span>
+              </button>
+            </div>
+            <!-- CARD 5 -->
+            <div class="card-servico">
+              <div class="cabecalho-card-servico">
+                <div class="icone-card-servico">
+                  <img src="https://i.ibb.co/35yNJ92k/computador-2.png" alt="Ícone de Scanner"
+                    class="img-icone-servico">
+                </div>
+                <div class="texto-cabecalho-servico">
+                  <h2 class="titulo-servico">Limpeza e Manutenção</h2>
+                  <p class="subtitulo-servico">
+                    Manutenção completa para garantir o melhor desempenho
+                  </p>
+                </div>
+              </div>
+              <p class="descricao-servico">
+                Evite travamentos e prolongue a vida útil do seu equipamento
+              </p>
+              <div class="area-mensagem-servico">
+                <span class="tag-horario-servico">
+                  <i class="fi fi-br-clock"></i>
+                  Computador limpo, rápido e protegido
+                </span>
+              </div>
+              <h3 class="titulo-lista-servico">Características do serviço</h3>
+              <div class="lista-servicos">
+                <ul>
+                  <li>Troca de pasta térmica e cuidados preventivos</li>
+                  <li>Atualizações essenciais e melhorias de desempenho</li>
+                  <li>Otimização do sistema e correção de lentidão</li>
+                  <li>Ajustes gerais e manutenção personalizada</li>
+                </ul>
+              </div>
               <button class="botao-solicitar-servico">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
@@ -519,10 +742,10 @@
             </div>
           </div>
         </div>
-
         <button class="btn-carrossel-servico btn-servico-next" aria-label="Próximos serviços">
           <span>&rarr;</span>
         </button>
+
       </div>
 
       <!-- Card de aviso -->
@@ -530,7 +753,6 @@
         <div class="aviso-icone">
           <i class="fi fi-br-marker"></i>
         </div>
-
         <div class="aviso-conteudo">
           <h3 class="aviso-titulo">
             Atenção - Agendamento para Identidades
@@ -540,10 +762,20 @@
             Utilizamos sistema de senhas para organizar o atendimento.
           </p>
         </div>
-
         <button class="aviso-botao">
           Agendar Agora
         </button>
+      </div>
+    </div>
+  </section>
+  <!-- Localização -->
+  <section id="localizacao" class="Localizacao">
+    <div class="localizacao-header">
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6077926411936!2d-54.50656670000001!3d-25.4847687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6975885a5b51b%3A0xc0eab1a473311d25!2sKlic%20Informatica!5e0!3m2!1spt-BR!2sbr!4v1760249957168!5m2!1spt-BR!2sbr"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -557,12 +789,10 @@
           ou preencha o formulário.
         </p>
       </header>
-
       <div class="contato-grid">
         <!-- COLUNA ESQUERDA – INFORMAÇÕES -->
         <div class="contato-info">
           <h3 class="contato-info-titulo">Informações de Contato</h3>
-
           <!-- Telefone -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -573,19 +803,16 @@
               <p>(45) 99805-5483<br>(45) 99806-7877<br>(45) 3577-1057</p>
             </div>
           </div>
-
           <!-- WhatsApp -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
               <i class="fi fi-brands-whatsapp"></i>
-
             </div>
             <div>
               <h4>WhatsApp</h4>
               <p>(45) 99805-5483<br><span>Atendimento rápido via WhatsApp</span></p>
             </div>
           </div>
-
           <!-- E-mail -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -596,7 +823,6 @@
               <p> klic.informatica.foz@gmail.com </p>
             </div>
           </div>
-
           <!-- Endereço -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -611,7 +837,6 @@
               </p>
             </div>
           </div>
-
           <!-- Horário -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -625,10 +850,8 @@
                 Sábado: 8h às 12h<br>
                 Domingo: Fechado
               </p>
-
             </div>
           </div>
-
           <!-- Botões WhatsApp / Ligar -->
           <div class="contato-info-actions">
             <button class="contato-btn contato-btn-whatsapp"
@@ -636,16 +859,12 @@
               <i class="fi fi-brands-whatsapp"></i>
               Enviar WhatsApp
             </button>
-
-    <a class="contato-btn contato-btn-call"
-   href="tel:+5545998387188">
-   <i class="fi fi-br-phone-call"></i>
-   Ligar Agora
-</a>
-
+            <a class="contato-btn contato-btn-call" href="tel:+5545998387188">
+              <i class="fi fi-br-phone-call"></i>
+              Ligar Agora
+            </a>
           </div>
         </div>
-
         <!-- COLUNA DIREITA – FORMULÁRIO -->
         <form class="contato-card">
           <div class="contato-card-header">
@@ -654,9 +873,7 @@
               Preencha o formulário abaixo e entraremos em contato o mais breve possível.
             </p>
           </div>
-
           <div class="contato-card-body">
-
             <!-- Nome + Telefone -->
             <div class="contato-row contato-row-2">
               <div class="contato-campo">
@@ -669,7 +886,6 @@
                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                   title="Digite apenas números (ex: 11998765432)">
               </div>
-
               <!-- Email -->
               <div class="contato-campo">
                 <label>Email</label>
