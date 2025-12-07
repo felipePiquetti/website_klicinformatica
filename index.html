@@ -21,11 +21,18 @@
 
 <body>
 
-  <!---- NAVBAR ---->
   <header class="navbar">
     <a href="#" class="logo-button">
       <img src="https://i.ibb.co/YBp7cV9B/logo.png" alt="KLIC INFORMATICA" class="logoHeader">
     </a>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" aria-label="Abrir menu de navegação">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav aria-label="Menu principal">
       <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
@@ -35,6 +42,7 @@
         <li><a href="#localizacao">Localização</a></li>
       </ul>
     </nav>
+
     <!-- Botão WhatsApp -->
     <a class="Btn"
       href="https://wa.me/+5545998387188?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20e%20servi%C3%A7os%20">
@@ -48,6 +56,7 @@
       <div class="text">Whatsapp</div>
     </a>
   </header>
+
   <!---- HERO ---->
   <section class="hero">
     <div class="overlay"></div>
@@ -148,7 +157,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso de Pacote Office Completo">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -216,7 +225,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o Curso de Robótica">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -284,7 +293,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o Curso de Digitação">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -346,7 +355,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o Curso de Computação Completa">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -415,7 +424,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o Montagem e Manutenção de Computadores">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -484,7 +493,7 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o curso.">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o Curso Auxiliar de Administração">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
@@ -585,10 +594,27 @@
                 </ul>
               </div>
 
-              <button class="botao-solicitar-servico">
+              <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
+                data-mensagem="Olá! Gostaria de solicitar um serviço.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
+
+                  botoes.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
+                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
+                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
+
+                      window.open(link, '_blank');
+                    });
+                  });
+                });
+              </script>
             </div>
 
             <!-- CARD 2 -->
@@ -623,10 +649,27 @@
                   <li>Preço acessivel</li>
                 </ul>
               </div>
-              <button class="botao-solicitar-servico">
+              <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
+                data-mensagem="Olá! Gostaria de solicitar um serviço.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
+
+                  botoes.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
+                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
+                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
+
+                      window.open(link, '_blank');
+                    });
+                  });
+                });
+              </script>
             </div>
 
             <!-- CARD 3 -->
@@ -660,10 +703,27 @@
 
                 </ul>
               </div>
-              <button class="botao-solicitar-servico">
+              <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
+                data-mensagem="Olá! Gostaria de solicitar um serviço.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
+
+                  botoes.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
+                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
+                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
+
+                      window.open(link, '_blank');
+                    });
+                  });
+                });
+              </script>
             </div>
 
             <!-- CARD 4 -->
@@ -698,10 +758,27 @@
                   <li>Texto objetivo e impactante</li>
                 </ul>
               </div>
-              <button class="botao-solicitar-servico">
+              <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
+                data-mensagem="Olá! Gostaria de solicitar um serviço.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
+
+                  botoes.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
+                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
+                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
+
+                      window.open(link, '_blank');
+                    });
+                  });
+                });
+              </script>
             </div>
             <!-- CARD 5 -->
             <div class="card-servico">
@@ -735,10 +812,27 @@
                   <li>Ajustes gerais e manutenção personalizada</li>
                 </ul>
               </div>
-              <button class="botao-solicitar-servico">
+              <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
+                data-mensagem="Olá! Gostaria de solicitar um serviço.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
+
+                  botoes.forEach(function (botao) {
+                    botao.addEventListener('click', function () {
+                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
+                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
+                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
+
+                      window.open(link, '_blank');
+                    });
+                  });
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -762,9 +856,30 @@
             Utilizamos sistema de senhas para organizar o atendimento.
           </p>
         </div>
-        <button class="aviso-botao">
+        <button class="aviso-botao" data-whatsapp="5545998387188"
+          data-mensagem="Olá! Gostaria de agendar para fazer identidade.">
           Agendar Agora
         </button>
+
+        <script>
+          function linkWhatsApp(numero, mensagem) {
+            const numeroLimpo = numero.replace(/\D/g, '');
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+          }
+
+          document.querySelectorAll('.aviso-botao').forEach(botao => {
+            botao.addEventListener('click', function (e) {
+              e.preventDefault();
+              const numero = this.dataset.whatsapp;
+              const mensagem = this.dataset.mensagem;
+
+              if (numero && mensagem) {
+                window.open(linkWhatsApp(numero, mensagem), '_blank');
+              }
+            });
+          });
+        </script>
       </div>
     </div>
   </section>
@@ -865,53 +980,66 @@
             </a>
           </div>
         </div>
-        <!-- COLUNA DIREITA – FORMULÁRIO -->
-        <form class="contato-card">
-          <div class="contato-card-header">
-            <h3>Envie uma Mensagem</h3>
-            <p>
-              Preencha o formulário abaixo e entraremos em contato o mais breve possível.
-            </p>
-          </div>
-          <div class="contato-card-body">
-            <!-- Nome + Telefone -->
-            <div class="contato-row contato-row-2">
-              <div class="contato-campo">
-                <label>Nome completo</label>
-                <input type="text" placeholder="nome completo">
-              </div>
-              <div class="contato-campo">
-                <label>Telefone</label>
-                <input type="tel" placeholder="(DD)9 9876-5432" inputmode="numeric" pattern="[0-9]*" maxlength="11"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                  title="Digite apenas números (ex: 11998765432)">
-              </div>
-              <!-- Email -->
-              <div class="contato-campo">
-                <label>Email</label>
-                <input type="email" placeholder="seu@email.com">
-              </div>
+<!-- COLUNA DIREITA – FORMULÁRIO -->
+<form class="contato-card" id="contatoForm">
+  <div class="contato-card-header">
+    <h3>Envie uma Mensagem</h3>
+    <p>
+      Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+    </p>
+  </div>
 
-              <!-- Assunto -->
-              <div class="contato-campo">
-                <label>Assunto</label>
-                <input type="text" placeholder="Qual é o assunto da sua mensagem?">
-              </div>
+  <div class="contato-card-body">
+    <!-- Nome + Telefone -->
+    <div class="contato-row contato-row-2">
+      <div class="contato-campo">
+        <label>Nome completo</label>
+        <input id="nome" type="text" placeholder="nome completo" required>
+      </div>
 
-              <!-- Mensagem -->
-              <div class="contato-campo">
-                <label>Mensagem</label>
-                <textarea rows="4" placeholder="Descreva sua dúvida ou necessidade..."></textarea>
-              </div>
-            </div>
+      <div class="contato-campo">
+        <label>Telefone</label>
+        <input
+          id="telefone"
+          type="tel"
+          placeholder="(DD)9 9876-5432"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="11"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          title="Digite apenas números (ex: 11998765432)"
+          required
+        >
+      </div>
 
-            <div class="contato-card-footer">
-              <button type="submit" class="contato-submit">
-                <i class="fi fi-br-paper-plane"></i>
-                Enviar Mensagem
-              </button>
-            </div>
-        </form>
+      <!-- Email -->
+      <div class="contato-campo">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="seu@email.com">
+      </div>
+
+      <!-- Assunto -->
+      <div class="contato-campo">
+        <label>Assunto</label>
+        <input id="assunto" type="text" placeholder="Qual é o assunto da sua mensagem?">
+      </div>
+
+      <!-- Mensagem -->
+      <div class="contato-campo">
+        <label>Mensagem</label>
+        <textarea id="mensagem" rows="4" placeholder="Descreva sua dúvida ou necessidade..." required></textarea>
+      </div>
+    </div>
+
+    <div class="contato-card-footer">
+      <button type="submit" class="contato-submit">
+        <i class="fi fi-br-paper-plane"></i>
+        Enviar Mensagem
+      </button>
+    </div>
+  </div>
+</form>
+  
       </div>
     </div>
   </section>

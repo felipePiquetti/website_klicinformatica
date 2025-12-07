@@ -11,6 +11,25 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// MENU MOBILE – abre/fecha o hambúrguer
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+    menuToggle.classList.toggle('ativo');
+  });
+
+  // Fecha o menu ao clicar em um link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      menuToggle.classList.remove('ativo');
+    });
+  });
+}
+
 // Contador animado
 const contar = () => {
   document.querySelectorAll('.counter').forEach(el => {
@@ -38,7 +57,10 @@ const observer = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.7 });
 
-observer.observe(document.querySelector('.cards-container'));
+const cardsContainer = document.querySelector('.cards-container');
+if (cardsContainer) {
+  observer.observe(cardsContainer);
+}
 
 // Carrossel de cursos (simples e funcional)
 document.querySelectorAll('.btn-curso-prev').forEach(btn => {
@@ -199,4 +221,3 @@ document.querySelectorAll('.btn-curso-next').forEach(btn => {
   // começa com o primeiro card no meio
   arrumarClassesCards();
 })();
-

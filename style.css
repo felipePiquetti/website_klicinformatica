@@ -13,6 +13,18 @@
   --cord-botao: #1e4e76;
   --cor-fundocard: #FBFCFC;
   --sombra-card: rgba(0, 0, 0, 0.35);
+
+  /* Cursos */
+  --kc-bg-section: #e8f0fe;
+  --kc-card-bg: #ffffff;
+  --kc-card-border: #dde5f2;
+  --kc-primary: #1e4e76;
+  --kc-primary-dark: #163957;
+  --kc-text-main: #1a2940;
+  --kc-text-muted: #51637a;
+  --kc-badge-bg: #f3f6fb;
+  --kc-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --kc-radius-card: 24px;
 }
 
 body {
@@ -31,14 +43,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
-  /* ESTADO INICIAL (sobre o hero) */
   padding: 20px 56px;
   background: transparent;
   border-bottom: 0;
   box-shadow: none;
   backdrop-filter: blur(0px);
-
   transform: translateY(0);
   transition:
     background 0.4s ease,
@@ -52,20 +61,16 @@ body {
 /* ESTADO AO ROLAR (navbar “grudada” e mais compacta) */
 .navbar.scrolled {
   padding: 5px 56px;
-
-  /* Mantém a ideia do gradiente original, só que um pouco translúcido */
   background: linear-gradient(90deg,
       rgba(15, 34, 56, 0.96) 0%,
       rgba(11, 28, 49, 0.96) 55%,
       rgba(10, 30, 53, 0.96) 100%);
-
   border-bottom: 1px solid rgba(250, 204, 107, 0.55);
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.468);
   backdrop-filter: blur(14px);
-
-  /* leve “encaixe” pra baixo quando fixa */
   transform: translateY(0);
 }
+
 .logo-button {
   display: inline-block;
   cursor: pointer;
@@ -74,27 +79,14 @@ body {
 }
 
 .logo-button:hover {
-  transform: scale(1.05); /* Leve zoom ao passar o mouse */
+  transform: scale(1.05);
 }
 
 .logoHeader {
-  height: 50px;
+  height: 90px;
   width: auto;
   display: block;
 }
-.logoHeader {
-  height: 90px; /* Ajuste conforme necessário */
-  width: auto;
-  display: block;
-}
-
-
-/*.logo {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color: var(--amarelo-botao);
-}*/
 
 .nav-links {
   list-style: none;
@@ -114,7 +106,6 @@ body {
 }
 
 .navbar.scrolled .nav-links a {
-  /* um leve brilho quando estiver em modo “barra” */
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
@@ -123,7 +114,7 @@ body {
   opacity: 1;
 }
 
-/* Botão do nav */
+/* Botão do nav (antigo – se quiser usar de novo) */
 .btn-contatonav {
   font-family: Arial, Helvetica, sans-serif;
   display: inline-flex;
@@ -151,9 +142,49 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
-.btn-contatonav .icon {
-  width: 18px;
-  height: 18px;
+/* ===========================
+   BOTÃO MENU MOBILE (hambúrguer)
+   =========================== */
+
+.menu-toggle::before {
+  content: none;
+}
+
+.menu-toggle {
+  display: none; /* só aparece no mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #eaf0f7;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.ativo span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* HERO */
@@ -162,19 +193,17 @@ body {
   position: relative;
   padding-bottom: 180px;
 }
+
 .cardEsfera {
   position: absolute;
   left: 50%;
-  bottom: -500px;         /* aqui você já ajusta se quiser subir/abaixar */
+  bottom: -500px;
   transform: translateX(-50%);
   z-index: 5;
-
-  /* ESSENCIAL pra servir de referência pros ícones */
-  position: absolute;
 }
 
 .esfera-base {
-  width: min(50vw, 600px);  /* mesmo tamanho que você já está usando */
+  width: min(50vw, 600px);
   height: auto;
   display: block;
 }
@@ -182,38 +211,39 @@ body {
 /* ÍCONES SOBRE A ESFERA */
 .esfera-icone {
   position: absolute;
-  width: 30px; /* tamanho do ícone */
+  width: 30px;
   object-fit: contain;
-  z-index: 6;    /* acima da esfera */
-  transition: transform 0.3s ease, z-index 0s; /* animação suave */
-  cursor: pointer; /* muda o cursor ao passar o mouse */
+  z-index: 6;
+  transition: transform 0.3s ease, z-index 0s;
+  cursor: pointer;
 }
 
-/* Efeito hover - aumenta o ícone */
 .esfera-icone:hover {
-  transform: translate(-50%, -50%) scale(1.3); /* aumenta 30% */
-  z-index: 10; /* coloca acima dos outros ao passar o mouse */
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 10;
   filter: brightness(1.1);
 }
 
 /* topo central */
 .icone-a {
-  top: 15%;      /* mais pra cima/baixo */
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.icone-livro{
+
+.icone-livro {
   width: 80px;
 }
 
 /* topo direita */
-.icone-b{
+.icone-b {
   top: 22%;
   left: 72%;
   transform: translate(-50%, -50%);
 }
+
 .icone-word {
-  width: 70px;    
+  width: 70px;
 }
 
 .icone-c {
@@ -221,7 +251,8 @@ body {
   left: 85%;
   transform: translate(-50%, -50%);
 }
-.icone-excel{
+
+.icone-excel {
   width: 110px;
 }
 
@@ -230,7 +261,8 @@ body {
   left: 73%;
   transform: translate(-50%, -50%);
 }
-.icone-powerpoint{
+
+.icone-powerpoint {
   width: 77px;
 }
 
@@ -239,7 +271,8 @@ body {
   left: 51%;
   transform: translate(-50%, -50%);
 }
-.icone-whats{
+
+.icone-whats {
   width: 67px;
 }
 
@@ -248,7 +281,8 @@ body {
   left: 28%;
   transform: translate(-50%, -50%);
 }
-.icone-documento{
+
+.icone-documento {
   width: 74px;
 }
 
@@ -257,7 +291,8 @@ body {
   left: 14%;
   transform: translate(-50%, -50%);
 }
-.icone-impressora{
+
+.icone-impressora {
   width: 140px;
 }
 
@@ -266,16 +301,17 @@ body {
   left: 27%;
   transform: translate(-50%, -50%);
 }
-.icone-togaa{
+
+.icone-togaa {
   width: 100px;
 }
 
-/* dá um respiro na seção de cursos para não colar na esfera */
+/* respiro */
 .area-cursos {
   padding-top: 140px;
 }
 
-
+/* HERO background */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -337,53 +373,78 @@ body {
   text-decoration: none;
 }
 
-.btn {
-  display: inline-flex;
+/* botão base (há overrides abaixo) */
+button {
+  --hov: 0;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 220px;
-  height: 47px;
-  padding: 0 16px;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 1;
-  text-decoration: none;
-  transition: background .2s ease, transform .06s ease, color .2s ease;
+  place-self: center;
+  border: none;
+  padding: 0.75em;
+  border-radius: 5em;
+  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
+  color: #0e0a0e;
+  font: 700 1em/1.375 ubuntu, sans-serif;
+  transition: 0.3s ease-out;
+  transition-delay: calc((1 - var(--hov))*.5*0.3s), 0s;
+  transition-property: grid-template-columns, background-color;
+  cursor: pointer;
 }
 
-.btn .iconNav {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
+button::before {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #0e0a0e;
+  color: hsla(0, 0%, 100%, var(--hov));
+  font-weight: 100;
+  text-indent: calc((var(--hov) - 1)*1em);
+  clip-path: circle(closest-side);
+  transition: inherit;
+  transition-delay: calc(var(--hov)*.5*0.3s);
+  transition-property: color, text-indent;
+  content: attr(data-ico);
 }
 
-.btn-amarelo1 {
-  background: var(--amarelo-botao);
-  color: #0b0b0b;
+button:is(:hover, :focus) {
+  --hov: 1;
 }
 
-.btn-amarelo1:hover {
-  background: var(--botao-cursor);
+/* Botão animado específico */
+.btn-animado {
+  --hov: 0;
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
+  align-items: center;
+  border: none;
+  padding: 0.75em;
+  border-radius: 5em;
+  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
+  color: #0e0a0e;
+  font: 700 1em/1.375 ubuntu, sans-serif;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  place-self: center;
 }
 
-.btn-amarelo1:active {
-  transform: translateY(1px);
+.btn-animado::before {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #0e0a0e;
+  color: hsla(0, 0%, 100%, var(--hov));
+  font-weight: 100;
+  text-indent: calc((var(--hov) - 1)*1em);
+  clip-path: circle(closest-side);
+  transition: inherit;
+  content: attr(data-ico);
 }
 
-.btn-branco1 {
-  background: #fff;
-  color: #000;
-}
-
-.btn-branco1:hover {
-  background: var(--amarelo-botao);
-  color: #000;
-}
-
-.btn-branco1:active {
-  transform: translateY(1px);
+.btn-animado:is(:hover, :focus) {
+  --hov: 1;
 }
 
 /* CARDS HERO */
@@ -424,23 +485,82 @@ body {
   color: var(--legenda-icone);
 }
 
-/* ==========================
-   CURSOS (area-cursos)
-   ========================== */
-:root {
-  --kc-bg-section: #e8f0fe;
-  --kc-card-bg: #ffffff;
-  --kc-card-border: #dde5f2;
-  --kc-primary: #1e4e76;
-  --kc-primary-dark: #163957;
-  --kc-text-main: #1a2940;
-  --kc-text-muted: #51637a;
-  --kc-badge-bg: #f3f6fb;
-  --kc-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.12);
-  --kc-radius-card: 24px;
+.cardHero .counter {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  display: block;
 }
 
-/* SECTION cursos */
+/* BOTÃO WHATSAPP FLUTUANTE NA NAV */
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #00d757;
+}
+
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 25px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover {
+  width: 150px;
+  border-radius: 40px;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  padding-left: 10px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  padding-right: 10px;
+}
+
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+/* ==========================
+   CURSOS
+   ========================== */
+
 .area-cursos {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--kc-bg-section);
@@ -451,7 +571,7 @@ body {
 .cursos-bloco {
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 320px;
+  margin-top: 320px; /* por causa da esfera no desktop */
 }
 
 /* HEADER */
@@ -480,42 +600,27 @@ body {
   gap: 12px;
 }
 
-/* FORÇA O CENTRALIZAMENTO PERFEITO – ignora qualquer coisa que o JS faça */
+
 .btn-carrossel-curso {
-  position: relative !important;
-  /* garante que o ::after e o span fiquem dentro */
   background: #ffffff;
   border-radius: 999px;
-  width: 40px !important;
-  height: 40px !important;
-  padding: 0 !important;
-  /* remove qualquer padding que o JS coloca */
+  width: 40px;
+  height: 40px;
   border: none;
-  display: grid !important;
-  /* grid é o mais confiável para centralizar */
-  place-items: center !important;
-  /* centraliza perfeitamente em X e Y */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
-  overflow: hidden;
-  /* importante pro ripple não vazar */
+  flex-shrink: 0;
 }
 
-/* Força o ícone a ficar exatamente no centro (mesmo se o JS mexer no span) */
 .btn-carrossel-curso span {
-  display: grid !important;
-  place-items: center !important;
-  width: 100% !important;
-  height: 100% !important;
-  font-size: 22px !important;
-  color: var(--kc-primary);
-  pointer-events: none;
-  /* evita que o span atrapalhe o clique */
+  font-size: 22px;
+  color: var(--cord-botao);
 }
 
-/* Hover e active (mantendo o estilo bonito que passei antes) */
 .btn-carrossel-curso:hover {
   background: var(--kc-primary);
   transform: translateY(-4px);
@@ -530,30 +635,19 @@ body {
   transform: translateY(-1px);
 }
 
-
-.btn-carrossel-curso:active::after {
-  width: 60px;
-  height: 60px;
-}
-
-/* Janela visível (3 cards inteiros no desktop) */
 .janela-cursos {
   overflow: hidden;
   flex: 0 0 auto;
   width: 100%;
   max-width: calc(340px * 3 + 20px * 2);
-  /* 3 cards + 2 gaps */
   margin: 0 auto;
-
 }
 
-/* Trilho com os cards */
+/* Trilho */
 .trilha-cursos {
   display: flex;
   gap: 20px;
-  /* espaço interno pra sombra/hover não serem cortados */
   padding: 16px 0 80px;
-  /* em cima / laterais / embaixo */
   box-sizing: border-box;
   transition: transform 0.45s ease;
 }
@@ -570,15 +664,12 @@ body {
   width: 340px;
   min-width: 340px;
   max-width: 340px;
-
-  /* animação suave no hover */
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
     border-color 0.2s ease;
 }
 
-/* efeito ao passar o mouse */
 .card-curso:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 32px rgba(15, 23, 42, 0.25);
@@ -700,16 +791,10 @@ body {
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
 }
 
-/* RESPONSIVO CURSOS */
+/* Responsivo parcial dos cursos */
 @media (max-width: 1100px) {
   .janela-cursos {
     max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .area-cursos {
-    padding: 24px 8px;
   }
 }
 
@@ -750,7 +835,7 @@ body {
 }
 
 /* ================================
-   SERVIÇOS – CARROSSEL 3D + AVISO
+   SERVIÇOS – CARROSSEL
    ================================ */
 
 .secao-servicos {
@@ -914,8 +999,6 @@ body {
   filter: blur(1.8px) brightness(0.9);
 }
 
- 
-
 /* HEADER DO CARD */
 .cabecalho-card-servico {
   display: flex;
@@ -961,7 +1044,6 @@ body {
   line-height: 1.4;
 }
 
-/* subtítulo complementar */
 .descricao-servico {
   font-size: 13px;
   color: #6b7280;
@@ -986,7 +1068,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-sizing: border-box;
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
@@ -1123,7 +1204,6 @@ body {
   line-height: 1.4;
 }
 
-/* Botão pequeno, igual ao exemplo */
 .aviso-botao {
   padding: 4px 14px;
   font-size: 12px;
@@ -1141,43 +1221,6 @@ body {
 .aviso-botao:hover {
   background: #1e4e76;
   color: #ffffff;
-}
-
-/* RESPONSIVO SERVIÇOS */
-@media (max-width: 960px) {
-  .carrossel-servicos {
-    gap: 8px;
-  }
-
-  .janela-servicos {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .trilha-servicos {
-    position: static;
-    width: 100%;
-    height: auto;
-  }
-
-  .card-servico {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-    width: 100%;
-    flex: 0 0 auto;
-    margin: 0 auto;
-  }
-
-  .card-servico-ativo,
-  .card-servico-anterior,
-  .card-servico-proximo {
-    transform: none;
-    filter: none;
-  }
 }
 
 /* ==============================
@@ -1430,17 +1473,6 @@ body {
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.22);
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .contato-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .contato-card {
-    padding: 18px 18px 20px;
-  }
-}
-
 /* ==============================
    FOOTER KLIC
    ============================== */
@@ -1574,17 +1606,26 @@ body {
   color: #9ca3af;
 }
 
-.cardHero .counter {
-  font-size: 28px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 4px;
-  display: block;
+/* GRID esquisito do snippet original */
+html,
+body,
+button {
+  display: grid;
 }
 
+/* ==============================
+   RESPONSIVO GERAL (MOBILE)
+   ============================== */
 
-/* RESPONSIVO FOOTER */
 @media (max-width: 900px) {
+  .contato-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contato-card {
+    padding: 18px 18px 20px;
+  }
+
   .klic-footer-main {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     row-gap: 24px;
@@ -1606,180 +1647,340 @@ body {
   }
 }
 
-html,
-body,
-button {
-  /* Aplica as mesmas propriedades de display para html, body e todos os botões */
-  display: grid;
-  /* Define o layout desses elementos como grid (grade) */
+/* MOBILE PRINCIPAL */
+@media (max-width: 768px) {
+  /* conserta o grid global no mobile */
+  html,
+  body {
+    display: block;
+  }
+
+  /* NAVBAR mobile */
+  .navbar {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .logoHeader {
+    height: 64px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    right: 16px;
+    left: 16px;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: rgba(10, 26, 47, 0.97);
+    border-radius: 12px;
+    border: 1px solid rgba(250, 204, 107, 0.4);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+    display: none;
+    gap: 10px;
+    z-index: 998;
+  }
+
+  .menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 4px 0;
+  }
+
+  .Btn {
+    margin-left: auto;
+    width: 42px;
+    height: 42px;
+  }
+
+  .Btn:hover {
+    width: 120px;
+  }
+
+  /* HERO mobile */
+  .hero-content {
+    padding: 120px 16px 40px;
+    max-width: 100%;
+  }
+
+  .titulo-branco,
+  .titulo-amarelo {
+    font-size: 2.1rem;
+  }
+
+  .subtitulo {
+    font-size: 0.95rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
+    max-width: 100%;
+    margin-top: 32px;
+  }
+
+  .cardHero {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .cardHero .icone {
+    width: 42px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .cardHero .counter {
+    font-size: 22px;
+  }
+
+  /* some a esfera no mobile */
+  .cardEsfera {
+    display: none;
+  }
+
+  /* CURSOS mobile – 1 card por vez, ocupando largura */
+  .area-cursos {
+    margin-top: 40px;
+    padding: 32px 12px;
+  }
+
+  .cursos-bloco {
+    margin-top: 16px;
+  }
+
+  .carrossel-cursos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn-carrossel-curso {
+    align-self: center;
+  }
+
+  .janela-cursos {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .trilha-cursos {
+    padding: 16px 0 32px;
+  }
+
+  .card-curso {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  /* SERVIÇOS mobile – vira lista */
+  .carrossel-servicos {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-carrossel-servico {
+    display: none;
+  }
+
+  .janela-servicos {
+    margin: 0;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .trilha-servicos {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card-servico,
+  .card-servico-ativo,
+  .card-servico-anterior,
+  .card-servico-proximo {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    opacity: 1;
+    filter: none;
+    width: 100%;
+    flex: 0 0 auto;
+    margin: 0 auto;
+  }
+
+  .aviso-agendamento {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* MAPA / LOCALIZAÇÃO */
+  .Localizacao {
+    padding: 50px 0 0;
+  }
+
+  .mapa-container iframe {
+    height: 340px;
+  }
+
+  /* CONTATO */
+  .contato-section {
+    padding: 56px 16px 64px;
+  }
+
+  .contato-grid {
+    gap: 24px;
+  }
+
+  .contato-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-card {
+    padding: 18px 18px 20px;
+  }
+}
+/* FORÇA RESPONSIVO DO CARROSSEL - SEMPRE ÚLTIMO */
+.card-curso { flex: 0 0 calc(100% - 40px) !important; width: calc(100% - 40px) !important; max-width: 340px !important; }
+@media (min-width: 640px) { .card-curso { flex: 0 0 calc(50% - 30px) !important; width: calc(50% - 30px) !important; } }
+@media (min-width: 1024px) { .card-curso { flex: 0 0 340px !important; width: 340px !important; max-width: 340px !important; } }
+/* ============================================================= */
+/* RESPONSIVO PERFEITO PARA IPAD / TABLET (768px – 1024px)      */
+/* ============================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* HERO – títulos menores, mais espaço */
+  .hero-content {
+    padding: 160px 40px 60px;
+    max-width: 100%;
+  }
+  
+  .titulo-branco,
+  .titulo-amarelo {
+    font-size: 4.2rem;
+  }
+  
+  .subtitulo {
+    font-size: 1.15rem;
+    max-width: 80%;
+    margin: 20px auto;
+  }
+  
+  /* Cards do hero em 2 colunas no iPad */
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 40px;
+    max-width: 800px;
+    margin: 60px auto 0;
+  }
+  
+  .cardHero {
+    min-width: auto;
+  }
+  
+  /* Esfera some no tablet também (evita sobreposição) */
+  .cardEsfera {
+    display: none;
+  }
+  
+  .area-cursos {
+    margin-top: 80px;
+    padding: 60px 20px;
+  }
+  
+  .cursos-bloco {
+    margin-top: 0;
+  }
+  
+  /* CARROSSEL DE CURSOS – 2 cards por vez no iPad */
+  .janela-cursos {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .trilha-cursos {
+    gap: 24px;
+    padding: 20px 0;
+  }
+  
+  .card-curso {
+    flex: 0 0 calc(50% - 12px) !important;
+    width: calc(50% - 12px) !important;
+    min-width: calc(50% - 12px) !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  
+  /* Botões do carrossel centralizados e bonitos */
+  .btn-carrossel-curso {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  
+  /* Seção de serviços – cards em coluna única, mas maior */
+  .card-servico,
+  .card-servico-ativo {
+    width: 480px;
+    max-width: 90vw;
+  }
+  
+  /* Contato – grid lado a lado volta no tablet */
+  .contato-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+  }
+  
+  /* Footer ajustado */
+  .klic-footer-main {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 32px;
+    padding: 32px 40px;
+  }
+  
+  /* Ajustes gerais de espaçamento */
+  .Localizacao {
+    padding: 80px 0 0;
+  }
+  
+  .mapa-container iframe {
+    height: 460px;
+  }
+  
+  .contato-section {
+    padding: 80px 20px;
+  }
 }
 
-
-
-
-button {
-  /* Seleciona todos os botões <button> */
-  --hov: 0;
-  /* Cria uma variável CSS chamada --hov, iniciando em 0 (estado normal, sem hover) */
-  grid-gap: 0.5em;
-  /* Define um espaçamento de 0.5em entre as colunas do grid interno do botão */
-  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
-  /* Define duas colunas: a primeira é pequena e cresce com o hover, a segunda ocupa o restante */
-  align-items: center;
-  /* Centraliza verticalmente o conteúdo dentro do grid do botão */
-  place-self: center;
-  /* Centraliza o botão dentro do container pai (grid do body/html) */
-  border: none;
-  /* Remove qualquer borda padrão do botão */
-  padding: 0.75em;
-  /* Adiciona espaçamento interno (padding) em todos os lados do botão */
-  border-radius: 5em;
-  /* Deixa o botão bem arredondado (formato de pílula) */
-  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
-  /* Mistura duas cores em HSL: cinza (#bec8cb) com amarelo (#ECBA25) dependendo do valor de --hov (0 ou 1) */
-  color: #0e0a0e;
-  /* Define a cor do texto do botão (quase preto) */
-  font: 700 1em/1.375 ubuntu, sans-serif;
-  /* Define a fonte: peso 700 (negrito), tamanho 2em, altura de linha 1.375, fonte Ubuntu ou sans-serif */
-  transition: 0.3s ease-out;
-  /* Define a transição padrão de 0.3s com easing "ease-out" para propriedades animáveis */
-  transition-delay: calc((1 - var(--hov))*.5*0.3s), 0s;
-  /* Define atrasos diferentes na transição dependendo do valor de --hov, para criar um efeito suave na ida/volta */
-  transition-property: grid-template-columns, background-color;
-  /* Especifica que as transições vão atuar nas colunas do grid e na cor de fundo */
-  cursor: pointer;
-  /* Troca o cursor para "mãozinha" ao passar em cima do botão */
-}
-
-button::before {
-  /* Seleciona o pseudo-elemento ::before de todo botão */
-  aspect-ratio: 1;
-  /* Garante que a “bolinha” seja sempre um quadrado perfeito (1:1) */
-  overflow: hidden;
-  /* Esconde qualquer conteúdo que ultrapassar os limites do pseudo-elemento */
-  border-radius: 50%;
-  /* Deixa o pseudo-elemento totalmente redondo (círculo) */
-  background: #0e0a0e;
-  /* Define fundo preto para o círculo */
-  color: hsla(0, 0%, 100%, var(--hov));
-  /* Cor do texto dentro do círculo: branco com opacidade controlada por --hov (0 = invisível, 1 = visível) */
-  font-weight: 100;
-  /* Deixa o texto dentro do círculo bem fino (peso 100) */
-  text-indent: calc((var(--hov) - 1)*1em);
-  /* Desloca o texto horizontalmente; quando não está em hover, o texto fica escondido */
-  clip-path: circle(closest-side);
-  /* Garante que só a parte circular mais próxima do centro fique visível */
-  transition: inherit;
-  /* Herda as mesmas configurações de transição definidas em button */
-  transition-delay: calc(var(--hov)*.5*0.3s);
-  /* Ajusta o atraso da transição do ::before de acordo com o valor de --hov */
-  transition-property: color, text-indent;
-  /* Aplica transição apenas na cor do texto e no recuo (text-indent) */
-  content: attr(data-ico);
-  /* Define o conteúdo do pseudo-elemento usando o atributo data-ico do botão (ex: data-ico="▶") */
-}
-
-button:is(:hover, :focus) {
-  /* Aplica estilos quando o botão estiver com hover ou foco (teclado) */
-  --hov: 1;
-  /* Muda a variável --hov para 1, ativando o estado “hover” e disparando as animações */
-}
-
-/* From Uiverse.io by Gaurang7717 */
-.btn-animado {
-  --hov: 0;
-  display: grid;
-  grid-gap: 0.5em;
-  grid-template-columns: calc(.375em + var(--hov)*1em) 1fr;
-  align-items: center;
-  border: none;
-  padding: 0.75em;
-  border-radius: 5em;
-  background: color-mix(in hsl, #ECBA25 calc(var(--hov)*100%), #bec8cb);
-  color: #0e0a0e;
-  font: 700 1em/1.375 ubuntu, sans-serif;
-  transition: 0.3s ease-out;
-  cursor: pointer;
-  place-self: center;
-}
-
-.btn-animado::before {
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: 50%;
-  background: #0e0a0e;
-  color: hsla(0, 0%, 100%, var(--hov));
-  font-weight: 100;
-  text-indent: calc((var(--hov) - 1)*1em);
-  clip-path: circle(closest-side);
-  transition: inherit;
-  content: attr(data-ico);
-}
-
-.btn-animado:is(:hover, :focus) {
-  --hov: 1;
-}
-
-/* From Uiverse.io by Gaurang7717 */
-.Btn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition-duration: 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: #00d757;
-}
-
-.sign {
-  width: 100%;
-  transition-duration: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sign svg {
-  width: 25px;
-}
-
-.sign svg path {
-  fill: white;
-}
-
-.text {
-  position: absolute;
-  right: 0%;
-  width: 0%;
-  opacity: 0;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  transition-duration: 0.3s;
-}
-
-.Btn:hover {
-  width: 150px;
-  border-radius: 40px;
-}
-
-.Btn:hover .sign {
-  width: 30%;
-  padding-left: 10px;
-}
-
-.Btn:hover .text {
-  opacity: 1;
-  width: 70%;
-  padding-right: 10px;
-}
-
-.Btn:active {
-  transform: translate(2px, 2px);
+/* IPAD PRO HORIZONTAL (1025px – 1366px) – quase desktop, mas ainda ajusta um pouco */
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+  .titulo-branco,
+  .titulo-amarelo {
+    font-size: 5.5rem;
+  }
+  
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 960px;
+  }
+  
+  .card-curso {
+    flex: 0 0 340px !important;
+    width: 340px !important;
+  }
 }
