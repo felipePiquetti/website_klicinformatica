@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KLIC INFORMATICA</title>
 
+  <!-- SEO básico -->
+  <meta name="description"
+    content="KLIC Informática – Cursos de informática, robótica, administração e serviços como impressão, manutenção e agendamentos em Foz do Iguaçu." />
+
   <!-- Fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
+  <!-- Ícones Flaticon -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body>
-
+<body id="topo">
+  <!-- HEADER / NAVBAR -->
   <header class="navbar">
-    <a href="#" class="logo-button">
-      <img src="https://i.ibb.co/YBp7cV9B/logo.png" alt="KLIC INFORMATICA" class="logoHeader">
+    <a href="#topo" class="logo-button" aria-label="Ir para o início">
+      <img src="https://i.ibb.co/YBp7cV9B/logo.png" alt="KLIC INFORMATICA" class="logoHeader" />
     </a>
 
     <!-- BOTÃO MENU MOBILE -->
@@ -35,7 +41,7 @@
 
     <nav aria-label="Menu principal">
       <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="#topo">Início</a></li>
         <li><a href="#cursos">Cursos</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -43,11 +49,11 @@
       </ul>
     </nav>
 
-    <!-- Botão WhatsApp -->
+    <!-- Botão WhatsApp fixo no header -->
     <a class="Btn"
       href="https://wa.me/+5545998387188?text=Oi!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20e%20servi%C3%A7os%20">
       <div class="sign">
-        <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+        <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16" aria-hidden="true">
           <path
             d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
           </path>
@@ -57,67 +63,69 @@
     </a>
   </header>
 
-  <!---- HERO ---->
+  <!-- HERO -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
       <h1 class="titulo-branco">Transforme seu futuro com</h1>
       <h1 class="titulo-amarelo">Tecnologia e Educação</h1>
       <p class="subtitulo">
-        Cursos especializados em robótica, computação e muito mais. <br>
+        Cursos especializados em robótica, computação e muito mais. <br />
         Além de assistência técnica profissional para todas as suas necessidades.
       </p>
 
       <div class="hero-buttons">
-        <button onclick="location.href='#servicos'" data-ico="→">Nossos Serviços</button>
-        <button onclick="location.href='#cursos'" data-ico="→">Nossos Cursos</button>
+        <button type="button" onclick="location.href='#servicos'" data-ico="→">Nossos Serviços</button>
+        <button type="button" onclick="location.href='#cursos'" data-ico="→">Nossos Cursos</button>
       </div>
 
-      <!------ ICONES HERO ---->
+      <!-- ICONES HERO -->
       <div class="cards-container">
         <div class="cardHero">
-          <img src="https://i.ibb.co/0RmP5Byw/toga.png" alt="Alunos formados" class="icone">
+          <img src="https://i.ibb.co/0RmP5Byw/toga.png" alt="Alunos formados" class="icone" />
           <span class="counter" data-target="500">0</span>
           <p>Alunos formados</p>
         </div>
 
         <div class="cardHero">
-          <img src="https://i.ibb.co/ymjZrRSG/lasca.png" alt="Equipamentos Reparados" class="icone">
+          <img src="https://i.ibb.co/ymjZrRSG/lasca.png" alt="Equipamentos reparados" class="icone" />
           <span class="counter" data-target="1000">0</span>
           <p>Equipamentos Reparados</p>
         </div>
 
         <div class="cardHero">
-          <img src="https://i.ibb.co/jPSC85m9/contexto.png" alt="Anos de Experiencia" class="icone">
+          <img src="https://i.ibb.co/jPSC85m9/contexto.png" alt="Anos de experiência" class="icone" />
           <span class="counter" data-target="20">0</span>
-          <p>Anos de Experiencia</p>
+          <p>Anos de Experiência</p>
         </div>
       </div>
     </div>
-    <!-------ESFERA-->
+
+    <!-- ESFERA -->
     <div class="cardEsfera">
-      <!-- imagem da esfera -->
-      <img src="https://i.ibb.co/cP9VkNY/iconecentro.png" alt="Esfera KLIC" class="esfera-base">
-      <img src="https://i.ibb.co/gFHp8vGq/livro.png" class="esfera-icone icone-a icone icone-livro" alt="livro">
-      <img src="https://i.ibb.co/5WTgdyrB/word.png" class="esfera-icone icone-b icone-word" alt="Word">
-      <img src="https://i.ibb.co/7tDDC9p6/excel.png" class="esfera-icone icone-c icone-excel" alt="documento">
+      <img src="https://i.ibb.co/cP9VkNY/iconecentro.png" alt="Esfera KLIC" class="esfera-base" />
+      <img src="https://i.ibb.co/gFHp8vGq/livro.png" class="esfera-icone icone-a icone-livro" alt="livro" />
+      <img src="https://i.ibb.co/5WTgdyrB/word.png" class="esfera-icone icone-b icone-word" alt="Word" />
+      <img src="https://i.ibb.co/7tDDC9p6/excel.png" class="esfera-icone icone-c icone-excel" alt="Excel" />
       <img src="https://i.ibb.co/7x8Vrzpw/powerpoint.png" class="esfera-icone icone-d icone-powerpoint"
-        alt="powerpoint">
-      <img src="https://i.ibb.co/3yjrB2fq/whatsapp.png" class="esfera-icone icone-e icone-whats" alt="whatsapp">
-      <img src="https://i.ibb.co/SXJXs8VB/documento.png" class="esfera-icone icone-f icone-documento" alt="documento">
-      <img src="https://i.ibb.co/sdFwz1L3/impressoraicone.png" class="esfera-icone icone-g  icone-impressora"
-        alt="impressora">
-      <img src="https://i.ibb.co/ZzcfKD3d/toga2.png" class="esfera-icone icone-h  icone-togaa" alt="toga">
+        alt="PowerPoint" />
+      <img src="https://i.ibb.co/3yjrB2fq/whatsapp.png" class="esfera-icone icone-e icone-whats" alt="WhatsApp" />
+      <img src="https://i.ibb.co/SXJXs8VB/documento.png" class="esfera-icone icone-f icone-documento"
+        alt="Documento" />
+      <img src="https://i.ibb.co/sdFwz1L3/impressoraicone.png" class="esfera-icone icone-g icone-impressora"
+        alt="Impressora" />
+      <img src="https://i.ibb.co/ZzcfKD3d/toga2.png" class="esfera-icone icone-h icone-togaa" alt="Formatura" />
     </div>
   </section>
-  </div>
-  <!------- CURSOS ---->
+
+  <!-- CURSOS -->
   <section id="cursos" class="area-cursos">
     <div class="cursos-bloco">
       <header class="cursos-header">
         <h2>Nossos Cursos</h2>
         <p>Invista no seu futuro com nossos cursos especializados em tecnologia e capacitação profissional.</p>
       </header>
+
       <div class="carrossel-cursos" aria-label="Carrossel de cursos">
         <button class="btn-carrossel-curso btn-curso-prev" aria-label="Cursos anteriores">
           <span>&larr;</span>
@@ -125,11 +133,10 @@
 
         <div class="janela-cursos">
           <div class="trilha-cursos">
-
             <!-- CARD 1 -->
             <article class="card-curso">
               <img class="img-curso" src="https://i.ibb.co/5gHcm3Ld/Gemini-Generated-Image-x0pqxtx0pqxtx0pq.png"
-                alt="Pessoa usando notebook com múltiplos monitores">
+                alt="Pessoa usando notebook com múltiplos monitores" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Pacote Office Completo</h3>
                 <p class="subtitulo-curso">
@@ -161,43 +168,13 @@
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
 
             <!-- CARD 2 -->
             <article class="card-curso">
-              <img class="img-curso" src="https://i.ibb.co/7xjsR3fw/pexels-vanessa-loring-7869048-1.png">
+              <img class="img-curso" src="https://i.ibb.co/7xjsR3fw/pexels-vanessa-loring-7869048-1.png"
+                alt="Alunos em aula de robótica" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Curso de Robótica</h3>
                 <p class="subtitulo-curso">
@@ -229,43 +206,12 @@
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
 
             <!-- CARD 3 -->
             <article class="card-curso">
-              <img class="img-curso" src="https://i.ibb.co/M51yK7qF/curso-digitacao2.png" alt="curso digitacao">
+              <img class="img-curso" src="https://i.ibb.co/M51yK7qF/curso-digitacao2.png" alt="Curso de digitação" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Curso de Digitação</h3>
                 <p class="subtitulo-curso">
@@ -297,59 +243,31 @@
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
 
             <!-- CARD 4 -->
             <article class="card-curso">
               <img class="img-curso" src="https://i.ibb.co/F4J8Xxc1/curso-computacao.jpg"
-                alt="Curso de Computação Completa">
+                alt="Curso de computação completa" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Curso de Computação Completa</h3>
                 <p class="subtitulo-curso">
                   Formação em computação com foco em sistemas operacionais e uso seguro da internet.
                 </p>
                 <div class="linha-info-curso">
-                  <div class="item-info-curso"><span class="icone-info-curso">⏱</span><span>30 horas</span></div>
-                  <div class="item-info-curso"><span class="icone-info-curso"></span><span>10 alunos por turma</span>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso">⏱</span><span>30 horas</span>
+                  </div>
+                  <div class="item-info-curso">
+                    <span class="icone-info-curso"></span><span>10 alunos por turma</span>
                   </div>
                 </div>
                 <p class="titulo-parte-curso">O que você vai aprender:</p>
                 <ul class="lista-curso">
                   <li>Uso prático do Windows para tarefas do dia a dia</li>
                   <li>Configurações básicas e intermediárias do sistema operacional</li>
-                  <li>Navegação segura na internet,</li>
+                  <li>Navegação segura na internet</li>
                   <li>Organização de arquivos e pastas</li>
                 </ul>
               </div>
@@ -359,53 +277,22 @@
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
+
             <!-- CARD 5 -->
             <article class="card-curso">
-              <img class="img-curso" src="https://i.ibb.co/XrR1mrB0/curso-montagem.jpg" alt="curso montagem ">
+              <img class="img-curso" src="https://i.ibb.co/XrR1mrB0/curso-montagem.jpg"
+                alt="Curso de montagem e manutenção de computadores" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Montagem e Manutenção de Computadores</h3>
                 <p class="subtitulo-curso">
-                  Curso prático de montagem e manutenção de computadores
+                  Curso prático de montagem e manutenção de computadores.
                 </p>
 
                 <div class="linha-info-curso">
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">
-
-                    </span>
+                    <span class="icone-info-curso"></span>
                     <span>20 horas</span>
                   </div>
                   <div class="item-info-curso">
@@ -424,51 +311,22 @@
               </div>
               <div class="rodape-curso">
                 <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o Montagem e Manutenção de Computadores">
+                  data-mensagem="Olá! Gostaria de saber mais sobre o curso de Montagem e Manutenção de Computadores">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
+
             <!-- CARD 6 -->
             <article class="card-curso">
               <img class="img-curso" src="https://i.ibb.co/bwk4Vwz/1913bcdf-b4e3-45c9-8c7f-13ce8b4d01bf.jpg"
-                alt="curso adm">
+                alt="Curso auxiliar de administração" />
               <div class="corpo-curso">
                 <h3 class="titulo-curso">Auxiliar de Administração</h3>
                 <p class="subtitulo-curso">
                   Formação prática para atuar como auxiliar administrativo no dia a dia do escritório.
+                </p>
 
                 <div class="linha-info-curso">
                   <div class="item-info-curso">
@@ -476,9 +334,7 @@
                     <span>30 horas</span>
                   </div>
                   <div class="item-info-curso">
-                    <span class="icone-info-curso">
-
-                    </span>
+                    <span class="icone-info-curso"></span>
                     <span>10 alunos por turma</span>
                   </div>
                 </div>
@@ -497,40 +353,8 @@
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
                 </button>
-
-                <script>
-                  // Função para criar link do WhatsApp
-                  function linkWhatsApp(numero, mensagem) {
-                    // Remove caracteres especiais do número
-                    const numeroLimpo = numero.replace(/\D/g, '');
-
-                    // Codifica a mensagem para URL
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-
-                    // Retorna o link formatado
-                    return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-                  }
-
-                  // Adiciona evento de clique aos botões
-                  document.querySelectorAll('.botao-curso').forEach(botao => {
-                    botao.addEventListener('click', function (e) {
-                      e.preventDefault();
-
-                      const numero = this.dataset.whatsapp;
-                      const mensagem = this.dataset.mensagem;
-
-                      if (numero && mensagem) {
-                        const link = linkWhatsApp(numero, mensagem);
-                        window.open(link, '_blank');
-                      } else {
-                        console.error('Número ou mensagem não definidos!');
-                      }
-                    });
-                  });
-                </script>
               </div>
             </article>
-
           </div>
         </div>
 
@@ -541,14 +365,13 @@
     </div>
   </section>
 
-
-  <!-- SERVIÇOS – seção nova integrada -->
+  <!-- SERVIÇOS -->
   <section id="servicos" class="secao-servicos">
     <div class="servicos-container">
       <header class="topo-servicos">
         <h2 class="titulo-servicos-geral">Nossos Serviços</h2>
         <p class="texto-servicos-geral">
-          Soluções rápidas e práticas para o seu dia a dia na KLIC Informática
+          Soluções rápidas e práticas para o seu dia a dia na KLIC Informática.
         </p>
       </header>
 
@@ -563,18 +386,18 @@
             <div class="card-servico">
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone-servico">
+                  <img src="icones/impressora.png" alt="Ícone de Impressora" class="img-icone-servico" />
                 </div>
                 <div class="texto-cabecalho-servico">
                   <h2 class="titulo-servico">Impressão de Boletos</h2>
                   <p class="subtitulo-servico">
-                    Impressão rápida de boletos enviados pelo WhatsApp
+                    Impressão rápida de boletos enviados pelo WhatsApp.
                   </p>
                 </div>
               </div>
 
               <p class="descricao-servico">
-                Serviços práticos e eficientes para o seu dia a dia
+                Serviços práticos e eficientes para o seu dia a dia.
               </p>
 
               <div class="area-mensagem-servico">
@@ -595,43 +418,29 @@
               </div>
 
               <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
-                data-mensagem="Olá! Gostaria de solicitar um serviço.">
+                data-mensagem="Olá! Gostaria de solicitar o serviço de impressão de boletos.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
-
-                  botoes.forEach(function (botao) {
-                    botao.addEventListener('click', function () {
-                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
-                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
-                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
-
-                      window.open(link, '_blank');
-                    });
-                  });
-                });
-              </script>
             </div>
 
             <!-- CARD 2 -->
             <div class="card-servico">
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="https://i.ibb.co/0y3J8XQz/documento.png" alt="Ícone de Documento" class="img-icone-servico">
+                  <img src="https://i.ibb.co/0y3J8XQz/documento.png" alt="Ícone de Documento"
+                    class="img-icone-servico" />
                 </div>
                 <div class="texto-cabecalho-servico">
                   <h2 class="titulo-servico">Contrato de Aluguel</h2>
                   <p class="subtitulo-servico">
-                    Elaboração profissional de contratos de aluguel
+                    Elaboração profissional de contratos de aluguel.
+                  </p>
                 </div>
               </div>
 
               <p class="descricao-servico">
-                Ideal para empresas e uso pessoal
+                Ideal para empresas e uso pessoal.
               </p>
 
               <div class="area-mensagem-servico">
@@ -640,115 +449,92 @@
                   Documento seguro e juridicamente válido
                 </span>
               </div>
+
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
                   <li>Contratos padronizados</li>
                   <li>Cláusulas atualizadas</li>
                   <li>Entrega rápida</li>
-                  <li>Preço acessivel</li>
+                  <li>Preço acessível</li>
                 </ul>
               </div>
+
               <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
-                data-mensagem="Olá! Gostaria de solicitar um serviço.">
+                data-mensagem="Olá! Gostaria de solicitar a elaboração de um contrato de aluguel.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
-
-                  botoes.forEach(function (botao) {
-                    botao.addEventListener('click', function () {
-                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
-                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
-                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
-
-                      window.open(link, '_blank');
-                    });
-                  });
-                });
-              </script>
             </div>
 
             <!-- CARD 3 -->
             <div class="card-servico">
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="https://i.ibb.co/SXJSTDQz/calendario.png" alt="Ícone de Cartão" class="img-icone-servico">
+                  <img src="https://i.ibb.co/SXJSTDQz/calendario.png" alt="Ícone de calendário"
+                    class="img-icone-servico" />
                 </div>
                 <div class="texto-cabecalho-servico">
                   <h2 class="titulo-servico">Agendamento para Identidades</h2>
                   <p class="subtitulo-servico">
-                    Agendamento para emissão de carteiras de identidade
+                    Agendamento para emissão de carteiras de identidade.
                   </p>
                 </div>
               </div>
+
               <p class="descricao-servico">
-                Processo simples e direto, sem complicações
+                Processo simples e direto, sem complicações.
               </p>
+
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
-                  Disponivel terças e quintas a partir das 18h
+                  Disponível terças e quintas a partir das 18h
                 </span>
               </div>
+
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
                   <li>Apenas terças e quintas</li>
                   <li>Sistema de senhas</li>
                   <li>Agendamento facilitado</li>
-
                 </ul>
               </div>
+
               <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
-                data-mensagem="Olá! Gostaria de solicitar um serviço.">
+                data-mensagem="Olá! Gostaria de agendar para fazer identidade.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
-
-                  botoes.forEach(function (botao) {
-                    botao.addEventListener('click', function () {
-                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
-                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
-                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
-
-                      window.open(link, '_blank');
-                    });
-                  });
-                });
-              </script>
             </div>
 
             <!-- CARD 4 -->
             <div class="card-servico">
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="https://i.ibb.co/bZHHfgR/curriculo-e-cv-1.png" alt="Ícone de Scanner"
-                    class="img-icone-servico">
+                  <img src="https://i.ibb.co/bZHHfgR/curriculo-e-cv-1.png" alt="Ícone de currículo"
+                    class="img-icone-servico" />
                 </div>
                 <div class="texto-cabecalho-servico">
                   <h2 class="titulo-servico">Criação de Currículos</h2>
                   <p class="subtitulo-servico">
-                    Currículos profissionais personalizados para destacar seu perfil
+                    Currículos profissionais personalizados para destacar seu perfil.
                   </p>
                 </div>
               </div>
+
               <p class="descricao-servico">
-                Dê o primeiro passo rumo a vaga dos seus sonhos com um currículo profissional
+                Dê o primeiro passo rumo à vaga dos seus sonhos com um currículo profissional.
               </p>
+
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Aumente suas chances no mercado
                 </span>
               </div>
+
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
@@ -758,51 +544,40 @@
                   <li>Texto objetivo e impactante</li>
                 </ul>
               </div>
+
               <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
-                data-mensagem="Olá! Gostaria de solicitar um serviço.">
+                data-mensagem="Olá! Gostaria de solicitar a criação de um currículo.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
-
-                  botoes.forEach(function (botao) {
-                    botao.addEventListener('click', function () {
-                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
-                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
-                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
-
-                      window.open(link, '_blank');
-                    });
-                  });
-                });
-              </script>
             </div>
+
             <!-- CARD 5 -->
             <div class="card-servico">
               <div class="cabecalho-card-servico">
                 <div class="icone-card-servico">
-                  <img src="https://i.ibb.co/35yNJ92k/computador-2.png" alt="Ícone de Scanner"
-                    class="img-icone-servico">
+                  <img src="https://i.ibb.co/35yNJ92k/computador-2.png" alt="Ícone de computador"
+                    class="img-icone-servico" />
                 </div>
                 <div class="texto-cabecalho-servico">
                   <h2 class="titulo-servico">Limpeza e Manutenção</h2>
                   <p class="subtitulo-servico">
-                    Manutenção completa para garantir o melhor desempenho
+                    Manutenção completa para garantir o melhor desempenho.
                   </p>
                 </div>
               </div>
+
               <p class="descricao-servico">
-                Evite travamentos e prolongue a vida útil do seu equipamento
+                Evite travamentos e prolongue a vida útil do seu equipamento.
               </p>
+
               <div class="area-mensagem-servico">
                 <span class="tag-horario-servico">
                   <i class="fi fi-br-clock"></i>
                   Computador limpo, rápido e protegido
                 </span>
               </div>
+
               <h3 class="titulo-lista-servico">Características do serviço</h3>
               <div class="lista-servicos">
                 <ul>
@@ -812,34 +587,19 @@
                   <li>Ajustes gerais e manutenção personalizada</li>
                 </ul>
               </div>
+
               <button class="botao-solicitar-servico" data-whatsapp="5545998387188"
-                data-mensagem="Olá! Gostaria de solicitar um serviço.">
+                data-mensagem="Olá! Gostaria de solicitar o serviço de limpeza e manutenção.">
                 Solicitar Serviço
                 <span class="seta-botao-servico">&rarr;</span>
               </button>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  const botoes = document.querySelectorAll('.botao-solicitar-servico');
-
-                  botoes.forEach(function (botao) {
-                    botao.addEventListener('click', function () {
-                      const numero = this.getAttribute('data-whatsapp').replace(/\D/g, '');
-                      const mensagem = encodeURIComponent(this.getAttribute('data-mensagem'));
-                      const link = 'https://wa.me/' + numero + '?text=' + mensagem;
-
-                      window.open(link, '_blank');
-                    });
-                  });
-                });
-              </script>
             </div>
           </div>
         </div>
+
         <button class="btn-carrossel-servico btn-servico-next" aria-label="Próximos serviços">
           <span>&rarr;</span>
         </button>
-
       </div>
 
       <!-- Card de aviso -->
@@ -852,49 +612,31 @@
             Atenção - Agendamento para Identidades
           </h3>
           <p class="aviso-texto">
-            Serviços disponível apenas às terças e quintas-feiras, com atendimento iniciando às 18h da tarde.
-            Utilizamos sistema de senhas para organizar o atendimento.
+            Serviço disponível apenas às terças e quintas-feiras, com atendimento iniciando às 18h. Utilizamos sistema
+            de senhas para organizar o atendimento.
           </p>
         </div>
         <button class="aviso-botao" data-whatsapp="5545998387188"
           data-mensagem="Olá! Gostaria de agendar para fazer identidade.">
           Agendar Agora
         </button>
-
-        <script>
-          function linkWhatsApp(numero, mensagem) {
-            const numeroLimpo = numero.replace(/\D/g, '');
-            const mensagemCodificada = encodeURIComponent(mensagem);
-            return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
-          }
-
-          document.querySelectorAll('.aviso-botao').forEach(botao => {
-            botao.addEventListener('click', function (e) {
-              e.preventDefault();
-              const numero = this.dataset.whatsapp;
-              const mensagem = this.dataset.mensagem;
-
-              if (numero && mensagem) {
-                window.open(linkWhatsApp(numero, mensagem), '_blank');
-              }
-            });
-          });
-        </script>
       </div>
     </div>
   </section>
-  <!-- Localização -->
+
+  <!-- LOCALIZAÇÃO -->
   <section id="localizacao" class="Localizacao">
     <div class="localizacao-header">
       <div class="mapa-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6077926411936!2d-54.50656670000001!3d-25.4847687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6975885a5b51b%3A0xc0eab1a473311d25!2sKlic%20Informatica!5e0!3m2!1spt-BR!2sbr!4v1760249957168!5m2!1spt-BR!2sbr"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          width="100%" height="450" style="border: 0" allowfullscreen loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
 
+  <!-- CONTATO -->
   <section id="contato" class="contato-section">
     <div class="contato-wrapper">
       <header class="contato-header">
@@ -904,10 +646,12 @@
           ou preencha o formulário.
         </p>
       </header>
+
       <div class="contato-grid">
         <!-- COLUNA ESQUERDA – INFORMAÇÕES -->
         <div class="contato-info">
           <h3 class="contato-info-titulo">Informações de Contato</h3>
+
           <!-- Telefone -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -915,9 +659,14 @@
             </div>
             <div>
               <h4>Telefone</h4>
-              <p>(45) 99805-5483<br>(45) 99806-7877<br>(45) 3577-1057</p>
+              <p>
+                (45) 99805-5483<br />
+                (45) 99806-7877<br />
+                (45) 3577-1057
+              </p>
             </div>
           </div>
+
           <!-- WhatsApp -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -925,9 +674,13 @@
             </div>
             <div>
               <h4>WhatsApp</h4>
-              <p>(45) 99805-5483<br><span>Atendimento rápido via WhatsApp</span></p>
+              <p>
+                (45) 99805-5483<br />
+                <span>Atendimento rápido via WhatsApp</span>
+              </p>
             </div>
           </div>
+
           <!-- E-mail -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -935,9 +688,10 @@
             </div>
             <div>
               <h4>E-mail</h4>
-              <p> klic.informatica.foz@gmail.com </p>
+              <p>klic.informatica.foz@gmail.com</p>
             </div>
           </div>
+
           <!-- Endereço -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -946,12 +700,13 @@
             <div>
               <h4>Endereço</h4>
               <p>
-                Av. João Ricieri Maran, n 627<br>
-                Três Lagos - Foz do Iguaçu/PR<br>
+                Av. João Ricieri Maran, n 627<br />
+                Três Lagoas - Foz do Iguaçu/PR<br />
                 CEP: 85862-425
               </p>
             </div>
           </div>
+
           <!-- Horário -->
           <div class="contato-info-item">
             <div class="contato-info-icon">
@@ -960,13 +715,14 @@
             <div>
               <h4>Horário de funcionamento</h4>
               <p>
-                Segunda, Quarta e Sexta: 9h às 18h (intervalo 12h às 14h)<br>
-                Terça e Quinta: 9h às 20h <br>
-                Sábado: 8h às 12h<br>
+                Segunda, Quarta e Sexta: 9h às 18h (intervalo 12h às 14h)<br />
+                Terça e Quinta: 9h às 20h <br />
+                Sábado: 8h às 12h<br />
                 Domingo: Fechado
               </p>
             </div>
           </div>
+
           <!-- Botões WhatsApp / Ligar -->
           <div class="contato-info-actions">
             <button class="contato-btn contato-btn-whatsapp"
@@ -980,143 +736,167 @@
             </a>
           </div>
         </div>
-<!-- COLUNA DIREITA – FORMULÁRIO -->
-<form class="contato-card" id="contatoForm">
-  <div class="contato-card-header">
-    <h3>Envie uma Mensagem</h3>
-    <p>
-      Preencha o formulário abaixo e entraremos em contato o mais breve possível.
-    </p>
-  </div>
 
-  <div class="contato-card-body">
-    <!-- Nome + Telefone -->
-    <div class="contato-row contato-row-2">
-      <div class="contato-campo">
-        <label>Nome completo</label>
-        <input id="nome" type="text" placeholder="nome completo" required>
-      </div>
+        <!-- COLUNA DIREITA – FORMULÁRIO -->
+        <form class="contato-card" id="contatoForm">
+          <div class="contato-card-header">
+            <h3>Envie uma Mensagem</h3>
+            <p>
+              Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+            </p>
+          </div>
 
-      <div class="contato-campo">
-        <label>Telefone</label>
-        <input
-          id="telefone"
-          type="tel"
-          placeholder="(DD)9 9876-5432"
-          inputmode="numeric"
-          pattern="[0-9]*"
-          maxlength="11"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-          title="Digite apenas números (ex: 11998765432)"
-          required
-        >
-      </div>
+          <div class="contato-card-body">
+            <div class="contato-row contato-row-2">
+              <!-- Nome -->
+              <div class="contato-campo">
+                <label for="nome">Nome completo</label>
+                <input id="nome" type="text" placeholder="Nome completo" required />
+              </div>
 
-      <!-- Email -->
-      <div class="contato-campo">
-        <label>Email</label>
-        <input id="email" type="email" placeholder="seu@email.com">
-      </div>
+              <!-- Telefone -->
+              <div class="contato-campo">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="tel" placeholder="DD999999999"
+                  inputmode="numeric" pattern="[0-9]*" maxlength="11"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                  title="Digite apenas números (ex: 45999887766)" required />
+              </div>
 
-      <!-- Assunto -->
-      <div class="contato-campo">
-        <label>Assunto</label>
-        <input id="assunto" type="text" placeholder="Qual é o assunto da sua mensagem?">
-      </div>
+              <!-- Email -->
+              <div class="contato-campo">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seu@email.com" />
+              </div>
 
-      <!-- Mensagem -->
-      <div class="contato-campo">
-        <label>Mensagem</label>
-        <textarea id="mensagem" rows="4" placeholder="Descreva sua dúvida ou necessidade..." required></textarea>
-      </div>
-    </div>
+              <!-- Assunto -->
+              <div class="contato-campo">
+                <label for="assunto">Assunto</label>
+                <input id="assunto" type="text" placeholder="Qual é o assunto da sua mensagem?" />
+              </div>
 
-    <div class="contato-card-footer">
-      <button type="submit" class="contato-submit">
-        <i class="fi fi-br-paper-plane"></i>
-        Enviar Mensagem
-      </button>
-    </div>
-  </div>
-</form>
-  
+              <!-- Mensagem -->
+              <div class="contato-campo">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="4" placeholder="Descreva sua dúvida ou necessidade..."
+                  required></textarea>
+              </div>
+            </div>
+
+            <div class="contato-card-footer">
+              <button type="submit" class="contato-submit">
+                <i class="fi fi-br-paper-plane"></i>
+                Enviar Mensagem
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
-  <script src="script.js">
-    document.querySelectorAll('.fade-up').forEach(element => {
-      const text = element.getAttribute('data-text') || element.textContent;
-      element.innerHTML = text
-        .split('')
-        .map((letra, i) => `<span style="--i:${i + 1}">${letra === ' ' ? '&nbsp;' : letra}</span>`)
-        .join('');
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Função genérica para link de WhatsApp
+    function criarLinkWhatsApp(numero, mensagem) {
+      const numeroLimpo = (numero || '').toString().replace(/\D/g, '');
+      const mensagemCodificada = encodeURIComponent(mensagem || '');
+      return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Botões de cursos, serviços e aviso que usam data-whatsapp + data-mensagem
+      document.querySelectorAll('[data-whatsapp][data-mensagem]').forEach((botao) => {
+        botao.addEventListener('click', (e) => {
+          // Evita conflito com links normais
+          if (botao.tagName.toLowerCase() === 'button') {
+            e.preventDefault();
+          }
+          const numero = botao.dataset.whatsapp;
+          const mensagem = botao.dataset.mensagem;
+          if (numero && mensagem) {
+            const link = criarLinkWhatsApp(numero, mensagem);
+            window.open(link, '_blank');
+          }
+        });
+      });
+
+      // Animação de texto para elementos com .fade-up (se você usar essa classe no HTML)
+      document.querySelectorAll('.fade-up').forEach((element) => {
+        const text = element.getAttribute('data-text') || element.textContent;
+        element.innerHTML = text
+          .split('')
+          .map((letra, i) => `<span style="--i:${i + 1}">${letra === ' ' ? '&nbsp;' : letra}</span>`)
+          .join('');
+      });
     });
   </script>
-</body>
 
-<footer class="klic-footer">
-  <div class="klic-footer-main">
-    <!-- COLUNA 1 – LOGO / PROJETO / REDES -->
-    <div class="klic-footer-brand">
-      <div class="klic-footer-logo">
-        <span class="klic-footer-logo-k">K</span>
-        <div class="klic-footer-logo-text">
-          <span class="klic-footer-logo-name">KLIC</span>
-          <span class="klic-footer-logo-sub">INFORMATICA</span>
+  <!-- FOOTER -->
+  <footer class="klic-footer">
+    <div class="klic-footer-main">
+      <!-- COLUNA 1 – LOGO / PROJETO / REDES -->
+      <div class="klic-footer-brand">
+        <div class="klic-footer-logo">
+          <span class="klic-footer-logo-k">K</span>
+          <div class="klic-footer-logo-text">
+            <span class="klic-footer-logo-name">KLIC</span>
+            <span class="klic-footer-logo-sub">INFORMATICA</span>
+          </div>
+        </div>
+
+        <p class="klic-footer-projeto">Projeto acadêmico</p>
+
+        <div class="klic-footer-social">
+          <a href="#" aria-label="WhatsApp">
+            <i class="fi fi-br-whatsapp"></i>
+          </a>
+          <a href="mailto:contato@klicinformatica.com" aria-label="E-mail">
+            <i class="fi fi-br-envelope"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fi fi-br-instagram"></i>
+          </a>
         </div>
       </div>
 
-      <p class="klic-footer-projeto">Projeto acadêmico</p>
+      <!-- COLUNA 2 – NAVEGAÇÃO -->
+      <div class="klic-footer-column">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contatos</a></li>
+        </ul>
+      </div>
 
-      <div class="klic-footer-social">
-        <a href="#" aria-label="WhatsApp">
-          <i class="fi fi-br-whatsapp"></i>
-        </a>
-        <a href="mailto:contato@klicinformatica.com" aria-label="E-mail">
-          <i class="fi fi-br-envelope"></i>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <i class="fi fi-br-instagram"></i>
-        </a>
+      <!-- COLUNA 3 – SUPORTE -->
+      <div class="klic-footer-column">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="mailto:contato@klicinformatica.com">E-mail</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 4 – FAQ / POLÍTICAS -->
+      <div class="klic-footer-column">
+        <h4>FAQ</h4>
+        <ul>
+          <li><a href="reportar-bug.html">Reportar Bug</a></li>
+          <li><a href="politicas.html">Políticas</a></li>
+          <li><a href="privacidade.html">Privacidade</a></li>
+          <li><a href="termos.html">Termos</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- COLUNA 2 – NAVEGAÇÃO -->
-    <div class="klic-footer-column">
-      <h4>Navegacao</h4>
-      <ul>
-        <li><a href="#topo">Início</a></li>
-        <li><a href="#cursos">Cursos</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato">Contatos</a></li>
-      </ul>
+    <div class="klic-footer-bottom">
+      <p>© 2025 KlicInformatica — Projeto acadêmico</p>
     </div>
-
-    <!-- COLUNA 3 – SUPORTE -->
-    <div class="klic-footer-column">
-      <h4>Suporte</h4>
-      <ul>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="mailto:contato@klicinformatica.com">E-mail</a></li>
-      </ul>
-    </div>
-
-    <!-- COLUNA 4 – FAQ / POLÍTICAS -->
-    <div class="klic-footer-column">
-      <h4>FAQ</h4>
-      <ul>
-        <li><a href="reportar-bug.html">Reportar Bug</a></li>
-        <li><a href="politicas.html">Políticas</a></li>
-        <li><a href="privacidade.html">Privacidade</a></li>
-        <li><a href="termos.html">Termos</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="klic-footer-bottom">
-    <p>© 2025 KlicInformatica — Projeto acadêmico</p>
-  </div>
-</footer>
+  </footer>
+</body>
 
 </html>

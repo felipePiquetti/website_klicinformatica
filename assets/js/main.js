@@ -1,4 +1,4 @@
-// HEADER – aplica classe quando a página é rolada
+ // HEADER – aplica classe quando a página é rolada
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
 
