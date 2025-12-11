@@ -1,3 +1,21 @@
 {
-    "liveServer.settings.port": 5503
+  "liveServer.settings.port": 5503,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 300,
+
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/"
+    }
+  ],
+
+  "liveServer.settings.ignoreFiles": [
+    "**/.vscode/**",
+    "**/*.scss",
+    "**/*.sass"
+  ],
+
+  "liveServer.settings.wait": 100
 }

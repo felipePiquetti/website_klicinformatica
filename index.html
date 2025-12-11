@@ -5,24 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KLIC INFORMATICA</title>
-
   <!-- SEO básico -->
   <meta name="description"
     content="KLIC Informática – Cursos de informática, robótica, administração e serviços como impressão, manutenção e agendamentos em Foz do Iguaçu." />
-
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css">
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-
   <!-- Ícones Flaticon -->
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css" />
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css" />
 
-  <!-- Estilos principais -->
-  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body id="topo">
@@ -110,8 +108,7 @@
       <img src="https://i.ibb.co/7x8Vrzpw/powerpoint.png" class="esfera-icone icone-d icone-powerpoint"
         alt="PowerPoint" />
       <img src="https://i.ibb.co/3yjrB2fq/whatsapp.png" class="esfera-icone icone-e icone-whats" alt="WhatsApp" />
-      <img src="https://i.ibb.co/SXJXs8VB/documento.png" class="esfera-icone icone-f icone-documento"
-        alt="Documento" />
+      <img src="https://i.ibb.co/SXJXs8VB/documento.png" class="esfera-icone icone-f icone-documento" alt="Documento" />
       <img src="https://i.ibb.co/sdFwz1L3/impressoraicone.png" class="esfera-icone icone-g icone-impressora"
         alt="Impressora" />
       <img src="https://i.ibb.co/ZzcfKD3d/toga2.png" class="esfera-icone icone-h icone-togaa" alt="Formatura" />
@@ -201,11 +198,10 @@
                 </ul>
               </div>
               <div class="rodape-curso">
-                <button class="botao-curso" data-whatsapp="+5545998387188"
-                  data-mensagem="Olá! Gostaria de saber mais sobre o Curso de Robótica">
+                <a href="cursos/robotica.html" class="botao-curso">
                   <span>Saiba Mais</span>
                   <span class="icone-seta-curso">➜</span>
-                </button>
+                </a>
               </div>
             </article>
 
@@ -757,9 +753,8 @@
               <!-- Telefone -->
               <div class="contato-campo">
                 <label for="telefone">Telefone</label>
-                <input id="telefone" type="tel" placeholder="DD999999999"
-                  inputmode="numeric" pattern="[0-9]*" maxlength="11"
-                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                <input id="telefone" type="tel" placeholder="DD999999999" inputmode="numeric" pattern="[0-9]*"
+                  maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                   title="Digite apenas números (ex: 45999887766)" required />
               </div>
 
@@ -796,7 +791,8 @@
   </section>
 
   <!-- SCRIPTS -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/componentes/main.js"></script>
+  <script src="assets/componentes/modules/menu.js"></script>
   <script>
     // Função genérica para link de WhatsApp
     function criarLinkWhatsApp(numero, mensagem) {

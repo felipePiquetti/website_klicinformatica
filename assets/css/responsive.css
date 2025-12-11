@@ -1,4 +1,48 @@
- 
+
+/* ===========================
+   BOTÃO MENU MOBILE (hambúrguer)
+   =========================== */
+
+.menu-toggle::before {
+  content: none;
+}
+
+.menu-toggle {
+  display: none; /* só aparece no mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #eaf0f7;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.ativo span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+} 
 /* ==============================
    RESPONSIVO GERAL (MOBILE)
    ============================== */
