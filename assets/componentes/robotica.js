@@ -159,3 +159,108 @@ if (btnInscricao) {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = Array.from(document.querySelectorAll(".stack-slide"));
+  const prevBtn = document.querySelector(".carousel-nav.prev");
+  const nextBtn = document.querySelector(".carousel-nav.next");
+
+  if (!slides.length || !prevBtn || !nextBtn) return;
+
+  let current = 0;
+
+  function updateSlides() {
+    slides.forEach(slide => {
+      slide.classList.remove("is-active", "is-prev", "is-next");
+    });
+
+    const prev = (current - 1 + slides.length) % slides.length;
+    const next = (current + 1) % slides.length;
+
+    slides[current].classList.add("is-active");
+    slides[prev].classList.add("is-prev");
+    slides[next].classList.add("is-next");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    updateSlides();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlides();
+  });
+
+  updateSlides();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".stack-carousel");
+  const slides = carousel?.querySelectorAll(".stack-slide");
+  if (!carousel || slides.length < 2) return;
+
+  let current = 0;
+  let startX = 0;
+  let deltaX = 0;
+  let dragging = false;
+
+  function updateSlides() {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("is-active", "is-next", "is-prev", "hint");
+
+      if (i === current) slide.classList.add("is-active");
+      if (i === (current + 1) % slides.length) slide.classList.add("is-next");
+      if (i === (current - 1 + slides.length) % slides.length) slide.classList.add("is-prev");
+    });
+  }
+
+  updateSlides();
+
+  /* HINT: só na imagem ativa */
+  if (window.innerWidth <= 768) {
+    const active = carousel.querySelector(".is-active");
+    if (active) {
+      active.classList.add("hint");
+      setTimeout(() => active.classList.remove("hint"), 4500);
+    }
+  }
+
+  /* TOUCH */
+  carousel.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    deltaX = 0;
+    dragging = true;
+
+    const active = carousel.querySelector(".is-active");
+    if (active) active.classList.remove("hint");
+  });
+
+  carousel.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    deltaX = e.touches[0].clientX - startX;
+
+    const active = carousel.querySelector(".is-active");
+    if (active) {
+      active.style.transform = `translateX(${deltaX}px) scale(1)`;
+    }
+  });
+
+  carousel.addEventListener("touchend", () => {
+    if (!dragging) return;
+    dragging = false;
+
+    const active = carousel.querySelector(".is-active");
+    if (active) {
+      active.style.transition = "transform 300ms ease";
+      active.style.transform = "";
+      setTimeout(() => active.style.transition = "", 300);
+    }
+
+    if (deltaX > 60) {
+      current = (current - 1 + slides.length) % slides.length;
+    } else if (deltaX < -60) {
+      current = (current + 1) % slides.length;
+    }
+
+    updateSlides();
+  });
+});
