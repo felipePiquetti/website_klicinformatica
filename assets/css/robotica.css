@@ -120,6 +120,40 @@ main {
   color: transparent;
 }
 
+/* ✅ Brand como botão (voltar para Home) */
+.brand.brand-home{
+  padding: 8px 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(221, 229, 242, 0.9);
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px rgba(15, 59, 137, 0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.brand.brand-home:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(15, 59, 137, 0.18);
+  box-shadow: 0 16px 40px rgba(15, 59, 137, 0.18);
+}
+
+.brand.brand-home:active{
+  transform: translateY(0px);
+  box-shadow: 0 10px 24px rgba(15, 59, 137, 0.12);
+}
+
+.brand.brand-home:focus-visible{
+  outline: 3px solid rgba(15, 59, 137, 0.25);
+  outline-offset: 3px;
+}
+
+/* Deixa o ícone da logo mais "botão" */
+.brand.brand-home .brand-mark{
+  box-shadow: 0 10px 22px rgba(15, 59, 137, 0.28);
+}
+
+
 /* HEADER fixo com blur */
 .site-header {
   position: fixed;
@@ -1049,7 +1083,7 @@ main {
   box-shadow: var(--shadow-soft);
   max-width: 450px;     /* ← tamanho ideal na maioria dos casos */
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
    
 }
 
@@ -1284,6 +1318,22 @@ main {
   gap: 42px;
   align-items: center;
 }
+/* ✅ FIX: o carousel não invade os cards da direita */
+.features-left { position: relative; z-index: 1; }
+.features-right { position: relative; z-index: 5; } /* garante que os cards ficam acima se encostar */
+
+.features-left .cards-carousel{
+  margin: 0;                 /* antes estava centralizado (0 auto) */
+  max-width: 460px;          /* reduz um pouco para caber perfeito */
+  height: 340px;
+}
+
+/* Em telas menores, pode centralizar de novo */
+@media (max-width: 1024px){
+  .features-left .cards-carousel{
+    margin: 0 auto;
+  }
+}
 
 .features-left .section-title,
 .features-left .section-subtitle {
@@ -1803,6 +1853,217 @@ main {
 }
 
 
+/* =========================
+   STACKED CARDS CAROUSEL – PREMIUM
+========================= */
+.cards-carousel{
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  height: 380px;
+  margin: 0 auto;
+  overflow: visible;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+/* Glow/halo suave atrás */
+.cards-carousel::before{
+  content: "";
+  position: absolute;
+  inset: -70px;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(15, 59, 137, 0.20), transparent 55%),
+    radial-gradient(circle at 30% 90%, rgba(59, 125, 183, 0.18), transparent 55%);
+  filter: blur(18px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* “Base shadow” no chão */
+.cards-carousel::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  width: 82%;
+  height: 28px;
+  background: radial-gradient(closest-side, rgba(0,0,0,0.18), transparent 70%);
+  filter: blur(10px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Card wrapper */
+.cards-slide{
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(221, 229, 242, 0.85);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  transform: translate3d(0,0,0) rotate(0deg);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+
+  transition:
+    transform 950ms cubic-bezier(.22,1,.36,1),
+    opacity 650ms ease,
+    filter 650ms ease,
+    box-shadow 650ms ease;
+}
+
+/* Imagem dentro do card */
+.cards-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 950ms cubic-bezier(.22,1,.36,1);
+}
+
+/* Brilho/Sheen */
+.cards-slide::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255,255,255,0.55), transparent 40%),
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.10));
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Estado ACTIVE: topo (mais “na frente”) */
+.cards-slide.is-active{
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 5;
+
+  transform: translate3d(58px, -18px, 70px) rotate(0.7deg);
+  box-shadow:
+    0 34px 90px rgba(15, 59, 137, 0.26),
+    0 14px 36px rgba(0, 0, 0, 0.10);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.cards-slide.is-active img{
+  transform: scale(1.02);
+}
+
+/* Card do meio */
+.cards-slide.is-2{
+  opacity: 0.92;
+  z-index: 3;
+
+  transform: translate3d(26px, 10px, 30px) rotate(-0.6deg) scale(0.988);
+  box-shadow:
+    0 22px 60px rgba(15, 59, 137, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.08);
+  filter: saturate(1.02);
+}
+
+/* Card de trás */
+.cards-slide.is-3{
+  opacity: 0.84;
+  z-index: 2;
+
+  transform: translate3d(-10px, 40px, 0px) rotate(0.4deg) scale(0.972);
+  box-shadow:
+    0 16px 44px rgba(15, 59, 137, 0.14),
+    0 8px 18px rgba(0, 0, 0, 0.06);
+  filter: saturate(0.98);
+}
+
+/* Hover “premium” no card ativo */
+@media (hover:hover){
+  .cards-carousel:hover .cards-slide.is-active{
+    transform: translate3d(58px, -22px, 80px) rotate(0.6deg);
+    box-shadow:
+      0 42px 110px rgba(15, 59, 137, 0.30),
+      0 18px 46px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Botões glass */
+.cards-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.96);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(221, 229, 242, 0.9);
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  color: #0b2859;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 18px 40px rgba(15, 59, 137, 0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+  opacity: 0.0;
+  pointer-events: none;
+}
+
+.cards-nav.prev{ left: -46px; }
+.cards-nav.next{ right: -126px; }
+
+/* ✅ Mostrar botões quando hover no carousel OU no próprio botão */
+@media (hover:hover){
+  .cards-carousel:hover .cards-nav,
+  .cards-nav:hover{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
+  }}
+
+.cards-nav:hover{
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 26px 60px rgba(15, 59, 137, 0.26);
+}
+
+.cards-nav:focus-visible{
+  outline: 3px solid rgba(15, 59, 137, 0.35);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .cards-nav{ display:none; }
+
+  .cards-carousel{
+    max-width: 320px;
+    height: 280px;
+  }
+
+  .cards-slide.is-active{
+    transform: translate3d(26px, -10px, 40px) rotate(0.4deg);
+  }
+  .cards-slide.is-2{
+    transform: translate3d(12px, 10px, 18px) rotate(-0.4deg) scale(0.988);
+  }
+  .cards-slide.is-3{
+    transform: translate3d(-4px, 26px, 0px) rotate(0.3deg) scale(0.972);
+  }
+}
+
+/* Respeita acessibilidade */
+@media (prefers-reduced-motion: reduce){
+  .cards-slide, .cards-slide img, .cards-nav{
+    transition: none !important;
+  }
+}
+
+
 /* Mobile */  
 /* ======================= RESPONSIVO ======================= */
 
@@ -1974,11 +2235,7 @@ main {
     padding: 18px 16px;
   }
 
-  .image-card.large {
-    max-width: 100%;
-    margin-top: 10px;
-  }
-
+ 
   /* Lista de módulos com mais respiro */
   .modules-list {
     gap: 12px;
@@ -2096,12 +2353,15 @@ main {
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #1d6eb5;
-  color: #fff;
+  background: rgba(255,255,255,0.72);
+  color: #0b2859;
   font-size: 24px;
   cursor: pointer;
   z-index: 10;
+  box-shadow: 0 18px 40px rgba(15, 59, 137, 0.18);    
+  border: 1px solid rgba(221, 229, 242, 0.9);   
 }
+
 
 .carousel-nav.prev { left: -58px; }
 .carousel-nav.next { right:
@@ -2167,4 +2427,19 @@ main {
   .stack-slide {
     border-radius: 18px;
   }
+}
+
+
+
+/* ✅ BOTÕES: ficam visíveis enquanto a classe nav-visible estiver ativa */
+.cards-nav{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.96);
+}
+
+.cards-carousel.nav-visible .cards-nav{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
 }

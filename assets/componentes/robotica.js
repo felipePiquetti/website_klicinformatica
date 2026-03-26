@@ -145,20 +145,7 @@ if (btnConsultor) {
   });
 }
 
-// Exemplo: botão de inscrição (pode apontar para checkout)
-if (btnInscricao) {
-  btnInscricao.addEventListener('click', e => {
-    e.preventDefault();
-    // Troque pelo link da sua página de pagamento ou formulário
-    const checkoutUrl = '#';
-    if (checkoutUrl === '#') {
-      // fallback: rolar para o topo do formulário (se tiver) ou apenas alert
-      alert('Aqui você pode colocar o link da sua página de inscrição/checkout.');
-    } else {
-      window.open(checkoutUrl, '_blank');
-    }
-  });
-}
+
 document.addEventListener("DOMContentLoaded", () => {
   const slides = Array.from(document.querySelectorAll(".stack-slide"));
   const prevBtn = document.querySelector(".carousel-nav.prev");
@@ -264,3 +251,119 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlides();
   });
 });
+
+// =========================
+// STACKED CARDS CAROUSEL (AUTO-PLAY LENTO)
+// =========================
+(function initCardsCarousel(){
+  document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stop();
+  else start();
+});
+
+  const carousel = document.querySelector('[data-cards-carousel]');
+  if(!carousel) return;
+// ✅ deixa os botões visíveis por mais tempo (ms)
+const NAV_LINGER_MS = 1200; // 1.2s (aumente se quiser)
+
+let navTimer = null;
+
+function showNav(){
+  if (navTimer) clearTimeout(navTimer);
+  carousel.classList.add('nav-visible');
+}
+
+function hideNavLater(){
+  if (navTimer) clearTimeout(navTimer);
+  navTimer = setTimeout(() => {
+    carousel.classList.remove('nav-visible');
+  }, NAV_LINGER_MS);
+}
+
+// Mostra ao entrar / segura visível
+carousel.addEventListener('mouseenter', showNav);
+carousel.addEventListener('mousemove', showNav);
+
+// Some depois de um tempinho ao sair
+carousel.addEventListener('mouseleave', hideNavLater);
+
+// Também mantém se passar por cima dos botões
+const navs = carousel.querySelectorAll('.cards-nav');
+navs.forEach(btn => {
+  btn.addEventListener('mouseenter', showNav);
+  btn.addEventListener('mouseleave', hideNavLater);
+});
+
+// Inicia visível por alguns segundos (opcional)
+showNav();
+hideNavLater();
+
+  const slides = Array.from(carousel.querySelectorAll('.cards-slide'));
+  const btnPrev = carousel.querySelector('[data-cards-prev]');
+  const btnNext = carousel.querySelector('[data-cards-next]');
+  if(slides.length === 0) return;
+
+  let index = 0;
+  let timer = null;
+
+  const INTERVAL_MS = 6500; // ✅ bem lento (6.5s) — aumente se quiser
+
+  function mod(n, m){ return ((n % m) + m) % m; }
+
+  function render(){
+    slides.forEach(s => s.classList.remove('is-active','is-2','is-3'));
+
+    const a = mod(index, slides.length);
+    const b = mod(index + 1, slides.length);
+    const c = mod(index + 2, slides.length);
+
+    slides[a].classList.add('is-active');
+    if(slides.length > 1) slides[b].classList.add('is-2');
+    if(slides.length > 2) slides[c].classList.add('is-3');
+  }
+
+  function next(){ index = mod(index + 1, slides.length); render(); }
+  function prev(){ index = mod(index - 1, slides.length); render(); }
+
+  function start(){
+    stop();
+    if(slides.length <= 1) return;
+    timer = setInterval(next, INTERVAL_MS);
+  }
+
+  function stop(){
+    if(timer) clearInterval(timer);
+    timer = null;
+  }
+
+  // Botões
+  btnNext && btnNext.addEventListener('click', () => { next(); start(); });
+  btnPrev && btnPrev.addEventListener('click', () => { prev(); start(); });
+
+  // ✅ Pausa no hover (desktop)
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  // ✅ Swipe no mobile
+  let startX = null;
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    stop(); // pausa enquanto arrasta
+  }, {passive:true});
+
+  carousel.addEventListener('touchend', (e) => {
+    if(startX === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+    startX = null;
+
+    if(Math.abs(dx) > 40){
+      dx < 0 ? next() : prev();
+    }
+    start(); // volta a rodar
+  });
+
+  // Inicializa
+  render();
+  start();
+})();
